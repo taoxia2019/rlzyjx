@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tcrl.dao.PerformanceInitMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.tcrl.entity.PerformanceInit">
+        <id column="id" property="id" />
+        <result column="beikaohedanwei" property="beikaohedanwei" />
+        <result column="beizhu" property="beizhu" />
+        <result column="biaozhun" property="biaozhun" />
+        <result column="caozuofu" property="caozuofu" />
+        <result column="danwei" property="danwei" />
+        <result column="kaohedanwei" property="kaohedanwei" />
+        <result column="kaohejieguo" property="kaohejieguo" />
+        <result column="kaohexiangmu" property="kaohexiangmu" />
+        <result column="kaoheyuefen" property="kaoheyuefen" />
+        <result column="mubiaozhi" property="mubiaozhi" />
+        <result column="shijishi" property="shijishi" />
+        <result column="zhouqi" property="zhouqi" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, beikaohedanwei, beizhu, biaozhun, caozuofu, danwei, kaohedanwei, kaohejieguo, kaohexiangmu, kaoheyuefen, mubiaozhi, shijishi, zhouqi
+    </sql>
+
+</mapper>
