@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html class="x-admin-sm" xmlns:th="http://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <title>新增页面</title>
+    <header th:replace="header::html"></header>
+</head>
+<body>
+<div class="x-body">
+
+        <form class="layui-form">
+            <input type="hidden" id="userId" name="id" th:value="${users.id}">
+            <div class="layui-form-item">
+                <label for="L_username" class="layui-form-label">
+                    <span class="x-red">*</span>用户名
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="L_username" th:value="${users.username}" name="username" required=""
+                           lay-verify="required"
+                           autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">
+                    <span class="x-red">*</span>将会成为您唯一的登入名
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="L_phone" class="layui-form-label">
+                    <span class="x-red">*</span>手机
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="L_phone" th:value="${users.phone}" name="phone" lay-verify="phone"
+                           autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">
+                    <span class="x-red">*</span>将会成为您唯一的登入名
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="L_email" class="layui-form-label">
+                    <span class="x-red">*</span>邮箱
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="L_email" th:value="${users.email}" name="email"
+                           autocomplete="off" class="layui-input">
+                </div>
+                <div class="layui-form-mid layui-word-aux">
+                    <span class="x-red">*</span>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">部门</label>
+                <div class="layui-input-inline">
+                    <select id="department" name="department" lay-filter="department">
+                        <option value=""></option>
+                        <option th:each="dept:${departments}" th:value="${dept.id}" th:text="${dept.deptName}" th:selected="${dept.flag}"></option>
+                    </select>
+                </div>
+            </div>
+
+
+            <div class="layui-form-item">
+                <label for="L_birthday" class="layui-form-label">
+                    生日
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="L_birthday" th:value="${#dates.format(users.birthday,'yyyy-MM-dd')}" placeholder="yyyy-MM-dd"
+                           name="birthday"
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">性别</label>
+                <div class="layui-input-block">
+                    <input type="radio" th:value="${users.sex}" name="sex" value="1" title="男" checked="">
+                    <input type="radio" th:value="${users.sex}" name="sex" value="0" title="女">
+                </div>
+            </div>
+            <!--<input type="text" id="roleid" name="roleid" style=""/>-->
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">角色</label>
+                <div class="layui-input-block">
+                    <input id="roleCheck" name="role" type="checkbox"  th:each="role:${roles}" th:value="${role.id}" th:title="${role.name}" th:checked="${role.flag}">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label for="L_email" class="layui-form-label">
+                </label>
+                <button class="layui-btn" lay-filter="edit" lay-submit="">
+                    修改
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    layui.use(['form', 'layer', 'laydate'],
+    function () {
+        $ = layui.jquery;
+        var form = layui.form,
+            layer = layui.layer,
+            laydate = layui.laydate;
+
+        //日期
+        laydate.render({
+            elem: '#L_birthday'
+            , format: 'yyyy-MM-dd'
+        });
+
+        //自定义验证规则
+        form.verify({
+            username: function (value) {
+                if (value.length < 5) {
+                    return '用户名至少得5个字符';
+                }
+            },
+        });
+
+        //监听提交
+        form.on('submit(edit)', function (data) {
+            var roleIds=new Array();
+            $('input[id="roleCheck"]:checked').each(function(){
+                roleIds.push($(this).val());//向数组中添加元素
+            });
+            data.field.roleIds=roleIds.join(',');
+            data.field.sex=$("input[type='radio']:checked").val();
+            data.field.dept=$('#department option:selected').text();
+            $.ajax({
+                url: "/user/edit",
+                type: "POST",
+                data: data.field,
+                dataType: 'json',
+                success: function (result) {
+                    if (result.code == 500 || result.code == 5000100 || result.code == 5000101 || result.code == 5000102) {
+                        layer.alert(result.msg);
+                    } else {
+                        layer.alert("设置成功", {icon: 6}, function () {
+                            //关闭当前frame
+                            xadmin.close();
+                            //可以对父窗口进行刷新
+                            xadmin.father_reload();
+
+                        });
+                    }
+
+                }
+            });
+            return false;
+        });
+
+    });
+
+</script>
+
+</body>
+
+</html>

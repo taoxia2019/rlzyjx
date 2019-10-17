@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html class="x-admin-sm" xmlns:th="http://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <title>新增页面</title>
+    <header th:replace="header::html"></header>
+    <!--<link rel="stylesheet" th:href="@{/ztree/css/zTreeStyle/zTreeStyle.css}">-->
+    <!--<link rel="stylesheet" th:href="@{/ztree/css/demo.css}">-->
+    <link rel="stylesheet" th:href="@{/dtree/dtree.css}">
+    <link rel="stylesheet" th:href="@{/dtree/font/dtreefont.css}">
+</head>
+<body>
+<div class="x-body">
+
+    <form class="layui-form">
+        <div class="layui-form-item">
+            <label for="L_name" class="layui-form-label">
+                <span class="x-red">*</span>角色名
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="L_name" th:value="${role.name}" name="name" required=""
+                       lay-verify="name"
+                       autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-form-mid layui-word-aux">
+                <span class="x-red">*</span>将会成为角色名
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label for="L_descirption" class="layui-form-label">
+                <span class="x-red">*</span>描述
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="L_descirption" th:value="${role.descirption}" name="descirption"
+                       lay-verify="descirption"
+                       autocomplete="off" class="layui-input">
+            </div>
+            <div class="layui-form-mid layui-word-aux">
+                <span class="x-red">*</span>该角色的定位或权限范围
+            </div>
+        </div>
+        <label class="col-md-d control-label layui-form-label">权限</label>
+        <div class="layui-form-item">
+            <div class="col-md-10">
+                <ul id="permissionTree" class="dtree" data-id="0"></ul>
+            </div>
+
+        </div>
+
+
+        <div class="layui-form-item">
+            <button class="layui-btn" lay-filter="add" lay-submit="">增加</button>
+        </div>
+    </form>
+</div>
+</div>
+<script>
+    layui.extend({
+        dtree: '/dtree/dtree'
+    }).use(['jquery', 'form', 'table', 'layer', 'dtree'], function () {
+        var $ = layui.jquery;
+        var form = layui.form;
+        var table = layui.table;
+        var layer = layui.layer;
+        var dtree = layui.dtree;
+
+        //日期
+        /*   laydate.render({
+               elem: '#L_birthday'
+               , format: 'yyyy-MM-dd'
+           });
+   */
+        //自定义验证规则
+        form.verify({
+            username: function (value) {
+                if (value.length < 4) {
+                    return '角色名至少得4个字符';
+                }
+            }
+        });
+
+        // 初始化树
+        dtree.render({
+            elem: "#permissionTree",
+            url: "/permission/listAllPermission",
+            dataStyle: "layuiStyle",  //使用layui风格的数据格式
+            dataFormat: "list",  //配置data的风格为list
+            response: {message: "msg", statusCode: 0},  //修改response中返回数据的定义
+            checkbar: true,
+            checkbarType: "all" // 默认就是all，其他的值为： no-all  p-casc   self  only
+        });
+
+        // 绑定节点点击
+        dtree.on("node('permissionTree')", function (obj) {
+            layer.msg(JSON.stringify(obj.param));
+
+        });
+        function getCheckedMenuIds() {
+            var permissionData = dtree.getCheckbarNodesParam("permissionTree");
+
+            var ids=[];
+            $.each(permissionData,function(index,item){
+                ids.push(item.nodeId);
+            });
+            return ids;
+
+        }
+
+        //监听提交
+        form.on('submit(add)', function (data) {
+            var permisssionIds = getCheckedMenuIds();
+            data.field.permissionIds=permisssionIds;
+
+            $.ajax({
+                url: "/role/add",
+                type: "POST",
+                contentType:"application/json;charset=utf-8",
+                data: JSON.stringify(data.field),
+                dataType: 'json',
+                success: function (result) {
+                        layer.alert("添加成功", {icon: 6}, function () {
+                            //关闭当前frame
+                            xadmin.close();
+                            //可以对父窗口进行刷新
+                            xadmin.father_reload();
+                        });
+                    }
+            });
+            return false;
+        });
+
+    });
+
+
+</script>
+
+</body>
+
+</html>

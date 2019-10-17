@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html class="x-admin-sm" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>权限列表</title>
+    <header th:replace="header::html"></header>
+
+    <link rel="stylesheet" href="../static/treetable-lay/treetable.css" th:href="@{/treetable-lay/treetable.css}">
+    <script type="text/javascript" src="../static/treetable-lay/treetable.js" th:src="@{/treetable-lay/treetable.js}"></script>
+
+</head>
+<body>
+<div class="x-nav">
+          <span class="layui-breadcrumb">
+            <a href="">首页</a>
+            <a href="">权限</a>
+            <a>
+              <cite>权限列表</cite></a>
+          </span>
+    <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
+       onclick="location.reload()" title="刷新">
+        <i class="layui-icon layui-icon-refresh" style="line-height:30px"></i></a>
+</div>
+
+
+<div class="x-body">
+    <div class="layui-fluid">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+                <div class="layui-card">
+                    <div class="layui-card-header">
+                        <from class="layui-form layui-col-md12 x-so" id="layuiformPermission">
+                            <!--<a class="layui-btn" id="crollAll">折叠展开</a>-->
+                            <!--<a class="layui-btn" onclick="xadmin.open('新增权限','/permission/add')" permission=""></a>-->
+                            <button class="layui-btn" onclick="xadmin.open('新增权限','/permission/add')"><i class="layui-icon"></i>添加</button>
+
+                        </from>
+                    </div>
+                    <div class="layui-card-body">
+                        <table class="layui-hide" id="menuTable" lay-filter="member"></table>
+                    </div>
+                    <div class="layui-card-body">
+                        <script type="text/html" id="barDemo">
+                            <a class="layui-btn layui-btn-xs" lay-event="edit" permission="sys:menu:edit">编辑</a>
+                            <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"
+                               permission="sys:menu:del">删除</a>
+                        </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+    var treetable, renderTable;
+    layui.config({
+        base: '/'
+    }).extend({
+        treetable: 'treetable-lay/treetable'
+    }).use(['treetable'], function () {
+        var $=layui.jquery;
+        var table=layui.table;
+        var treetable = layui.treetable;
+
+        renderTable = function () {
+            treetable.render({
+                treeColIndex: 1,          // treetable新增参数
+                treeSpid: 0,             // treetable新增参数
+                treeIdName: 'id',       // treetable新增参数
+                treePidName: 'parentId',     // treetable新增参数
+                treeDefaultClose: true,   // treetable新增参数
+                treeLinkage: true,        // treetable新增参数
+                elem: '#menuTable',
+                url: '/permission/menuAll',
+                cols: [
+                    [
+                    {type: 'numbers'},
+                    {field: 'title', title: '名称',width:180},
+                    {field: 'href', title: 'url',width:180},
+
+                    {field: 'permission', title: '资源标识'},
+                    {field: 'type', title: '类型',width:60,templet:function (d) {
+                            return d.type=='1'?"菜单":"按钮";
+                        }},
+                    {field: 'sort', title: '排序',width:60},
+                    {title: '操作',toolbar:'#barDemo'},
+                ]
+                ]
+            });
+
+        };
+        renderTable();
+      //折叠
+       var croll=false;
+        $("#crollAll").click(function () {
+            if(croll){
+                treetable.expandAll('#menuTable');
+                croll=false;
+            }else {
+                treetable.foldAll('#menuTable');
+                croll=true;
+            }
+
+        });
+
+        //监听工具条
+        table.on('tool(member)', function (obj) {
+            var data = obj.data;
+            if (obj.event == 'del') {
+                layer.confirm('真的删除行吗', function (index) {
+                    $.ajax({
+                        url: "/permission/delete",
+                        type: "GET",
+                        data: {id: data.id},
+                        dataType: 'json',
+                        success: function (result) {
+                            layer.alert("删除成功", {icon: 1}, function (index1) {
+                                layer.close(index1);
+                                location.reload()
+                                //xadmin.father_reload();
+                                //table.reload('menuTable');
+                            });
+                        },
+                    });
+
+                });
+            } else if (obj.event === 'edit') {
+                xadmin.open('编辑权限信息', '/permission/edit/?id=' + data.id);
+            }
+        });
+    });
+
+</script>
+
+</html>
