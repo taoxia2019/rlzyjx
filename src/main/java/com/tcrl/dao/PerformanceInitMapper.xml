@@ -15,13 +15,13 @@
         <result column="kaohexiangmu" property="kaohexiangmu" />
         <result column="kaoheyuefen" property="kaoheyuefen" />
         <result column="mubiaozhi" property="mubiaozhi" />
-        <result column="shijishi" property="shijishi" />
+        <result column="shijizhi" property="shijizhi" />
         <result column="zhouqi" property="zhouqi" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, beikaohedanwei, beizhu, biaozhun, caozuofu, danwei, kaohedanwei, kaohejieguo, kaohexiangmu, kaoheyuefen, mubiaozhi, shijishi, zhouqi
+        id, beikaohedanwei, beizhu, biaozhun, caozuofu, danwei, kaohedanwei, kaohejieguo, kaohexiangmu, kaoheyuefen, mubiaozhi, shijizhi, zhouqi
     </sql>
 
 </mapper>

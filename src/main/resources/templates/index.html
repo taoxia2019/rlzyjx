@@ -2,7 +2,7 @@
 <html class="x-admin-sm" xmlns:th="http://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
-    <title>后台登录页面</title>
+    <title>首页</title>
     <header th:replace="header::html"></header>
 
 </head>
@@ -10,15 +10,15 @@
 <!-- 顶部开始 -->
 <div class="container">
     <div class="logo">
-        <a href="./index.html">X-admin v2.2</a></div>
+        <a href="./index.html">铜材公司绩效管理系统</a></div>
     <div class="left_open">
         <a><i title="展开左侧栏" class="iconfont">&#xe699;</i></a>
     </div>
-    <ul class="layui-nav left fast-add" lay-filter="">
+   <!-- <ul class="layui-nav left fast-add" lay-filter="">
         <li class="layui-nav-item">
             <a href="javascript:;">+新增</a>
             <dl class="layui-nav-child">
-                <!-- 二级菜单 -->
+                &lt;!&ndash; 二级菜单 &ndash;&gt;
                 <dd>
                     <a onclick="xadmin.open('最大化','http://www.baidu.com','','',true)">
                         <i class="iconfont">&#xe6a2;</i>弹出最大化</a></dd>
@@ -36,7 +36,7 @@
                         <i class="iconfont">&#xe6b8;</i>在tab打开刷新</a></dd>
             </dl>
         </li>
-    </ul>
+    </ul>-->
     <ul class="layui-nav right" lay-filter="">
         <li class="layui-nav-item">
             <a href="javascript:;" id="show-username">admin</a>
@@ -50,8 +50,8 @@
                     <a href="/logout">退出</a></dd>
             </dl>
         </li>
-        <li class="layui-nav-item to-index">
-            <a href="/">前台首页</a></li>
+        <!--<li class="layui-nav-item to-index">
+            <a href="/api/getPage?pageName=welcome">前台首页</a></li>-->
     </ul>
 </div>
 <!-- 顶部结束 -->

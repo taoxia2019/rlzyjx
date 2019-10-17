@@ -94,7 +94,7 @@ public class PermissionController {
         List<TreeNode> nodes=new ArrayList<>();
         for (Permission p1 : list) {
             String checkArr="0";
-            Boolean spread= true;
+            Boolean spread= false;
             nodes.add(new TreeNode(p1.getId(), p1.getParentid(), p1.getName(), spread, checkArr));
         }
         return new DataGridView(nodes);
