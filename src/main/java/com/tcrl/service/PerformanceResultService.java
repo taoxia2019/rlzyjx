@@ -1,5 +1,6 @@
 package com.tcrl.service;
 
+import com.tcrl.base.result.Results;
 import com.tcrl.entity.PerformanceResult;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -13,4 +14,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface PerformanceResultService extends IService<PerformanceResult> {
 
+    Results<PerformanceResult> getList();
 }
