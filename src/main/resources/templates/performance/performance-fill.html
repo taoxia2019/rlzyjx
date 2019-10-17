@@ -50,7 +50,7 @@
         //第一个实例
         table.render({
             elem: '#test3'
-            , url: '/performanceInit/list' //数据接口
+            , url: '/performance/fill' //数据接口
             // , toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
             , response: {
                 dataName: 'datas' //规定数据列表的字段名称，默认：data
@@ -59,8 +59,8 @@
             , cols: [
                 [ //表头
                     // {type: 'checkbox', fixed: 'left'}
-                    {field: 'id', title: 'ID', width: 50, sort: true, fixed: 'left'}
-                    ,{field:'kaoheyuefen', title: '月份',width:50, sort: true}
+                    {field: 'id', title: 'ID', width: 30, sort: true, fixed: 'left'}
+                    ,{field:'kaoheyuefen', title: '月份',width:40, sort: true}
                     ,{field:'beikaohedanwei', title: '部门分厂'}
                     ,{field:'kaohexiangmu', title: '项目'}
                     ,{field:'biaozhun', title: '标准'}
@@ -101,7 +101,7 @@
                     //window.location.reload();
                     //刷新当前表格
                     table.reload('test3', {
-                        url: '/performanceInit/list'
+                        url: '/performance/fill'
                     });
 
 

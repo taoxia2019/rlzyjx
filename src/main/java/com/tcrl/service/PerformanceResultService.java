@@ -14,5 +14,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface PerformanceResultService extends IService<PerformanceResult> {
 
-    Results<PerformanceResult> getList();
+
+    Results<PerformanceResult> getList(Integer offset, Integer limit);
 }
