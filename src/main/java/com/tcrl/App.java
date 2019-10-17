@@ -8,10 +8,10 @@ import org.springframework.security.config.annotation.method.configuration.Enabl
 @SpringBootApplication
 @MapperScan("com.tcrl.dao")
 @EnableGlobalMethodSecurity(prePostEnabled = true) //开启security注解
-public class RlzyjxApplication {
+public class App {
 
 	public static void main(String[] args) {
-		SpringApplication.run(RlzyjxApplication.class, args);
+		SpringApplication.run(App.class, args);
 	}
 
 }
