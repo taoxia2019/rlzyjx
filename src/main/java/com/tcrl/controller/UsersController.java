@@ -91,6 +91,7 @@ public class UsersController {
     public String addUser(Model model){
         model.addAttribute(new Users());
         model.addAttribute("roles",roleService.list());
+        model.addAttribute("departments",departmentService.list());
 
         return "user/user-add";
     }
