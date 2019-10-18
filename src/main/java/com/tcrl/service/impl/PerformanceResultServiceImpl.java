@@ -21,8 +21,10 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
+import java.awt.*;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * <p>
@@ -95,25 +97,29 @@ public class PerformanceResultServiceImpl extends ServiceImpl<PerformanceResultM
             if (performanceResults1.size() !=0) {
                 //如果有数据，将没有初始化表中没有填入到结果集
                 List<PerformanceInit> performanceInits = performanceInitMapper.selectList(null);
-                performanceInits.stream().forEach(perInit -> {
-                    performanceResults1.stream().forEach(perresult -> {
-                        //通过考核月份和初始化表中的状态码判断result表中是否存储该数据，如果没有则存储
-                        if (!perresult.getKaoheyuefen().equals(perInit.getKaoheyuefen()) && !perresult.getStatus().equals(perInit.getStatus()))
-                        {
-                            PerformanceResult pResult = getPerformanceResult(perInit);
-                            performanceResultMapper.insert(pResult);
-                        }
+                //获取初始化表中status的集合
+                List<Integer> initStatusCollect = performanceInits
+                        .stream().map(perinit -> perinit.getStatus()).collect(Collectors.toList());
+                //获取初结果表中status的集合
+                List<Integer> resultStatusCollect = performanceResults1.stream()
+                        .map(perresult -> perresult.getStatus()).collect(Collectors.toList());
+                //去除结果集中有的status
+                initStatusCollect.removeAll(resultStatusCollect);
+                if(initStatusCollect.size()>0){
+                    initStatusCollect.stream().forEach(i->{
+                        performanceInits.stream().forEach(perInit->{
+                               if( perInit.getStatus().equals(i)){
+                                   PerformanceResult pResult = getPerformanceResult(perInit);
+                                   performanceResultMapper.insert(pResult);
+                               }
+                        });
                     });
-                });
-
+                }
             } else {
-
                 //将所有数据存储到RESULT表
                 List<PerformanceInit> performanceInits = performanceInitMapper.selectList(null);
                 performanceInits.stream().forEach(perInit -> {
-                    System.out.println(perInit.getKaohedanwei());
                     PerformanceResult pResult = getPerformanceResult(perInit);
-                    System.out.println(pResult.getKaohedanwei());
                     performanceResultMapper.insert(pResult);
                 });
             }
