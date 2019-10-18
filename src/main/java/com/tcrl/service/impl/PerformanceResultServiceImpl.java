@@ -4,6 +4,8 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.tcrl.base.result.Results;
+import com.tcrl.dao.PerformanceInitMapper;
+import com.tcrl.dao.UsersMapper;
 import com.tcrl.entity.PerformanceInit;
 import com.tcrl.entity.PerformanceResult;
 import com.tcrl.dao.PerformanceResultMapper;
@@ -24,7 +26,7 @@ import java.util.List;
 
 /**
  * <p>
- *  服务实现类
+ * 服务实现类
  * </p>
  *
  * @author taoxia
@@ -34,9 +36,11 @@ import java.util.List;
 public class PerformanceResultServiceImpl extends ServiceImpl<PerformanceResultMapper, PerformanceResult> implements PerformanceResultService {
     @Autowired
     private PerformanceResultMapper performanceResultMapper;
+    @Autowired
+    private PerformanceInitMapper performanceInitMapper;
 
     @Autowired
-    private UsersService usersService;
+    private UsersMapper usersMapper;
 
     @Override
     public Results<PerformanceResult> getList(Integer offset, Integer limit) {
@@ -45,26 +49,91 @@ public class PerformanceResultServiceImpl extends ServiceImpl<PerformanceResultM
                 .getAuthentication()
                 .getPrincipal();
         String username = principal.getUsername();
+        System.out.println("当前用户："+username);
         //判断是否是管理员
-        if(!username.equals("admin")) {
+        if (!username.equals("admin")) {
             //如果不是管理员，查找用户所在部门
-            QueryWrapper<Users> queryWrapper1 = new QueryWrapper<>();
-            queryWrapper1.eq("username", username);
-            String dept = usersService.getOne(queryWrapper1).getDept();
+//            QueryWrapper<Users> queryWrapper1 = new QueryWrapper<>();
+//            queryWrapper1.eq("username", username);
+            String dept = usersMapper.getUser(username).getDept();
 
-            //根据所在部门查询考核单位即数据（即填报单位）
-            int count = performanceResultMapper.countAllPerformances(DataUtils.getMonth(), dept).intValue();
-            //当前填报表考核月份
-            List<PerformanceResult> performanceResults = performanceResultMapper.getallPerformancesByPage(offset, limit, DataUtils.getMonth(), dept);
-            return Results.success(count,performanceResults);
+            //根据考核月份和考核单位判断是否已经有结果集
+            QueryWrapper<PerformanceResult> performanceResultQueryWrapper = new QueryWrapper<>();
+            performanceResultQueryWrapper.eq("kaoheyuefen", DataUtils.getMonth());
+            performanceResultQueryWrapper.eq("kaohedanwei", dept);
 
-        }else {
+            List<PerformanceResult> list1 = performanceResultMapper
+                    .selectList(performanceResultQueryWrapper);
+            if (list1.size() != 0) {
+                //根据所在部门查询考核单位即数据（即填报单位）
+                int count = performanceResultMapper.countAllPerformances(DataUtils.getMonth(), dept).intValue();
+                //当前填报表考核月份
+                List<PerformanceResult> performanceResults = performanceResultMapper.getallPerformancesByPage(DataUtils.getMonth(), dept, offset, limit);
+                return Results.success(count, performanceResults);
+            } else {
+                QueryWrapper<PerformanceInit> queryWrapper2 = new QueryWrapper<>();
+                queryWrapper2.eq("kaohedanwei", dept);
+                List<PerformanceInit> PerformanceInitlist = performanceInitMapper.selectList(queryWrapper2);
+                PerformanceInitlist.stream().forEach(perInit -> {
+                    PerformanceResult pResult = getPerformanceResult(perInit);
+                    performanceResultMapper.insert(pResult);
+                });
+                //根据所在部门查询考核单位即数据（即填报单位）
+                int count = performanceResultMapper.countAllPerformances(DataUtils.getMonth(), dept).intValue();
+                //当前填报表考核月份
+                List<PerformanceResult> performanceResults = performanceResultMapper.getallPerformancesByPage(DataUtils.getMonth(), dept, offset, limit);
+                return Results.success(count, performanceResults);
+            }
+
+        } else {
+            //管理员身份
+            //根据月份查询结果集是否有数据
+            QueryWrapper<PerformanceResult> performanceResultQueryWrapper1 = new QueryWrapper<>();
+            performanceResultQueryWrapper1.eq("kaoheyuefen", DataUtils.getMonth());
+            List<PerformanceResult> performanceResults1 = performanceResultMapper.selectList(performanceResultQueryWrapper1);
+
+            if (performanceResults1.size() !=0) {
+                //如果有数据，将没有初始化表中没有填入到结果集
+                List<PerformanceInit> performanceInits = performanceInitMapper.selectList(null);
+                performanceInits.stream().forEach(perInit -> {
+                    performanceResults1.stream().forEach(perresult -> {
+                        //通过考核月份和初始化表中的状态码判断result表中是否存储该数据，如果没有则存储
+                        if (!perresult.getKaoheyuefen().equals(perInit.getKaoheyuefen()) && !perresult.getStatus().equals(perInit.getStatus()))
+                        {
+                            PerformanceResult pResult = getPerformanceResult(perInit);
+                            performanceResultMapper.insert(pResult);
+                        }
+                    });
+                });
+
+            } else {
+
+                //将所有数据存储到RESULT表
+                List<PerformanceInit> performanceInits = performanceInitMapper.selectList(null);
+                performanceInits.stream().forEach(perInit -> {
+                    System.out.println(perInit.getKaohedanwei());
+                    PerformanceResult pResult = getPerformanceResult(perInit);
+                    System.out.println(pResult.getKaohedanwei());
+                    performanceResultMapper.insert(pResult);
+                });
+            }
             //管理员返回全部当期考核表数据
-            int count = performanceResultMapper.countAllPerformances(DataUtils.getMonth()).intValue();
+            int count = performanceResultMapper.countAllPerformances1(DataUtils.getMonth()).intValue();
             //当前填报表考核月份
-            List<PerformanceResult> performanceResults = performanceResultMapper.getallPerformancesByPage(offset, limit, DataUtils.getMonth());
-            return Results.success(count,performanceResults);
-
+            List<PerformanceResult> performanceResults = performanceResultMapper.getallPerformancesByPage1(DataUtils.getMonth(), offset, limit);
+            return Results.success(count, performanceResults);
         }
     }
+
+
+    //两个类对拷 PerformanceInit ->PerformanceResult
+    private PerformanceResult getPerformanceResult(PerformanceInit perInit) {
+        PerformanceResult pResult = new PerformanceResult();
+        perInit.setKaoheyuefen(DataUtils.getMonth());
+        perInit.setId(null);
+        BeanUtils.copyProperties(perInit, pResult);
+        return pResult;
+    }
+
+
 }

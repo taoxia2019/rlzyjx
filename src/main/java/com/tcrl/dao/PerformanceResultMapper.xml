@@ -17,11 +17,12 @@
         <result column="mubiaozhi" property="mubiaozhi" />
         <result column="shijishi" property="shijishi" />
         <result column="zhouqi" property="zhouqi" />
+        <result column="status" property="status" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, beikaohedanwei, beizhu, biaozhun, caozuofu, danwei, kaohedanwei, kaohejieguo, kaohexiangmu, kaoheyuefen, mubiaozhi, shijishi, zhouqi
+        id, beikaohedanwei, beizhu, biaozhun, caozuofu, danwei, kaohedanwei, kaohejieguo, kaohexiangmu, kaoheyuefen, mubiaozhi, shijishi, zhouqi,status
     </sql>
 
 </mapper>

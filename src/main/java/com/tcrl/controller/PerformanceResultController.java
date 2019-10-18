@@ -52,49 +52,12 @@ public class PerformanceResultController {
     @ResponseBody
     public Results<PerformanceResult> getPerformanceResultList(PageTableRequest page) {
         page.countOffset();
-        List<PerformanceResult> list1 = performanceResultService
-                .list(new QueryWrapper<PerformanceResult>().eq("kaoheyuefen", DataUtils.getMonth()));
 
-        if (list1.size() > 0) {
-            return performanceResultService.getList(page.getOffset(), page.getLimit());
-        } else {
-            UserDetails principal = (UserDetails) SecurityContextHolder.getContext()
-                    .getAuthentication()
-                    .getPrincipal();
-            String username = principal.getUsername();
-            if (!username.equals("admin")) {
-                QueryWrapper<Users> queryWrapper1 = new QueryWrapper<>();
-                queryWrapper1.eq("username", username);
-                String dept = usersService.getOne(queryWrapper1).getDept();
-
-                QueryWrapper<PerformanceInit> queryWrapper2 = new QueryWrapper<>();
-                queryWrapper2.eq("kaohedanwei", dept);
-                List<PerformanceInit> PerformanceInitlist = performanceInitService.list(queryWrapper2);
-                PerformanceInitlist.stream().forEach(perInit -> {
-                    PerformanceResult pResult = getPerformanceResult(perInit);
-                    performanceResultService.save(pResult);
-                });
-            } else {
-                List<PerformanceInit> list = performanceInitService.list();
-                list.stream().forEach(perInit -> {
-                    PerformanceResult pResult = getPerformanceResult(perInit);
-                    performanceResultService.save(pResult);
-                });
-            }
-            return performanceResultService.getList(page.getOffset(), page.getLimit());
-        }
-    }
-
-    private PerformanceResult getPerformanceResult(PerformanceInit perInit) {
-        PerformanceResult pResult = new PerformanceResult();
-        perInit.setKaoheyuefen(DataUtils.getMonth());
-        perInit.setId(null);
-        BeanUtils.copyProperties(perInit, pResult);
-        return pResult;
+        return performanceResultService.getList(page.getOffset(), page.getLimit());
     }
 
 
-    //kpi:performance:fill
+
 
 }
 

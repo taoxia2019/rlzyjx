@@ -47,6 +47,7 @@ private static final long serialVersionUID=1L;
     private Double shijizhi;
 
     private String zhouqi;
+    private Integer status;
 
 
 }
