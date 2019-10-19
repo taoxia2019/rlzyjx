@@ -24,8 +24,9 @@ class RlzyjxApplicationTests {
 
 
 	@Test
+	//输入status状态码，与ID一致
 	void contextLoads() {
-		Integer i=1;
+
 		performanceInitMapper.selectList(null).stream()
 				.forEach(per->{
 					per.setStatus(per.getId().intValue());

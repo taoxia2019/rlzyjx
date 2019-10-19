@@ -55,8 +55,6 @@ public class PerformanceResultServiceImpl extends ServiceImpl<PerformanceResultM
         //判断是否是管理员
         if (!username.equals("admin")) {
             //如果不是管理员，查找用户所在部门
-//            QueryWrapper<Users> queryWrapper1 = new QueryWrapper<>();
-//            queryWrapper1.eq("username", username);
             String dept = usersMapper.getUser(username).getDept();
 
             //根据考核月份和考核单位判断是否已经有结果集
