@@ -145,8 +145,14 @@ public class PerformanceResultServiceImpl extends ServiceImpl<PerformanceResultM
             pr.setCaozuofu(fieldValue);
             getKaohejieguo(pr);
         }
+        int insert = performanceResultMapper.updateById(pr);
+        if(insert>0){
+            return Results.success();
+        }else {
+            return Results.failure();
+        }
 
-        return null;
+
     }
 
     private void getKaohejieguo(PerformanceResult pr) {

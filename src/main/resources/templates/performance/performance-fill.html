@@ -58,17 +58,17 @@
             , page: true //开启分页
             , cols: [
                 [ //表头
-                    {field: 'id', title: 'ID', width: 30, sort: true, fixed: 'left'}
-                    ,{field:'kaoheyuefen', title: '月份',width:40, sort: true}
-                    ,{field:'beikaohedanwei', title: '部门分厂'}
-                    ,{field:'kaohexiangmu', title: '项目'}
-                    ,{field:'biaozhun', title: '标准'}
-                    ,{field:'zhouqi', title: '周期'}
-                    ,{field:'danwei', title: '单位'}
-                    ,{field:'mubiaozhi', title: '目标值(x)',edit:true}
-                    ,{field:'shijizhi', title: '实际值(y)',edit:true}
-                    ,{field:'caozuofu', title: '操作符',edit:true}
-                    ,{field:'kaohejieguo', title: '考核结果'}
+                    {field: 'id', title: '序号', width: 20, sort: true, fixed: 'left'}
+                    ,{field:'kaoheyuefen', title: '月份',width:60, sort: true}
+                    ,{field:'beikaohedanwei', title: '部门分厂', width:90}
+                    ,{field:'kaohexiangmu', title: '项目', width:140}
+                    ,{field:'biaozhun', title: '标准', width:40}
+                    ,{field:'zhouqi', title: '周期', width:40}
+                    ,{field:'danwei', title: '单位', width:40}
+                    ,{field:'mubiaozhi', title: '目标值(x)',edit:true,width:90}
+                    ,{field:'shijizhi', title: '实际值(y)',edit:true,width:100}
+                    ,{field:'caozuofu', title: '操作符',edit:true,width:100}
+                    ,{field:'kaohejieguo', title: '考核结果',templet: '#resultTpl',width:90}
                     ,{field:'kaohedanwei', title: '考核单位',hide:true}
                     ,{field:'beizhu', title: '备注',width:150,edit:true}
 
@@ -78,13 +78,13 @@
 
         //监听单元格编辑
         table.on('edit(test3)', function(obj){
-            alert("判断是否进入监听");
+
             var value = obj.value //得到修改后的值
                 ,data = obj.data //得到所在行所有键值
                 ,field = obj.field; //得到字段
-            layer.msg('[ID: '+ data.id +'] ' + field + ' 字段更改为：'+ value);
+            //layer.msg('[ID: '+ data.id +'] ' + field + ' 字段更改为：'+ value);
             $.ajax({
-                url: "/editField",
+                url: "/performance/editField",
                 type: "POST",
                 data: {
                     id:data.id,
@@ -110,7 +110,7 @@
 
 
         //监听工具条
-        table.on('tool(test3)', function (obj) {
+        /*table.on('tool(test3)', function (obj) {
             var data = obj.data;
             if (obj.event == 'del') {
                 layer.confirm('真的删除行吗', function (index) {
@@ -133,9 +133,17 @@
             } else if (obj.event === 'edit') {
                 xadmin.open('编辑指标信息', '/performanceInit/edit/?id=' + data.id);
             }
-        });
+        });*/
     });
 
+</script>
+
+<script type="text/html" id="resultTpl">
+    {{#  if(d.kaohejieguo>0){ }}
+    <span style="color:mediumblue;">{{ d.kaohejieguo }}</span>
+    {{#  } else { }}
+    <span style="color:red;">{{ d.kaohejieguo }}</span>
+    {{#  } }}
 </script>
 
 </html>

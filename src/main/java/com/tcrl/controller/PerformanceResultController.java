@@ -40,8 +40,9 @@ public class PerformanceResultController {
     @ResponseBody
     @RequestMapping("editField")
     public Results getResultField(Integer id,String field,String fieldValue){
-
+        System.out.println(id+"--"+field+"---"+fieldValue);
         return performanceResultService.saveResultfieldValue(id,field,fieldValue);
+
     }
 
 
