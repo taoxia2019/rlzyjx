@@ -144,6 +144,9 @@ public class PerformanceResultServiceImpl extends ServiceImpl<PerformanceResultM
         }else if("caozuofu".equals(field)){
             pr.setCaozuofu(fieldValue);
             getKaohejieguo(pr);
+        }else {
+            pr.setBeizhu(fieldValue);
+
         }
         int insert = performanceResultMapper.updateById(pr);
         if(insert>0){
