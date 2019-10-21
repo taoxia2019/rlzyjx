@@ -44,7 +44,7 @@ private static final long serialVersionUID=1L;
 
     private Double mubiaozhi;
 
-    private Double shijishi;
+    private Double shijizhi;
 
     private String zhouqi;
 
