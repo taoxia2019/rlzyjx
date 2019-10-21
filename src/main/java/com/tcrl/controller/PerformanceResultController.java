@@ -37,11 +37,14 @@ public class PerformanceResultController {
     @Autowired
     private PerformanceResultService performanceResultService;
 
-    @Autowired
-    private PerformanceInitService performanceInitService;
+    @ResponseBody
+    @RequestMapping("editField")
+    public Results getResultField(Integer id,String field,String fieldValue){
 
-    @Autowired
-    private UsersService usersService;
+        return performanceResultService.saveResultfieldValue(id,field,fieldValue);
+    }
+
+
 
     @RequestMapping("/performance-fill")
     public String getFillPage() {

@@ -10,10 +10,12 @@ import com.tcrl.entity.PerformanceInit;
 import com.tcrl.entity.PerformanceResult;
 import com.tcrl.dao.PerformanceResultMapper;
 import com.tcrl.entity.Users;
+import com.tcrl.exception.MyParseException;
 import com.tcrl.service.PerformanceResultService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.tcrl.service.UsersService;
 import com.tcrl.utils.DataUtils;
+import com.tcrl.utils.JexlUtils;
 import io.swagger.models.auth.In;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -126,6 +128,36 @@ public class PerformanceResultServiceImpl extends ServiceImpl<PerformanceResultM
             //当前填报表考核月份
             List<PerformanceResult> performanceResults = performanceResultMapper.getallPerformancesByPage1(DataUtils.getMonth(), offset, limit);
             return Results.success(count, performanceResults);
+        }
+    }
+
+    @Override
+    public Results saveResultfieldValue(Integer id, String field, String fieldValue) {
+        PerformanceResult pr = performanceResultMapper.selectById(id);
+        if("mubiaozhi".equals(field)){
+            pr.setMubiaozhi(Double.parseDouble(fieldValue));
+            getKaohejieguo(pr);
+        }else if("shijizhi".equals(field)){
+            pr.setShijizhi(Double.parseDouble(fieldValue));
+            getKaohejieguo(pr);
+
+        }else if("caozuofu".equals(field)){
+            pr.setCaozuofu(fieldValue);
+            getKaohejieguo(pr);
+        }
+
+        return null;
+    }
+
+    private void getKaohejieguo(PerformanceResult pr) {
+        if(pr.getShijizhi()!=null&& pr.getCaozuofu()!=null&&pr.getMubiaozhi()!=null){
+            Double value=null;
+            try {
+                value= JexlUtils.getValue(pr.getShijizhi(),pr.getMubiaozhi(),pr.getCaozuofu());
+                pr.setKaohejieguo(value);
+            }catch (Exception e){
+                throw new MyParseException();
+            }
         }
     }
 

@@ -16,4 +16,6 @@ public interface PerformanceResultService extends IService<PerformanceResult> {
 
 
     Results<PerformanceResult> getList(Integer offset, Integer limit);
+
+    Results saveResultfieldValue(Integer id, String field, String fieldValue);
 }
