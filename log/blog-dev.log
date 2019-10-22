@@ -6467,3 +6467,288 @@ org.thymeleaf.exceptions.TemplateInputException: Error resolving template [api/g
 2019-10-22 16:18:17.350 DEBUG 5300 --- [http-nio-8080-exec-4] c.t.d.P.getallPerformancesByPage         : <==      Total: 10
 2019-10-22 16:18:17.350 DEBUG 5300 --- [http-nio-8080-exec-8] c.tcrl.dao.PermissionMapper.selectList   : ==> Parameters: 
 2019-10-22 16:18:17.356 DEBUG 5300 --- [http-nio-8080-exec-8] c.tcrl.dao.PermissionMapper.selectList   : <==      Total: 29
+2019-10-22 16:44:18.853  INFO 5160 --- [main] com.tcrl.App                             : Starting App on PC-20190301SZZL with PID 5160 (D:\123\rlzyjx\target\classes started by Administrator in D:\123\rlzyjx)
+2019-10-22 16:44:18.858 DEBUG 5160 --- [main] com.tcrl.App                             : Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2019-10-22 16:44:18.859  INFO 5160 --- [main] com.tcrl.App                             : The following profiles are active: dev
+2019-10-22 16:44:20.804  INFO 5160 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-22 16:44:20.811  INFO 5160 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-22 16:44:20.833  INFO 5160 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-22 16:44:20.835  INFO 5160 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@30814f43' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-22 16:44:20.839  INFO 5160 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-22 16:44:20.842  INFO 5160 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-22 16:44:21.191  INFO 5160 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-10-22 16:44:21.202  INFO 5160 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-22 16:44:21.202  INFO 5160 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-10-22 16:44:21.343  INFO 5160 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-22 16:44:21.344  INFO 5160 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2157 ms
+2019-10-22 16:44:21.979  INFO 5160 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-10-22 16:44:22.437  WARN 5160 --- [main] c.b.m.core.toolkit.TableInfoHelper       : Warn: Could not find @TableId in Class: com.tcrl.entity.RolePermission.
+2019-10-22 16:44:22.571  WARN 5160 --- [main] c.b.m.core.toolkit.TableInfoHelper       : Warn: Could not find @TableId in Class: com.tcrl.entity.UserRole.
+2019-10-22 16:44:23.220  INFO 5160 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2019-10-22 16:44:23.342  INFO 5160 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/xadmin/**'], []
+2019-10-22 16:44:23.343  INFO 5160 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/treetable-lay/**'], []
+2019-10-22 16:44:23.343  INFO 5160 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/dtree/**'], []
+2019-10-22 16:44:23.343  INFO 5160 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/myjs/**'], []
+2019-10-22 16:44:23.398  INFO 5160 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5856dbe4, org.springframework.security.web.context.SecurityContextPersistenceFilter@7ebe2e47, org.springframework.security.web.header.HeaderWriterFilter@6fc0bbc6, org.springframework.security.web.authentication.logout.LogoutFilter@3f63a513, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@6b9fdbc6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@6bbab114, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2d2b6960, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@f557c37, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7e15f4d4, org.springframework.security.web.session.SessionManagementFilter@fd09e43, org.springframework.security.web.access.ExceptionTranslationFilter@2cca611f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@423a0e1d]
+2019-10-22 16:44:23.474  INFO 5160 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-22 16:44:23.539  INFO 5160 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-10-22 16:44:23.750  INFO 5160 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-10-22 16:44:23.770  INFO 5160 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-10-22 16:44:23.823  INFO 5160 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-10-22 16:44:24.216  INFO 5160 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUserUsingGET_1
+2019-10-22 16:44:24.219  INFO 5160 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editUserUsingGET_1
+2019-10-22 16:44:24.249  INFO 5160 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUserUsingGET_1
+2019-10-22 16:44:24.281  INFO 5160 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUserUsingGET_2
+2019-10-22 16:44:24.284  INFO 5160 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editUserUsingGET_2
+2019-10-22 16:44:24.305  INFO 5160 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUserUsingPOST_1
+2019-10-22 16:44:24.308  INFO 5160 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUserUsingPOST_1
+2019-10-22 16:44:24.362  INFO 5160 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-10-22 16:44:24.367  INFO 5160 --- [main] com.tcrl.App                             : Started App in 6.865 seconds (JVM running for 8.217)
+2019-10-22 16:44:27.938  INFO 5160 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-22 16:44:27.939  INFO 5160 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-22 16:44:27.948  INFO 5160 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2019-10-22 16:44:35.443 DEBUG 5160 --- [http-nio-8080-exec-8] com.tcrl.dao.UsersMapper.selectList      : ==>  Preparing: SELECT id,username,password,phone,dept,email,headimage,gangweimingcheng,status,createtime,updatetime,birthday,sex FROM sys_users WHERE username = ? 
+2019-10-22 16:44:35.575 DEBUG 5160 --- [http-nio-8080-exec-8] com.tcrl.dao.UsersMapper.selectList      : ==> Parameters: admin(String)
+2019-10-22 16:44:35.605 DEBUG 5160 --- [http-nio-8080-exec-8] com.tcrl.dao.UsersMapper.selectList      : <==      Total: 1
+2019-10-22 16:44:35.620 DEBUG 5160 --- [http-nio-8080-exec-8] c.t.dao.PermissionMapper.listByUserId    : ==>  Preparing: select distinct sp.* from sys_user_role sru inner join sys_role_permission srp on srp.roleid=sru.roleid left join sys_permission sp on srp.permissionid = sp.id where sru.userid=? 
+2019-10-22 16:44:35.625 DEBUG 5160 --- [http-nio-8080-exec-8] c.t.dao.PermissionMapper.listByUserId    : ==> Parameters: 1(Integer)
+2019-10-22 16:44:35.634 DEBUG 5160 --- [http-nio-8080-exec-8] c.t.dao.PermissionMapper.listByUserId    : <==      Total: 28
+2019-10-22 16:44:35.766  INFO 5160 --- [http-nio-8080-exec-8] c.t.s.a.MyAuthenticationSuccessHandler   : 登录成功
+2019-10-22 16:44:36.780 DEBUG 5160 --- [http-nio-8080-exec-1] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-10-22 16:44:36.782 DEBUG 5160 --- [http-nio-8080-exec-1] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-10-22 16:44:36.791 DEBUG 5160 --- [http-nio-8080-exec-1] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 14
+2019-10-22 16:44:36.827 DEBUG 5160 --- [http-nio-8080-exec-2] c.t.dao.PermissionMapper.listByUserId    : ==>  Preparing: select distinct sp.* from sys_user_role sru inner join sys_role_permission srp on srp.roleid=sru.roleid left join sys_permission sp on srp.permissionid = sp.id where sru.userid=? 
+2019-10-22 16:44:36.828 DEBUG 5160 --- [http-nio-8080-exec-2] c.t.dao.PermissionMapper.listByUserId    : ==> Parameters: 1(Integer)
+2019-10-22 16:44:36.840 DEBUG 5160 --- [http-nio-8080-exec-2] c.t.dao.PermissionMapper.listByUserId    : <==      Total: 28
+2019-10-22 16:44:36.854 DEBUG 5160 --- [http-nio-8080-exec-3] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-10-22 16:44:36.854 DEBUG 5160 --- [http-nio-8080-exec-3] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-10-22 16:44:36.860 DEBUG 5160 --- [http-nio-8080-exec-3] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 14
+2019-10-22 16:44:37.187 DEBUG 5160 --- [http-nio-8080-exec-5] c.t.d.P.selectList                       : ==>  Preparing: SELECT id,beikaohedanwei,beizhu,biaozhun,caozuofu,danwei,kaohedanwei,kaohejieguo,kaohexiangmu,kaoheyuefen,mubiaozhi,shijizhi,zhouqi,status FROM kpi_performance_result WHERE kaoheyuefen = ? AND beikaohedanwei = ? 
+2019-10-22 16:44:37.189 DEBUG 5160 --- [http-nio-8080-exec-5] c.t.d.P.selectList                       : ==> Parameters: 2019-10(String), 铸轧分厂(String)
+2019-10-22 16:44:37.225 DEBUG 5160 --- [http-nio-8080-exec-5] c.t.d.P.selectList                       : <==      Total: 30
+2019-10-22 16:44:37.227 DEBUG 5160 --- [http-nio-8080-exec-5] c.t.d.P.selectCount                      : ==>  Preparing: SELECT COUNT( 1 ) FROM kpi_performance_result WHERE kaoheyuefen = ? AND beikaohedanwei = ? 
+2019-10-22 16:44:37.230 DEBUG 5160 --- [http-nio-8080-exec-5] c.t.d.P.selectCount                      : ==> Parameters: 2019-10(String), 铸轧分厂(String)
+2019-10-22 16:44:37.232 DEBUG 5160 --- [http-nio-8080-exec-5] c.t.d.P.selectCount                      : <==      Total: 1
+2019-10-22 16:45:49.688  INFO 10196 --- [main] com.tcrl.App                             : Starting App on PC-20190301SZZL with PID 10196 (D:\123\rlzyjx\target\classes started by Administrator in D:\123\rlzyjx)
+2019-10-22 16:45:49.692 DEBUG 10196 --- [main] com.tcrl.App                             : Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2019-10-22 16:45:49.693  INFO 10196 --- [main] com.tcrl.App                             : The following profiles are active: dev
+2019-10-22 16:45:51.317  INFO 10196 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-22 16:45:51.325  INFO 10196 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-22 16:45:51.346  INFO 10196 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-22 16:45:51.349  INFO 10196 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3bead518' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-22 16:45:51.352  INFO 10196 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-22 16:45:51.355  INFO 10196 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-22 16:45:51.670  INFO 10196 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-10-22 16:45:51.680  INFO 10196 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-22 16:45:51.680  INFO 10196 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-10-22 16:45:51.825  INFO 10196 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-22 16:45:51.825  INFO 10196 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2031 ms
+2019-10-22 16:45:52.404  INFO 10196 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-10-22 16:45:52.856  WARN 10196 --- [main] c.b.m.core.toolkit.TableInfoHelper       : Warn: Could not find @TableId in Class: com.tcrl.entity.RolePermission.
+2019-10-22 16:45:52.960  WARN 10196 --- [main] c.b.m.core.toolkit.TableInfoHelper       : Warn: Could not find @TableId in Class: com.tcrl.entity.UserRole.
+2019-10-22 16:45:53.579  INFO 10196 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2019-10-22 16:45:53.697  INFO 10196 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/xadmin/**'], []
+2019-10-22 16:45:53.697  INFO 10196 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/treetable-lay/**'], []
+2019-10-22 16:45:53.697  INFO 10196 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/dtree/**'], []
+2019-10-22 16:45:53.697  INFO 10196 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/myjs/**'], []
+2019-10-22 16:45:53.750  INFO 10196 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5d512ddb, org.springframework.security.web.context.SecurityContextPersistenceFilter@1b90fee4, org.springframework.security.web.header.HeaderWriterFilter@1084ac45, org.springframework.security.web.authentication.logout.LogoutFilter@478b0739, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@733c464f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4978777f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@47248a48, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@32f1fafe, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@707ca986, org.springframework.security.web.session.SessionManagementFilter@6ea246af, org.springframework.security.web.access.ExceptionTranslationFilter@553da911, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2272cbb0]
+2019-10-22 16:45:53.827  INFO 10196 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-22 16:45:53.892  INFO 10196 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-10-22 16:45:54.144  INFO 10196 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-10-22 16:45:54.171  INFO 10196 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-10-22 16:45:54.235  INFO 10196 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-10-22 16:45:54.589  INFO 10196 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUserUsingGET_1
+2019-10-22 16:45:54.591  INFO 10196 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editUserUsingGET_1
+2019-10-22 16:45:54.615  INFO 10196 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUserUsingGET_1
+2019-10-22 16:45:54.642  INFO 10196 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUserUsingGET_2
+2019-10-22 16:45:54.644  INFO 10196 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editUserUsingGET_2
+2019-10-22 16:45:54.663  INFO 10196 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUserUsingPOST_1
+2019-10-22 16:45:54.665  INFO 10196 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUserUsingPOST_1
+2019-10-22 16:45:54.710  INFO 10196 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-10-22 16:45:54.714  INFO 10196 --- [main] com.tcrl.App                             : Started App in 6.39 seconds (JVM running for 7.78)
+2019-10-22 17:10:00.068  INFO 7968 --- [main] com.tcrl.App                             : Starting App on PC-20190301SZZL with PID 7968 (D:\123\rlzyjx\target\classes started by Administrator in D:\123\rlzyjx)
+2019-10-22 17:10:00.070 DEBUG 7968 --- [main] com.tcrl.App                             : Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2019-10-22 17:10:00.070  INFO 7968 --- [main] com.tcrl.App                             : The following profiles are active: dev
+2019-10-22 17:10:01.590  INFO 7968 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-22 17:10:01.598  INFO 7968 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-22 17:10:01.619  INFO 7968 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-22 17:10:01.622  INFO 7968 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3cae7b8b' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-22 17:10:01.624  INFO 7968 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-22 17:10:01.628  INFO 7968 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-22 17:10:01.946  INFO 7968 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-10-22 17:10:01.956  INFO 7968 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-22 17:10:01.957  INFO 7968 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-10-22 17:10:02.124  INFO 7968 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-22 17:10:02.124  INFO 7968 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1982 ms
+2019-10-22 17:10:02.712  INFO 7968 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-10-22 17:10:03.172  WARN 7968 --- [main] c.b.m.core.toolkit.TableInfoHelper       : Warn: Could not find @TableId in Class: com.tcrl.entity.RolePermission.
+2019-10-22 17:10:03.265  WARN 7968 --- [main] c.b.m.core.toolkit.TableInfoHelper       : Warn: Could not find @TableId in Class: com.tcrl.entity.UserRole.
+2019-10-22 17:10:03.902  INFO 7968 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2019-10-22 17:10:04.104  INFO 7968 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/xadmin/**'], []
+2019-10-22 17:10:04.104  INFO 7968 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/treetable-lay/**'], []
+2019-10-22 17:10:04.104  INFO 7968 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/dtree/**'], []
+2019-10-22 17:10:04.104  INFO 7968 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/myjs/**'], []
+2019-10-22 17:10:04.165  INFO 7968 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@78910096, org.springframework.security.web.context.SecurityContextPersistenceFilter@5f366587, org.springframework.security.web.header.HeaderWriterFilter@2a2dc0a, org.springframework.security.web.authentication.logout.LogoutFilter@1903b5d, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@25ffd826, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2ec99035, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7ca16adc, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@41b64020, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@39dec536, org.springframework.security.web.session.SessionManagementFilter@36ef1d65, org.springframework.security.web.access.ExceptionTranslationFilter@1e225820, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6a15b73]
+2019-10-22 17:10:04.251  INFO 7968 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-22 17:10:04.320  INFO 7968 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-10-22 17:10:04.571  INFO 7968 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-10-22 17:10:04.590  INFO 7968 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-10-22 17:10:04.640  INFO 7968 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-10-22 17:10:04.981  INFO 7968 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUserUsingGET_1
+2019-10-22 17:10:04.984  INFO 7968 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editUserUsingGET_1
+2019-10-22 17:10:05.016  INFO 7968 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUserUsingGET_1
+2019-10-22 17:10:05.042  INFO 7968 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUserUsingGET_2
+2019-10-22 17:10:05.045  INFO 7968 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editUserUsingGET_2
+2019-10-22 17:10:05.063  INFO 7968 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUserUsingPOST_1
+2019-10-22 17:10:05.066  INFO 7968 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUserUsingPOST_1
+2019-10-22 17:10:05.110  INFO 7968 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-10-22 17:10:05.114  INFO 7968 --- [main] com.tcrl.App                             : Started App in 6.452 seconds (JVM running for 8.722)
+2019-10-22 17:10:08.281  INFO 7968 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-22 17:10:08.281  INFO 7968 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-22 17:10:08.292  INFO 7968 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2019-10-22 17:10:15.111 DEBUG 7968 --- [http-nio-8080-exec-6] com.tcrl.dao.UsersMapper.selectList      : ==>  Preparing: SELECT id,username,password,phone,dept,email,headimage,gangweimingcheng,status,createtime,updatetime,birthday,sex FROM sys_users WHERE username = ? 
+2019-10-22 17:10:15.242 DEBUG 7968 --- [http-nio-8080-exec-6] com.tcrl.dao.UsersMapper.selectList      : ==> Parameters: admin(String)
+2019-10-22 17:10:15.272 DEBUG 7968 --- [http-nio-8080-exec-6] com.tcrl.dao.UsersMapper.selectList      : <==      Total: 1
+2019-10-22 17:10:15.289 DEBUG 7968 --- [http-nio-8080-exec-6] c.t.dao.PermissionMapper.listByUserId    : ==>  Preparing: select distinct sp.* from sys_user_role sru inner join sys_role_permission srp on srp.roleid=sru.roleid left join sys_permission sp on srp.permissionid = sp.id where sru.userid=? 
+2019-10-22 17:10:15.294 DEBUG 7968 --- [http-nio-8080-exec-6] c.t.dao.PermissionMapper.listByUserId    : ==> Parameters: 1(Integer)
+2019-10-22 17:10:15.304 DEBUG 7968 --- [http-nio-8080-exec-6] c.t.dao.PermissionMapper.listByUserId    : <==      Total: 28
+2019-10-22 17:10:15.436  INFO 7968 --- [http-nio-8080-exec-6] c.t.s.a.MyAuthenticationSuccessHandler   : 登录成功
+2019-10-22 17:10:16.425 DEBUG 7968 --- [http-nio-8080-exec-9] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-10-22 17:10:16.428 DEBUG 7968 --- [http-nio-8080-exec-9] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-10-22 17:10:16.440 DEBUG 7968 --- [http-nio-8080-exec-9] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 14
+2019-10-22 17:10:16.459 DEBUG 7968 --- [http-nio-8080-exec-10] c.t.dao.PermissionMapper.listByUserId    : ==>  Preparing: select distinct sp.* from sys_user_role sru inner join sys_role_permission srp on srp.roleid=sru.roleid left join sys_permission sp on srp.permissionid = sp.id where sru.userid=? 
+2019-10-22 17:10:16.459 DEBUG 7968 --- [http-nio-8080-exec-10] c.t.dao.PermissionMapper.listByUserId    : ==> Parameters: 1(Integer)
+2019-10-22 17:10:16.470 DEBUG 7968 --- [http-nio-8080-exec-10] c.t.dao.PermissionMapper.listByUserId    : <==      Total: 28
+2019-10-22 17:10:16.484 DEBUG 7968 --- [http-nio-8080-exec-1] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-10-22 17:10:16.487 DEBUG 7968 --- [http-nio-8080-exec-1] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-10-22 17:10:16.496 DEBUG 7968 --- [http-nio-8080-exec-1] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 14
+2019-10-22 17:10:16.888 DEBUG 7968 --- [http-nio-8080-exec-2] c.t.d.P.selectList                       : ==>  Preparing: SELECT id,beikaohedanwei,beizhu,biaozhun,caozuofu,danwei,kaohedanwei,kaohejieguo,kaohexiangmu,kaoheyuefen,mubiaozhi,shijizhi,zhouqi,status FROM kpi_performance_result WHERE kaoheyuefen = ? AND beikaohedanwei = ? 
+2019-10-22 17:10:16.890 DEBUG 7968 --- [http-nio-8080-exec-2] c.t.d.P.selectList                       : ==> Parameters: 2019-10(String), 铸轧分厂(String)
+2019-10-22 17:10:16.905 DEBUG 7968 --- [http-nio-8080-exec-2] c.t.d.P.selectList                       : <==      Total: 30
+2019-10-22 17:10:16.907 DEBUG 7968 --- [http-nio-8080-exec-2] c.t.d.P.selectCount                      : ==>  Preparing: SELECT COUNT( 1 ) FROM kpi_performance_result WHERE kaoheyuefen = ? AND beikaohedanwei = ? 
+2019-10-22 17:10:16.912 DEBUG 7968 --- [http-nio-8080-exec-2] c.t.d.P.selectCount                      : ==> Parameters: 2019-10(String), 铸轧分厂(String)
+2019-10-22 17:10:16.914 DEBUG 7968 --- [http-nio-8080-exec-2] c.t.d.P.selectCount                      : <==      Total: 1
+2019-10-22 17:10:59.895  INFO 6836 --- [main] com.tcrl.App                             : Starting App on PC-20190301SZZL with PID 6836 (D:\123\rlzyjx\target\classes started by Administrator in D:\123\rlzyjx)
+2019-10-22 17:10:59.901 DEBUG 6836 --- [main] com.tcrl.App                             : Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2019-10-22 17:10:59.902  INFO 6836 --- [main] com.tcrl.App                             : The following profiles are active: dev
+2019-10-22 17:11:01.474  INFO 6836 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-22 17:11:01.481  INFO 6836 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-22 17:11:01.501  INFO 6836 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-22 17:11:01.504  INFO 6836 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@7cb2651f' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-22 17:11:01.507  INFO 6836 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-22 17:11:01.511  INFO 6836 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-22 17:11:01.833  INFO 6836 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-10-22 17:11:01.843  INFO 6836 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-22 17:11:01.843  INFO 6836 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-10-22 17:11:02.008  INFO 6836 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-22 17:11:02.008  INFO 6836 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2008 ms
+2019-10-22 17:11:02.596  INFO 6836 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-10-22 17:11:03.065  WARN 6836 --- [main] c.b.m.core.toolkit.TableInfoHelper       : Warn: Could not find @TableId in Class: com.tcrl.entity.RolePermission.
+2019-10-22 17:11:03.158  WARN 6836 --- [main] c.b.m.core.toolkit.TableInfoHelper       : Warn: Could not find @TableId in Class: com.tcrl.entity.UserRole.
+2019-10-22 17:11:03.742  INFO 6836 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2019-10-22 17:11:03.880  INFO 6836 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/xadmin/**'], []
+2019-10-22 17:11:03.880  INFO 6836 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/treetable-lay/**'], []
+2019-10-22 17:11:03.881  INFO 6836 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/dtree/**'], []
+2019-10-22 17:11:03.881  INFO 6836 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/myjs/**'], []
+2019-10-22 17:11:03.942  INFO 6836 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@39666e42, org.springframework.security.web.context.SecurityContextPersistenceFilter@47248a48, org.springframework.security.web.header.HeaderWriterFilter@468e8565, org.springframework.security.web.authentication.logout.LogoutFilter@2a7d9b41, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5974b7e8, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@17e0933c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@6fc0bbc6, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@2291d9a0, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@25c2a9e3, org.springframework.security.web.session.SessionManagementFilter@7066363, org.springframework.security.web.access.ExceptionTranslationFilter@67bd351e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4de79b7d]
+2019-10-22 17:11:04.028  INFO 6836 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-22 17:11:04.090  INFO 6836 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-10-22 17:11:04.358  INFO 6836 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-10-22 17:11:04.377  INFO 6836 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-10-22 17:11:04.449  INFO 6836 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-10-22 17:11:04.816  INFO 6836 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUserUsingGET_1
+2019-10-22 17:11:04.818  INFO 6836 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editUserUsingGET_1
+2019-10-22 17:11:04.846  INFO 6836 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUserUsingGET_1
+2019-10-22 17:11:04.875  INFO 6836 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUserUsingGET_2
+2019-10-22 17:11:04.878  INFO 6836 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editUserUsingGET_2
+2019-10-22 17:11:04.896  INFO 6836 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUserUsingPOST_1
+2019-10-22 17:11:04.898  INFO 6836 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUserUsingPOST_1
+2019-10-22 17:11:04.943  INFO 6836 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-10-22 17:11:04.947  INFO 6836 --- [main] com.tcrl.App                             : Started App in 6.608 seconds (JVM running for 8.674)
+2019-10-22 17:11:08.218  INFO 6836 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-22 17:11:08.219  INFO 6836 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-22 17:11:08.229  INFO 6836 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2019-10-22 17:11:15.559 DEBUG 6836 --- [http-nio-8080-exec-6] com.tcrl.dao.UsersMapper.selectList      : ==>  Preparing: SELECT id,username,password,phone,dept,email,headimage,gangweimingcheng,status,createtime,updatetime,birthday,sex FROM sys_users WHERE username = ? 
+2019-10-22 17:11:15.686 DEBUG 6836 --- [http-nio-8080-exec-6] com.tcrl.dao.UsersMapper.selectList      : ==> Parameters: admin(String)
+2019-10-22 17:11:15.715 DEBUG 6836 --- [http-nio-8080-exec-6] com.tcrl.dao.UsersMapper.selectList      : <==      Total: 1
+2019-10-22 17:11:15.730 DEBUG 6836 --- [http-nio-8080-exec-6] c.t.dao.PermissionMapper.listByUserId    : ==>  Preparing: select distinct sp.* from sys_user_role sru inner join sys_role_permission srp on srp.roleid=sru.roleid left join sys_permission sp on srp.permissionid = sp.id where sru.userid=? 
+2019-10-22 17:11:15.734 DEBUG 6836 --- [http-nio-8080-exec-6] c.t.dao.PermissionMapper.listByUserId    : ==> Parameters: 1(Integer)
+2019-10-22 17:11:15.743 DEBUG 6836 --- [http-nio-8080-exec-6] c.t.dao.PermissionMapper.listByUserId    : <==      Total: 28
+2019-10-22 17:11:15.875  INFO 6836 --- [http-nio-8080-exec-6] c.t.s.a.MyAuthenticationSuccessHandler   : 登录成功
+2019-10-22 17:11:16.856 DEBUG 6836 --- [http-nio-8080-exec-9] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-10-22 17:11:16.858 DEBUG 6836 --- [http-nio-8080-exec-9] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-10-22 17:11:16.865 DEBUG 6836 --- [http-nio-8080-exec-9] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 14
+2019-10-22 17:11:16.871 DEBUG 6836 --- [http-nio-8080-exec-10] c.t.dao.PermissionMapper.listByUserId    : ==>  Preparing: select distinct sp.* from sys_user_role sru inner join sys_role_permission srp on srp.roleid=sru.roleid left join sys_permission sp on srp.permissionid = sp.id where sru.userid=? 
+2019-10-22 17:11:16.879 DEBUG 6836 --- [http-nio-8080-exec-10] c.t.dao.PermissionMapper.listByUserId    : ==> Parameters: 1(Integer)
+2019-10-22 17:11:16.894 DEBUG 6836 --- [http-nio-8080-exec-10] c.t.dao.PermissionMapper.listByUserId    : <==      Total: 28
+2019-10-22 17:11:16.934 DEBUG 6836 --- [http-nio-8080-exec-1] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-10-22 17:11:16.935 DEBUG 6836 --- [http-nio-8080-exec-1] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-10-22 17:11:16.941 DEBUG 6836 --- [http-nio-8080-exec-1] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 14
+2019-10-22 17:11:17.288 DEBUG 6836 --- [http-nio-8080-exec-2] c.t.d.P.selectList                       : ==>  Preparing: SELECT id,beikaohedanwei,beizhu,biaozhun,caozuofu,danwei,kaohedanwei,kaohejieguo,kaohexiangmu,kaoheyuefen,mubiaozhi,shijizhi,zhouqi,status FROM kpi_performance_result WHERE kaoheyuefen = ? AND beikaohedanwei = ? 
+2019-10-22 17:11:17.289 DEBUG 6836 --- [http-nio-8080-exec-2] c.t.d.P.selectList                       : ==> Parameters: 2019-10(String), 铸轧分厂(String)
+2019-10-22 17:11:17.306 DEBUG 6836 --- [http-nio-8080-exec-2] c.t.d.P.selectList                       : <==      Total: 30
+2019-10-22 17:11:17.310 DEBUG 6836 --- [http-nio-8080-exec-2] c.t.d.P.selectCount                      : ==>  Preparing: SELECT COUNT( 1 ) FROM kpi_performance_result WHERE kaoheyuefen = ? AND beikaohedanwei = ? 
+2019-10-22 17:11:17.313 DEBUG 6836 --- [http-nio-8080-exec-2] c.t.d.P.selectCount                      : ==> Parameters: 2019-10(String), 铸轧分厂(String)
+2019-10-22 17:11:17.315 DEBUG 6836 --- [http-nio-8080-exec-2] c.t.d.P.selectCount                      : <==      Total: 1
+2019-10-22 17:12:37.532  INFO 9260 --- [main] com.tcrl.App                             : Starting App on PC-20190301SZZL with PID 9260 (D:\123\rlzyjx\target\classes started by Administrator in D:\123\rlzyjx)
+2019-10-22 17:12:37.536 DEBUG 9260 --- [main] com.tcrl.App                             : Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2019-10-22 17:12:37.536  INFO 9260 --- [main] com.tcrl.App                             : The following profiles are active: dev
+2019-10-22 17:12:39.026  INFO 9260 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-22 17:12:39.033  INFO 9260 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-22 17:12:39.054  INFO 9260 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-22 17:12:39.057  INFO 9260 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@6e57b5e9' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-22 17:12:39.059  INFO 9260 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-22 17:12:39.065  INFO 9260 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-22 17:12:39.387  INFO 9260 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-10-22 17:12:39.402  INFO 9260 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-22 17:12:39.403  INFO 9260 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-10-22 17:12:39.605  INFO 9260 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-22 17:12:39.606  INFO 9260 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2002 ms
+2019-10-22 17:12:40.202  INFO 9260 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-10-22 17:12:40.647  WARN 9260 --- [main] c.b.m.core.toolkit.TableInfoHelper       : Warn: Could not find @TableId in Class: com.tcrl.entity.RolePermission.
+2019-10-22 17:12:40.737  WARN 9260 --- [main] c.b.m.core.toolkit.TableInfoHelper       : Warn: Could not find @TableId in Class: com.tcrl.entity.UserRole.
+2019-10-22 17:12:41.402  INFO 9260 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2019-10-22 17:12:41.538  INFO 9260 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/xadmin/**'], []
+2019-10-22 17:12:41.539  INFO 9260 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/treetable-lay/**'], []
+2019-10-22 17:12:41.539  INFO 9260 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/dtree/**'], []
+2019-10-22 17:12:41.539  INFO 9260 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/myjs/**'], []
+2019-10-22 17:12:41.602  INFO 9260 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7066363, org.springframework.security.web.context.SecurityContextPersistenceFilter@d88f893, org.springframework.security.web.header.HeaderWriterFilter@68b734a8, org.springframework.security.web.authentication.logout.LogoutFilter@474179fa, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7bc6935c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@48eaf42f, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@2668c286, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@468e8565, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@75b38c36, org.springframework.security.web.session.SessionManagementFilter@4215e133, org.springframework.security.web.access.ExceptionTranslationFilter@3e3cd6fe, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1b90fee4]
+2019-10-22 17:12:41.695  INFO 9260 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-22 17:12:41.763  INFO 9260 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-10-22 17:12:42.009  INFO 9260 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-10-22 17:12:42.030  INFO 9260 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-10-22 17:12:42.082  INFO 9260 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-10-22 17:12:42.430  INFO 9260 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUserUsingGET_1
+2019-10-22 17:12:42.433  INFO 9260 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editUserUsingGET_1
+2019-10-22 17:12:42.459  INFO 9260 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUserUsingGET_1
+2019-10-22 17:12:42.489  INFO 9260 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUserUsingGET_2
+2019-10-22 17:12:42.491  INFO 9260 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editUserUsingGET_2
+2019-10-22 17:12:42.509  INFO 9260 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUserUsingPOST_1
+2019-10-22 17:12:42.512  INFO 9260 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUserUsingPOST_1
+2019-10-22 17:12:42.558  INFO 9260 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-10-22 17:12:42.562  INFO 9260 --- [main] com.tcrl.App                             : Started App in 6.524 seconds (JVM running for 8.501)
+2019-10-22 17:12:45.985  INFO 9260 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-22 17:12:45.986  INFO 9260 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-22 17:12:45.995  INFO 9260 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 9 ms
+2019-10-22 17:12:55.103 DEBUG 9260 --- [http-nio-8080-exec-6] com.tcrl.dao.UsersMapper.selectList      : ==>  Preparing: SELECT id,username,password,phone,dept,email,headimage,gangweimingcheng,status,createtime,updatetime,birthday,sex FROM sys_users WHERE username = ? 
+2019-10-22 17:12:55.234 DEBUG 9260 --- [http-nio-8080-exec-6] com.tcrl.dao.UsersMapper.selectList      : ==> Parameters: admin(String)
+2019-10-22 17:12:55.265 DEBUG 9260 --- [http-nio-8080-exec-6] com.tcrl.dao.UsersMapper.selectList      : <==      Total: 1
+2019-10-22 17:12:55.282 DEBUG 9260 --- [http-nio-8080-exec-6] c.t.dao.PermissionMapper.listByUserId    : ==>  Preparing: select distinct sp.* from sys_user_role sru inner join sys_role_permission srp on srp.roleid=sru.roleid left join sys_permission sp on srp.permissionid = sp.id where sru.userid=? 
+2019-10-22 17:12:55.287 DEBUG 9260 --- [http-nio-8080-exec-6] c.t.dao.PermissionMapper.listByUserId    : ==> Parameters: 1(Integer)
+2019-10-22 17:12:55.297 DEBUG 9260 --- [http-nio-8080-exec-6] c.t.dao.PermissionMapper.listByUserId    : <==      Total: 28
+2019-10-22 17:12:55.430  INFO 9260 --- [http-nio-8080-exec-6] c.t.s.a.MyAuthenticationSuccessHandler   : 登录成功
+2019-10-22 17:12:56.447 DEBUG 9260 --- [http-nio-8080-exec-9] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-10-22 17:12:56.448 DEBUG 9260 --- [http-nio-8080-exec-9] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-10-22 17:12:56.454 DEBUG 9260 --- [http-nio-8080-exec-9] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 14
+2019-10-22 17:12:56.473 DEBUG 9260 --- [http-nio-8080-exec-10] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-10-22 17:12:56.474 DEBUG 9260 --- [http-nio-8080-exec-10] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-10-22 17:12:56.480 DEBUG 9260 --- [http-nio-8080-exec-10] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 14
+2019-10-22 17:12:56.727 DEBUG 9260 --- [http-nio-8080-exec-1] c.t.dao.PermissionMapper.listByUserId    : ==>  Preparing: select distinct sp.* from sys_user_role sru inner join sys_role_permission srp on srp.roleid=sru.roleid left join sys_permission sp on srp.permissionid = sp.id where sru.userid=? 
+2019-10-22 17:12:56.728 DEBUG 9260 --- [http-nio-8080-exec-1] c.t.dao.PermissionMapper.listByUserId    : ==> Parameters: 1(Integer)
+2019-10-22 17:12:56.738 DEBUG 9260 --- [http-nio-8080-exec-1] c.t.dao.PermissionMapper.listByUserId    : <==      Total: 28
+2019-10-22 17:12:56.770 DEBUG 9260 --- [http-nio-8080-exec-2] c.t.d.P.selectList                       : ==>  Preparing: SELECT id,beikaohedanwei,beizhu,biaozhun,caozuofu,danwei,kaohedanwei,kaohejieguo,kaohexiangmu,kaoheyuefen,mubiaozhi,shijizhi,zhouqi,status FROM kpi_performance_result WHERE kaoheyuefen = ? AND beikaohedanwei = ? 
+2019-10-22 17:12:56.778 DEBUG 9260 --- [http-nio-8080-exec-2] c.t.d.P.selectList                       : ==> Parameters: 2019-10(String), 铸轧分厂(String)
+2019-10-22 17:12:56.802 DEBUG 9260 --- [http-nio-8080-exec-2] c.t.d.P.selectList                       : <==      Total: 30
+2019-10-22 17:12:56.806 DEBUG 9260 --- [http-nio-8080-exec-2] c.t.d.P.selectCount                      : ==>  Preparing: SELECT COUNT( 1 ) FROM kpi_performance_result WHERE kaoheyuefen = ? AND beikaohedanwei = ? 
+2019-10-22 17:12:56.810 DEBUG 9260 --- [http-nio-8080-exec-2] c.t.d.P.selectCount                      : ==> Parameters: 2019-10(String), 铸轧分厂(String)
+2019-10-22 17:12:56.811 DEBUG 9260 --- [http-nio-8080-exec-2] c.t.d.P.selectCount                      : <==      Total: 1

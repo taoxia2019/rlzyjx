@@ -446,10 +446,10 @@ table th, table td {
 /*精细版样式*/
 
 .x-admin-sm{
-    font-size: 12px;
+    font-size: 14px;
 }
 .x-admin-sm body{
-    font-size: 12px;
+    font-size: 14px;
 }
 /*登录页面样式*/
 .x-admin-sm .login input[type=submit],.x-admin-sm .login input[type=button]{
@@ -466,7 +466,7 @@ table th, table td {
 }
 
 .x-admin-sm .layui-table td, .x-admin-sm .layui-table th{
-    font-size: 12px;
+    font-size: 16px;
 }
 .x-admin-sm .layui-elem-field legend{
     font-size: 18px;
