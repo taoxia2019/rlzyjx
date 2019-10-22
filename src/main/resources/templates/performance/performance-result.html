@@ -1,19 +1,17 @@
 <!DOCTYPE html>
-<html class="x-admin-sm" xmlns:th="http://www.thymeleaf.org/">
+<html class="x-admin-sm" xmlns:th="http://www.thymeleaf.org/"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <head>
     <meta charset="UTF-8">
-    <title>考核结果列表</title>
+    <title>考核结果</title>
     <header th:replace="header::html"></header>
-
-    <link rel="stylesheet" href="../static/treetable-lay/treetable.css" th:href="@{/treetable-lay/treetable.css}">
-    <script type="text/javascript" src="../static/treetable-lay/treetable.js" th:src="@{/treetable-lay/treetable.js}"></script>
 
 </head>
 <body>
 <div class="x-nav">
           <span class="layui-breadcrumb">
             <a href="">首页</a>
-            <a href="">绩效</a>
+            <a href="">考核</a>
             <a>
               <cite>考核结果</cite></a>
           </span>
@@ -22,42 +20,58 @@
         <i class="layui-icon layui-icon-refresh" style="line-height:30px"></i></a>
 </div>
 
-
 <div class="x-body">
     <div class="layui-fluid">
         <div class="layui-row layui-col-space15">
             <div class="layui-col-md12">
                 <div class="layui-card">
-                    <div class="layui-card-body ">
+                    <div class="layui-card-header ">
                         <form class="layui-form layui-col-space5">
                             <div class="layui-inline layui-show-xs-block">
-                                <input class="layui-input"  autocomplete="off" placeholder="月份" name="kaoheyuefen" id="kaoheyuefen">
+                                <input class="layui-input" autocomplete="off" placeholder="月份" name="kaoheyuefen"
+                                       id="kaoheyuefen">
                             </div>
                             <div class="layui-inline layui-show-xs-block">
                                 <select id="department" name="department" lay-filter="department">
-                                    <option value=""></option>
-                                    <option th:each="dept:${departments}" th:value="${dept.id}" th:text="${dept.deptName}" th:selected="${dept.flag}"></option>
+                                    <!--<option value=""></option>-->
+                                    <option th:each="dept:${departments}" th:value="${dept.id}"
+                                            th:text="${dept.deptName}" th:selected="${dept.flag}"></option>
                                 </select>
                             </div>
+
                             <div class="layui-inline layui-show-xs-block">
-                                <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
+                                <button class="layui-btn" lay-submit="" lay-filter="search"><i class="layui-icon">&#xe615;</i>
+                                </button>
                             </div>
                         </form>
                     </div>
                     <div class="layui-card-body">
-                        <table id="test3" lay-filter="test3"></table>
+                        <div class="layui-fluid">
+                            <div class="layui-row layui-col-space15">
+                                <div class="layui-col-md12">
+                                    <div class="layui-card">
+                                        <table id="table" lay-filter="member"></table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>
 </div>
+</div>
+
+
+
 </body>
 <script>
-    layui.use(['table','laydate','form'], function() {
+    layui.use(['table','laydate', 'form'], function () {
         var table = layui.table,
-        laydate=layui.laydate,
-        form=layui.form;
+            laydate=layui.laydate,
+            form = layui.form;
 
         //年月选择器
         laydate.render({
@@ -66,93 +80,77 @@
         });
         //第一个实例
         table.render({
-            elem: '#test3'
+            elem: '#table'
             , url: '/performance/findByDeptResult' //数据接口
-            //,toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
-            //,defaultToolbar: ['filter', 'exports', 'print']
+            //, toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
             , response: {
                 dataName: 'datas' //规定数据列表的字段名称，默认：data
             }
             //, page: true //开启分页
             , cols: [
                 [ //表头
-                    {field: 'id', title: 'ID', width: 80, sort: true, fixed: 'left'}
+                    {field: 'id', title: 'ID', width: 80, sort: true}
                     ,{field:'kaoheyuefen', title: '月份',width:80, sort: true}
-                    ,{field:'beikaohedanwei', title: '部门分厂', width:90}
-                    ,{field:'kaohexiangmu', title: '项目', width:140}
-                    ,{field:'biaozhun', title: '标准', width:40}
-                    ,{field:'zhouqi', title: '周期', width:40}
-                    ,{field:'danwei', title: '单位', width:40}
-                    ,{field:'mubiaozhi', title: '目标值',edit:true,width:100}
-                    ,{field:'shijizhi', title: '实际值',edit:true,width:100}
+                    //,{field:'beikaohedanwei', title: '部门分厂', width:90}
+                    ,{field:'kaohexiangmu', title: '项目', width:250}
+                    ,{field:'biaozhun', title: '标准', width:60}
+                    ,{field:'zhouqi', title: '周期', width:60}
+                    ,{field:'danwei', title: '单位', width:60}
+                    ,{field:'mubiaozhi', title: '目标值',edit:true,width:110}
+                    ,{field:'shijizhi', title: '实际值',edit:true,width:110}
                     //,{field:'caozuofu', title: '运算符',edit:true,width:110}
-                    ,{field:'kaohejieguo', title: '考核结果',templet: '#resultTpl',width:100}
+                    ,{field:'kaohejieguo', title: '考核结果',templet: '#resultTpl',width:110}
                     //,{field:'kaohedanwei', title: '考核单位',hide:true}
-                    ,{field:'beizhu', title: '备注',width:160,edit:true}
+                    ,{field:'beizhu', title: '备注',edit:true}
 
                 ]
-            ]
-        });
-
-        //监听单元格编辑
-        table.on('edit(test3)', function(obj){
-
-            var value = obj.value //得到修改后的值
-                ,data = obj.data //得到所在行所有键值
-                ,field = obj.field; //得到字段
-            //layer.msg('[ID: '+ data.id +'] ' + field + ' 字段更改为：'+ value);
-            $.ajax({
-                url: "/performance/editField",
-                type: "POST",
-                data: {
-                    id:data.id,
-                    field:field,
-                    fieldValue:value
-                },
-                dataType: 'json',
-                success: function (result) {
-                    // layer.alert("设置成功", {icon: 6,time: 500}, function () {
-
-                    //刷新当前页面
-                    //window.location.reload();
-                    //刷新当前表格
-                    table.reload('test3', {
-                        url: '/performance/findByDeptResult'
-                    });
-
-                }
-
-            });
-
-        });
-
-
-        //监听工具条
-        /*table.on('tool(test3)', function (obj) {
-            var data = obj.data;
-            if (obj.event == 'del') {
-                layer.confirm('真的删除行吗', function (index) {
-                    $.ajax({
-                        url: "/performanceInit/delete",
-                        type: "GET",
-                        data: {id: data.id},
-                        dataType: 'json',
-                        success: function (result) {
-                            layer.alert("删除成功", {icon: 1}, function (index1) {
-                                layer.close(index1);
-                                location.reload()
-                                //xadmin.father_reload();
-                                //table.reload('menuTable');
-                            });
-                        },
-                    });
-
-                });
-            } else if (obj.event === 'edit') {
-                xadmin.open('编辑指标信息', '/performanceInit/edit/?id=' + data.id);
+            ],
+            done: function () {
+                checkPermission()
             }
-        });*/
+        });
+
+
+        //监听提交
+        form.on('submit(search)', function (data) {
+            var kaoheyuefen = data.field.kaoheyuefen;
+            var beikaohedanwei=$('#department option:selected').text();
+            table.render({
+                elem: '#table'
+                , url: '/performance/findByDeptResult' //数据接口
+                , where: {
+                    kaoheyuefen: kaoheyuefen,
+                    beikaohedanwei:beikaohedanwei
+                }
+                //, toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
+                , response: {
+                    dataName: 'datas' //规定数据列表的字段名称，默认：data
+                }
+                //, page: true //开启分页
+                , cols: [
+                    [ //表头
+                        {field: 'id', title: 'ID', width: 80, sort: true}
+                        ,{field:'kaoheyuefen', title: '月份',width:80, sort: true}
+                       // ,{field:'beikaohedanwei', title: '部门分厂', width:90}
+                        ,{field:'kaohexiangmu', title: '项目',width:140}
+                        ,{field:'biaozhun', title: '标准', width:40}
+                        ,{field:'zhouqi', title: '周期', width:40}
+                        ,{field:'danwei', title: '单位', width:40}
+                        ,{field:'mubiaozhi', title: '目标值',edit:true,width:100}
+                        ,{field:'shijizhi', title: '实际值',edit:true,width:100}
+                        //,{field:'caozuofu', title: '运算符',edit:true,width:110}
+                        ,{field:'kaohejieguo', title: '考核结果',templet: '#resultTpl',width:100}
+                        //,{field:'kaohedanwei', title: '考核单位',hide:true}
+                        ,{field:'beizhu', title: '备注',width:160,edit:true}
+
+                    ]
+                ]
+            });
+            return false;
+        });
+        checkPermission();
     });
+
 
 </script>
 

@@ -90,9 +90,9 @@ layui.define(['layer', 'table'], function (exports) {
                 $('.treeTable .layui-table-page').css('display', 'none');
                 $(param.elem).next().attr('treeLinkage', param.treeLinkage);
                 // 绑定事件换成对body绑定
-                /*$('.treeTable .treeTable-icon').click(function () {
+                $('.treeTable .treeTable-icon').click(function () {
                     treetable.toggleRows($(this), param.treeLinkage);
-                });*/
+                });
                 if (param.treeDefaultClose) {
                     treetable.foldAll(param.elem);
                 }
