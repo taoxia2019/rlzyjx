@@ -2,7 +2,7 @@
 <html class="x-admin-sm" xmlns:th="http://www.thymeleaf.org/">
 <head>
     <meta charset="UTF-8">
-    <title>权限列表</title>
+    <title>考核结果列表</title>
     <header th:replace="header::html"></header>
 
     <link rel="stylesheet" href="../static/treetable-lay/treetable.css" th:href="@{/treetable-lay/treetable.css}">
@@ -15,7 +15,7 @@
             <a href="">首页</a>
             <a href="">绩效</a>
             <a>
-              <cite>指标填报</cite></a>
+              <cite>考核结果</cite></a>
           </span>
     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
        onclick="location.reload()" title="刷新">
@@ -28,16 +28,25 @@
         <div class="layui-row layui-col-space15">
             <div class="layui-col-md12">
                 <div class="layui-card">
+                    <div class="layui-card-body ">
+                        <form class="layui-form layui-col-space5">
+                            <div class="layui-inline layui-show-xs-block">
+                                <input class="layui-input"  autocomplete="off" placeholder="月份" name="kaoheyuefen" id="kaoheyuefen">
+                            </div>
+                            <div class="layui-inline layui-show-xs-block">
+                                <select id="department" name="department" lay-filter="department">
+                                    <option value=""></option>
+                                    <option th:each="dept:${departments}" th:value="${dept.id}" th:text="${dept.deptName}" th:selected="${dept.flag}"></option>
+                                </select>
+                            </div>
+                            <div class="layui-inline layui-show-xs-block">
+                                <button class="layui-btn"  lay-submit="" lay-filter="sreach"><i class="layui-icon">&#xe615;</i></button>
+                            </div>
+                        </form>
+                    </div>
                     <div class="layui-card-body">
                         <table id="test3" lay-filter="test3"></table>
                     </div>
-                    <!--<div class="layui-card-body">
-                        <script type="text/html" id="barDemo">
-                            <a class="layui-btn layui-btn-xs" lay-event="edit" permission="kpi:performance:edit">编辑</a>
-                            <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"
-                               permission="kpi:performance:del">删除</a>
-                        </script>
-                    </div>-->
                 </div>
             </div>
         </div>
@@ -45,32 +54,40 @@
 </div>
 </body>
 <script>
-    layui.use('table', function() {
-        var table = layui.table;
+    layui.use(['table','laydate','form'], function() {
+        var table = layui.table,
+        laydate=layui.laydate,
+        form=layui.form;
+
+        //年月选择器
+        laydate.render({
+            elem: '#kaoheyuefen'
+            ,type: 'month'
+        });
         //第一个实例
         table.render({
             elem: '#test3'
-            , url: '/performance/fill' //数据接口
+            , url: '/performance/findByDeptResult' //数据接口
             //,toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
             //,defaultToolbar: ['filter', 'exports', 'print']
             , response: {
                 dataName: 'datas' //规定数据列表的字段名称，默认：data
             }
-            , page: true //开启分页
+            //, page: true //开启分页
             , cols: [
                 [ //表头
-                    {field: 'id', title: 'ID', width: 70, sort: true, fixed: 'left'}
-                    ,{field:'kaoheyuefen', title: '月份',width:100, sort: true}
+                    {field: 'id', title: 'ID', width: 80, sort: true, fixed: 'left'}
+                    ,{field:'kaoheyuefen', title: '月份',width:80, sort: true}
                     ,{field:'beikaohedanwei', title: '部门分厂', width:90}
                     ,{field:'kaohexiangmu', title: '项目', width:140}
                     ,{field:'biaozhun', title: '标准', width:40}
                     ,{field:'zhouqi', title: '周期', width:40}
                     ,{field:'danwei', title: '单位', width:40}
-                    ,{field:'mubiaozhi', title: '目标值(x)',edit:true,width:100}
-                    ,{field:'shijizhi', title: '实际值(y)',edit:true,width:100}
-                    ,{field:'caozuofu', title: '运算符',edit:true,width:110}
+                    ,{field:'mubiaozhi', title: '目标值',edit:true,width:100}
+                    ,{field:'shijizhi', title: '实际值',edit:true,width:100}
+                    //,{field:'caozuofu', title: '运算符',edit:true,width:110}
                     ,{field:'kaohejieguo', title: '考核结果',templet: '#resultTpl',width:100}
-                    ,{field:'kaohedanwei', title: '考核单位',hide:true}
+                    //,{field:'kaohedanwei', title: '考核单位',hide:true}
                     ,{field:'beizhu', title: '备注',width:160,edit:true}
 
                 ]
@@ -100,7 +117,7 @@
                     //window.location.reload();
                     //刷新当前表格
                     table.reload('test3', {
-                        url: '/performance/fill'
+                        url: '/performance/findByDeptResult'
                     });
 
                 }

@@ -1,30 +1,23 @@
 package com.tcrl.service.impl;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
-import com.baomidou.mybatisplus.core.metadata.IPage;
-import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.tcrl.base.result.Results;
 import com.tcrl.dao.PerformanceInitMapper;
 import com.tcrl.dao.UsersMapper;
 import com.tcrl.entity.PerformanceInit;
 import com.tcrl.entity.PerformanceResult;
 import com.tcrl.dao.PerformanceResultMapper;
-import com.tcrl.entity.Users;
 import com.tcrl.exception.MyParseException;
 import com.tcrl.service.PerformanceResultService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.tcrl.service.UsersService;
-import com.tcrl.utils.DataUtils;
+import com.tcrl.utils.DateUtils;
 import com.tcrl.utils.JexlUtils;
-import io.swagger.models.auth.In;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
-import java.awt.*;
-import java.time.LocalDate;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -61,16 +54,16 @@ public class PerformanceResultServiceImpl extends ServiceImpl<PerformanceResultM
 
             //根据考核月份和考核单位判断是否已经有结果集
             QueryWrapper<PerformanceResult> performanceResultQueryWrapper = new QueryWrapper<>();
-            performanceResultQueryWrapper.eq("kaoheyuefen", DataUtils.getMonth());
+            performanceResultQueryWrapper.eq("kaoheyuefen", DateUtils.getMonth());
             performanceResultQueryWrapper.eq("kaohedanwei", dept);
 
             List<PerformanceResult> list1 = performanceResultMapper
                     .selectList(performanceResultQueryWrapper);
             if (list1.size() != 0) {
                 //根据所在部门查询考核单位即数据（即填报单位）
-                int count = performanceResultMapper.countAllPerformances(DataUtils.getMonth(), dept).intValue();
+                int count = performanceResultMapper.countAllPerformances(DateUtils.getMonth(), dept).intValue();
                 //当前填报表考核月份
-                List<PerformanceResult> performanceResults = performanceResultMapper.getallPerformancesByPage(DataUtils.getMonth(), dept, offset, limit);
+                List<PerformanceResult> performanceResults = performanceResultMapper.getallPerformancesByPage(DateUtils.getMonth(), dept, offset, limit);
                 return Results.success(count, performanceResults);
             } else {
                 QueryWrapper<PerformanceInit> queryWrapper2 = new QueryWrapper<>();
@@ -81,9 +74,9 @@ public class PerformanceResultServiceImpl extends ServiceImpl<PerformanceResultM
                     performanceResultMapper.insert(pResult);
                 });
                 //根据所在部门查询考核单位即数据（即填报单位）
-                int count = performanceResultMapper.countAllPerformances(DataUtils.getMonth(), dept).intValue();
+                int count = performanceResultMapper.countAllPerformances(DateUtils.getMonth(), dept).intValue();
                 //当前填报表考核月份
-                List<PerformanceResult> performanceResults = performanceResultMapper.getallPerformancesByPage(DataUtils.getMonth(), dept, offset, limit);
+                List<PerformanceResult> performanceResults = performanceResultMapper.getallPerformancesByPage(DateUtils.getMonth(), dept, offset, limit);
                 return Results.success(count, performanceResults);
             }
 
@@ -91,7 +84,7 @@ public class PerformanceResultServiceImpl extends ServiceImpl<PerformanceResultM
             //管理员身份
             //根据月份查询结果集是否有数据
             QueryWrapper<PerformanceResult> performanceResultQueryWrapper1 = new QueryWrapper<>();
-            performanceResultQueryWrapper1.eq("kaoheyuefen", DataUtils.getMonth());
+            performanceResultQueryWrapper1.eq("kaoheyuefen", DateUtils.getMonth());
             List<PerformanceResult> performanceResults1 = performanceResultMapper.selectList(performanceResultQueryWrapper1);
 
             if (performanceResults1.size() !=0) {
@@ -124,9 +117,9 @@ public class PerformanceResultServiceImpl extends ServiceImpl<PerformanceResultM
                 });
             }
             //管理员返回全部当期考核表数据
-            int count = performanceResultMapper.countAllPerformances1(DataUtils.getMonth()).intValue();
+            int count = performanceResultMapper.countAllPerformances1(DateUtils.getMonth()).intValue();
             //当前填报表考核月份
-            List<PerformanceResult> performanceResults = performanceResultMapper.getallPerformancesByPage1(DataUtils.getMonth(), offset, limit);
+            List<PerformanceResult> performanceResults = performanceResultMapper.getallPerformancesByPage1(DateUtils.getMonth(), offset, limit);
             return Results.success(count, performanceResults);
         }
     }
@@ -174,7 +167,7 @@ public class PerformanceResultServiceImpl extends ServiceImpl<PerformanceResultM
     //两个类对拷 PerformanceInit ->PerformanceResult
     private PerformanceResult getPerformanceResult(PerformanceInit perInit) {
         PerformanceResult pResult = new PerformanceResult();
-        perInit.setKaoheyuefen(DataUtils.getMonth());
+        perInit.setKaoheyuefen(DateUtils.getMonth());
         perInit.setId(null);
         BeanUtils.copyProperties(perInit, pResult);
         return pResult;

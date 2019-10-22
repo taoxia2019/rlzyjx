@@ -87,7 +87,10 @@
     width:100%;
 }
 .login hr {
-    background: #fff url() 0 0 no-repeat;
+    background-repeat: no-repeat;
+    background-position: 0 0;
+    background-image: url(X-admin/images/aiwrap.png);
+    background-color: #fff;
 }
 .login hr.hr15 {
     height: 15px;

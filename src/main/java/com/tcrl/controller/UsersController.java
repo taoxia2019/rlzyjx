@@ -91,7 +91,7 @@ public class UsersController {
     public String addUser(Model model){
         model.addAttribute(new Users());
         model.addAttribute("roles",roleService.list());
-        model.addAttribute("departments",departmentService.list());
+        model.addAttribute("departments",departmentService.list(new QueryWrapper<Department>().ne("id", 1)));
 
         return "user/user-add";
     }
