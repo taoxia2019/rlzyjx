@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.tcrl.App;
 import com.tcrl.base.result.Results;
+import com.tcrl.dao.DetailedruleResultMapper;
 import com.tcrl.dao.PerformanceInitMapper;
 import com.tcrl.dao.PerformanceResultMapper;
 import com.tcrl.entity.PerformanceInit;
@@ -21,20 +22,16 @@ class RlzyjxApplicationTests {
 	private PerformanceInitMapper performanceInitMapper;
 	@Autowired
     private PerformanceResultMapper performanceResultMapper;
+	@Autowired
+	private DetailedruleResultMapper detailedruleResultMapper;
+
 
 
 	@Test
 	//输入status状态码，与ID一致
 	void contextLoads() {
+		System.out.println(detailedruleResultMapper.selectById(4).getKaohejine());
 
-		performanceInitMapper.selectList(null).stream()
-				.forEach(per->{
-					per.setStatus(per.getId().intValue());
-					performanceInitMapper.updateById(per);
-				});
-
-
-
-    }
+	}
 
 }

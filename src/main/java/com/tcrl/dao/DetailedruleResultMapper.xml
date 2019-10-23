@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tcrl.dao.DetailedruleResultMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.tcrl.entity.DetailedruleResult">
+        <id column="id" property="id" />
+        <result column="kaoheyuefen" property="kaoheyuefen" />
+        <result column="beikaohedanwei" property="beikaohedanwei" />
+        <result column="kaoheshiyou" property="kaoheshiyou" />
+        <result column="kaohejine" property="kaohejine" />
+        <result column="kaohedanwei" property="kaohedanwei" />
+        <result column="status" property="status" />
+        <result column="xiangmumingcheng" property="xiangmumingcheng" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, kaoheyuefen, beikaohedanwei, kaoheshiyou, kaohejine, kaohedanwei, status,xiangmumingcheng
+    </sql>
+
+</mapper>
