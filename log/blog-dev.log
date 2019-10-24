@@ -5394,3 +5394,679 @@ Caused by: java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
 2019-10-24 15:49:25.701 DEBUG 11456 --- [http-nio-8080-exec-8] c.t.d.P.getallPerformancesByPage1        : ==>  Preparing: select * from kpi_performance_result t where t.kaoheyuefen=? order by t.id limit ?,? 
 2019-10-24 15:49:25.707 DEBUG 11456 --- [http-nio-8080-exec-8] c.t.d.P.getallPerformancesByPage1        : ==> Parameters: 2019-10(String), 0(Integer), 10(Integer)
 2019-10-24 15:49:25.710 DEBUG 11456 --- [http-nio-8080-exec-8] c.t.d.P.getallPerformancesByPage1        : <==      Total: 10
+2019-10-24 16:09:47.547  INFO 11728 --- [main] com.tcrl.App                             : Starting App on PC-20190301SZZL with PID 11728 (D:\123\rlzyjx\target\classes started by Administrator in D:\123\rlzyjx)
+2019-10-24 16:09:47.552 DEBUG 11728 --- [main] com.tcrl.App                             : Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2019-10-24 16:09:47.552  INFO 11728 --- [main] com.tcrl.App                             : The following profiles are active: dev
+2019-10-24 16:09:49.186  INFO 11728 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 16:09:49.194  INFO 11728 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 16:09:49.218  INFO 11728 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 16:09:49.221  INFO 11728 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@dcc6211' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 16:09:49.224  INFO 11728 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 16:09:49.228  INFO 11728 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 16:09:49.594  INFO 11728 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-10-24 16:09:49.604  INFO 11728 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-24 16:09:49.605  INFO 11728 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-10-24 16:09:49.758  INFO 11728 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-24 16:09:49.758  INFO 11728 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2096 ms
+2019-10-24 16:09:50.385  INFO 11728 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-10-24 16:09:50.673  WARN 11728 --- [main] c.b.m.core.toolkit.TableInfoHelper       : Warn: Could not find @TableId in Class: com.tcrl.entity.UserRole.
+2019-10-24 16:09:50.946  WARN 11728 --- [main] c.b.m.core.toolkit.TableInfoHelper       : Warn: Could not find @TableId in Class: com.tcrl.entity.RolePermission.
+2019-10-24 16:09:51.568  INFO 11728 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2019-10-24 16:09:51.715  INFO 11728 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/xadmin/**'], []
+2019-10-24 16:09:51.715  INFO 11728 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/treetable-lay/**'], []
+2019-10-24 16:09:51.715  INFO 11728 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/dtree/**'], []
+2019-10-24 16:09:51.715  INFO 11728 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/myjs/**'], []
+2019-10-24 16:09:51.771  INFO 11728 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a6c7f42, org.springframework.security.web.context.SecurityContextPersistenceFilter@1dcedc93, org.springframework.security.web.header.HeaderWriterFilter@47248a48, org.springframework.security.web.authentication.logout.LogoutFilter@25f61c2c, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5e26f1ed, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@628b819d, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7ebe2e47, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@9b23822, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5a515e5d, org.springframework.security.web.session.SessionManagementFilter@17e0933c, org.springframework.security.web.access.ExceptionTranslationFilter@7066363, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2839e3c8]
+2019-10-24 16:09:51.854  INFO 11728 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-24 16:09:51.914  INFO 11728 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-10-24 16:09:52.120  INFO 11728 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-10-24 16:09:52.140  INFO 11728 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-10-24 16:09:52.194  INFO 11728 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-10-24 16:09:52.505  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUserUsingGET_1
+2019-10-24 16:09:52.508  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editUserUsingGET_1
+2019-10-24 16:09:52.527  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUserUsingPOST_1
+2019-10-24 16:09:52.531  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingGET_1
+2019-10-24 16:09:52.532  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingHEAD_1
+2019-10-24 16:09:52.533  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingPOST_1
+2019-10-24 16:09:52.534  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingPUT_1
+2019-10-24 16:09:52.535  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingPATCH_1
+2019-10-24 16:09:52.537  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingDELETE_1
+2019-10-24 16:09:52.538  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingOPTIONS_1
+2019-10-24 16:09:52.539  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingTRACE_1
+2019-10-24 16:09:52.619  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUserUsingGET_2
+2019-10-24 16:09:52.621  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editUserUsingGET_2
+2019-10-24 16:09:52.646  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUserUsingGET_1
+2019-10-24 16:09:52.675  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUserUsingGET_3
+2019-10-24 16:09:52.677  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editUserUsingGET_3
+2019-10-24 16:09:52.696  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUserUsingPOST_1
+2019-10-24 16:09:52.698  INFO 11728 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUserUsingPOST_2
+2019-10-24 16:09:52.749  INFO 11728 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-10-24 16:09:52.753  INFO 11728 --- [main] com.tcrl.App                             : Started App in 6.695 seconds (JVM running for 7.937)
+2019-10-24 16:10:05.732  INFO 11728 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-24 16:10:05.733  INFO 11728 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-24 16:10:05.743  INFO 11728 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2019-10-24 16:10:16.858 DEBUG 11728 --- [http-nio-8080-exec-4] com.tcrl.dao.UsersMapper.selectList      : ==>  Preparing: SELECT id,username,password,phone,dept,email,headimage,gangweimingcheng,status,createtime,updatetime,birthday,sex FROM sys_users WHERE username = ? 
+2019-10-24 16:10:16.986 DEBUG 11728 --- [http-nio-8080-exec-4] com.tcrl.dao.UsersMapper.selectList      : ==> Parameters: admin(String)
+2019-10-24 16:10:17.016 DEBUG 11728 --- [http-nio-8080-exec-4] com.tcrl.dao.UsersMapper.selectList      : <==      Total: 1
+2019-10-24 16:10:17.030 DEBUG 11728 --- [http-nio-8080-exec-4] c.t.dao.PermissionMapper.listByUserId    : ==>  Preparing: select distinct sp.* from sys_user_role sru inner join sys_role_permission srp on srp.roleid=sru.roleid left join sys_permission sp on srp.permissionid = sp.id where sru.userid=? 
+2019-10-24 16:10:17.036 DEBUG 11728 --- [http-nio-8080-exec-4] c.t.dao.PermissionMapper.listByUserId    : ==> Parameters: 1(Integer)
+2019-10-24 16:10:17.046 DEBUG 11728 --- [http-nio-8080-exec-4] c.t.dao.PermissionMapper.listByUserId    : <==      Total: 28
+2019-10-24 16:10:17.176  INFO 11728 --- [http-nio-8080-exec-4] c.t.s.a.MyAuthenticationSuccessHandler   : 登录成功
+2019-10-24 16:10:18.262 DEBUG 11728 --- [http-nio-8080-exec-5] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-10-24 16:10:18.264 DEBUG 11728 --- [http-nio-8080-exec-5] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-10-24 16:10:18.271 DEBUG 11728 --- [http-nio-8080-exec-5] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 14
+2019-10-24 16:10:18.277 DEBUG 11728 --- [http-nio-8080-exec-3] c.t.dao.PermissionMapper.listByUserId    : ==>  Preparing: select distinct sp.* from sys_user_role sru inner join sys_role_permission srp on srp.roleid=sru.roleid left join sys_permission sp on srp.permissionid = sp.id where sru.userid=? 
+2019-10-24 16:10:18.278 DEBUG 11728 --- [http-nio-8080-exec-3] c.t.dao.PermissionMapper.listByUserId    : ==> Parameters: 1(Integer)
+2019-10-24 16:10:18.289 DEBUG 11728 --- [http-nio-8080-exec-3] c.t.dao.PermissionMapper.listByUserId    : <==      Total: 28
+2019-10-24 16:10:18.310 DEBUG 11728 --- [http-nio-8080-exec-10] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-10-24 16:10:18.311 DEBUG 11728 --- [http-nio-8080-exec-10] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-10-24 16:10:18.317 DEBUG 11728 --- [http-nio-8080-exec-10] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 14
+2019-10-24 16:10:18.339 DEBUG 11728 --- [http-nio-8080-exec-5] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-10-24 16:10:18.339 DEBUG 11728 --- [http-nio-8080-exec-5] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-10-24 16:10:18.343 DEBUG 11728 --- [http-nio-8080-exec-5] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 14
+2019-10-24 16:10:18.875 DEBUG 11728 --- [http-nio-8080-exec-9] c.t.d.P.selectList                       : ==>  Preparing: SELECT id,beikaohedanwei,beizhu,biaozhun,caozuofu,danwei,kaohedanwei,kaohejieguo,kaohexiangmu,kaoheyuefen,mubiaozhi,shijizhi,zhouqi,status FROM kpi_performance_result WHERE kaoheyuefen = ? AND beikaohedanwei = ? 
+2019-10-24 16:10:18.878 DEBUG 11728 --- [http-nio-8080-exec-9] c.t.d.P.selectList                       : ==> Parameters: 2019-10(String), 铸轧分厂(String)
+2019-10-24 16:10:18.899 DEBUG 11728 --- [http-nio-8080-exec-9] c.t.d.P.selectList                       : <==      Total: 30
+2019-10-24 16:10:18.900 DEBUG 11728 --- [http-nio-8080-exec-7] c.t.d.D.selectList                       : ==>  Preparing: SELECT id,kaoheyuefen,beikaohedanwei,kaoheshiyou,kaohejine,kaohedanwei,status,xiangmumingcheng FROM kpi_detailedrule_result WHERE kaoheyuefen = ? AND beikaohedanwei = ? 
+2019-10-24 16:10:18.903 DEBUG 11728 --- [http-nio-8080-exec-9] c.t.d.P.selectCount                      : ==>  Preparing: SELECT COUNT( 1 ) FROM kpi_performance_result WHERE kaoheyuefen = ? AND beikaohedanwei = ? 
+2019-10-24 16:10:18.904 DEBUG 11728 --- [http-nio-8080-exec-7] c.t.d.D.selectList                       : ==> Parameters: 2019-10(String), 铸轧分厂(String)
+2019-10-24 16:10:18.908 DEBUG 11728 --- [http-nio-8080-exec-9] c.t.d.P.selectCount                      : ==> Parameters: 2019-10(String), 铸轧分厂(String)
+2019-10-24 16:10:18.910 DEBUG 11728 --- [http-nio-8080-exec-9] c.t.d.P.selectCount                      : <==      Total: 1
+2019-10-24 16:10:18.923 DEBUG 11728 --- [http-nio-8080-exec-7] c.t.d.D.selectList                       : <==      Total: 1
+2019-10-24 16:10:18.933 DEBUG 11728 --- [http-nio-8080-exec-7] c.t.d.D.selectCount                      : ==>  Preparing: SELECT COUNT( 1 ) FROM kpi_detailedrule_result WHERE kaoheyuefen = ? AND beikaohedanwei = ? 
+2019-10-24 16:10:18.935 DEBUG 11728 --- [http-nio-8080-exec-7] c.t.d.D.selectCount                      : ==> Parameters: 2019-10(String), 铸轧分厂(String)
+2019-10-24 16:10:18.937 DEBUG 11728 --- [http-nio-8080-exec-7] c.t.d.D.selectCount                      : <==      Total: 1
+2019-10-24 16:10:18.972 DEBUG 11728 --- [http-nio-8080-exec-8] c.t.d.P.selectList                       : ==>  Preparing: SELECT id,beikaohedanwei,beizhu,biaozhun,caozuofu,danwei,kaohedanwei,kaohejieguo,kaohexiangmu,kaoheyuefen,mubiaozhi,shijizhi,zhouqi,status FROM kpi_performance_result WHERE kaoheyuefen = ? 
+2019-10-24 16:10:18.974 DEBUG 11728 --- [http-nio-8080-exec-8] c.t.d.P.selectList                       : ==> Parameters: 2019-10(String)
+2019-10-24 16:10:19.009 DEBUG 11728 --- [http-nio-8080-exec-4] com.tcrl.dao.UsersMapper.selectOne       : ==>  Preparing: SELECT id,username,password,phone,dept,email,headimage,gangweimingcheng,status,createtime,updatetime,birthday,sex FROM sys_users WHERE username = ? 
+2019-10-24 16:10:19.009 DEBUG 11728 --- [http-nio-8080-exec-4] com.tcrl.dao.UsersMapper.selectOne       : ==> Parameters: admin(String)
+2019-10-24 16:10:19.012 DEBUG 11728 --- [http-nio-8080-exec-4] com.tcrl.dao.UsersMapper.selectOne       : <==      Total: 1
+2019-10-24 16:10:19.015 DEBUG 11728 --- [http-nio-8080-exec-4] c.t.d.D.selectCount                      : ==>  Preparing: SELECT COUNT( 1 ) FROM kpi_detailedrule_result WHERE kaohedanwei = ? AND kaoheyuefen = ? 
+2019-10-24 16:10:19.017 DEBUG 11728 --- [http-nio-8080-exec-4] c.t.d.D.selectCount                      : ==> Parameters: 人力资源部(String), 2019-10(String)
+2019-10-24 16:10:19.019 DEBUG 11728 --- [http-nio-8080-exec-4] c.t.d.D.selectCount                      : <==      Total: 1
+2019-10-24 16:10:19.021 DEBUG 11728 --- [http-nio-8080-exec-4] c.t.d.D.selectList                       : ==>  Preparing: SELECT id,kaoheyuefen,beikaohedanwei,kaoheshiyou,kaohejine,kaohedanwei,status,xiangmumingcheng FROM kpi_detailedrule_result WHERE kaohedanwei = ? AND kaoheyuefen = ? 
+2019-10-24 16:10:19.022 DEBUG 11728 --- [http-nio-8080-exec-4] c.t.d.D.selectList                       : ==> Parameters: 人力资源部(String), 2019-10(String)
+2019-10-24 16:10:19.025 DEBUG 11728 --- [http-nio-8080-exec-4] c.t.d.D.selectList                       : <==      Total: 4
+2019-10-24 16:10:19.026 DEBUG 11728 --- [http-nio-8080-exec-8] c.t.d.P.selectList                       : <==      Total: 201
+2019-10-24 16:10:19.027 DEBUG 11728 --- [http-nio-8080-exec-8] c.t.d.PerformanceInitMapper.selectList   : ==>  Preparing: SELECT id,beikaohedanwei,beizhu,biaozhun,caozuofu,danwei,kaohedanwei,kaohejieguo,kaohexiangmu,kaoheyuefen,mubiaozhi,shijizhi,zhouqi,status FROM kpi_performance_init 
+2019-10-24 16:10:19.029 DEBUG 11728 --- [http-nio-8080-exec-8] c.t.d.PerformanceInitMapper.selectList   : ==> Parameters: 
+2019-10-24 16:10:19.062 DEBUG 11728 --- [http-nio-8080-exec-8] c.t.d.PerformanceInitMapper.selectList   : <==      Total: 201
+2019-10-24 16:10:19.075 DEBUG 11728 --- [http-nio-8080-exec-8] c.t.d.P.countAllPerformances1            : ==>  Preparing: select count(*) from kpi_performance_result t where t.kaoheyuefen=? 
+2019-10-24 16:10:19.088 DEBUG 11728 --- [http-nio-8080-exec-8] c.t.d.P.countAllPerformances1            : ==> Parameters: 2019-10(String)
+2019-10-24 16:10:19.099 DEBUG 11728 --- [http-nio-8080-exec-8] c.t.d.P.countAllPerformances1            : <==      Total: 1
+2019-10-24 16:10:19.102 DEBUG 11728 --- [http-nio-8080-exec-8] c.t.d.P.getallPerformancesByPage1        : ==>  Preparing: select * from kpi_performance_result t where t.kaoheyuefen=? order by t.id limit ?,? 
+2019-10-24 16:10:19.106 DEBUG 11728 --- [http-nio-8080-exec-8] c.t.d.P.getallPerformancesByPage1        : ==> Parameters: 2019-10(String), 0(Integer), 10(Integer)
+2019-10-24 16:10:19.109 DEBUG 11728 --- [http-nio-8080-exec-8] c.t.d.P.getallPerformancesByPage1        : <==      Total: 10
+2019-10-24 16:12:05.233  INFO 11944 --- [main] com.tcrl.App                             : Starting App on PC-20190301SZZL with PID 11944 (D:\123\rlzyjx\target\classes started by Administrator in D:\123\rlzyjx)
+2019-10-24 16:12:05.238 DEBUG 11944 --- [main] com.tcrl.App                             : Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2019-10-24 16:12:05.239  INFO 11944 --- [main] com.tcrl.App                             : The following profiles are active: dev
+2019-10-24 16:12:06.923  INFO 11944 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 16:12:06.930  INFO 11944 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 16:12:06.951  INFO 11944 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 16:12:06.954  INFO 11944 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@3d98d138' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 16:12:06.956  INFO 11944 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 16:12:06.960  INFO 11944 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 16:12:07.326  INFO 11944 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-10-24 16:12:07.336  INFO 11944 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-24 16:12:07.337  INFO 11944 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-10-24 16:12:07.472  INFO 11944 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-24 16:12:07.473  INFO 11944 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2111 ms
+2019-10-24 16:12:08.084  INFO 11944 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-10-24 16:12:08.380  WARN 11944 --- [main] c.b.m.core.toolkit.TableInfoHelper       : Warn: Could not find @TableId in Class: com.tcrl.entity.UserRole.
+2019-10-24 16:12:08.644  WARN 11944 --- [main] c.b.m.core.toolkit.TableInfoHelper       : Warn: Could not find @TableId in Class: com.tcrl.entity.RolePermission.
+2019-10-24 16:12:09.283  INFO 11944 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2019-10-24 16:12:09.417  INFO 11944 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/xadmin/**'], []
+2019-10-24 16:12:09.417  INFO 11944 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/treetable-lay/**'], []
+2019-10-24 16:12:09.417  INFO 11944 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/dtree/**'], []
+2019-10-24 16:12:09.417  INFO 11944 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/myjs/**'], []
+2019-10-24 16:12:09.472  INFO 11944 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2ec99035, org.springframework.security.web.context.SecurityContextPersistenceFilter@3d620a1, org.springframework.security.web.header.HeaderWriterFilter@5eb5da12, org.springframework.security.web.authentication.logout.LogoutFilter@25a94b55, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@3a00b15d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@51e3d37e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3635099, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@5f366587, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@60743cdb, org.springframework.security.web.session.SessionManagementFilter@5099c59b, org.springframework.security.web.access.ExceptionTranslationFilter@5529ff44, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1e225820]
+2019-10-24 16:12:09.552  INFO 11944 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-24 16:12:09.610  INFO 11944 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-10-24 16:12:09.853  INFO 11944 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-10-24 16:12:09.877  INFO 11944 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-10-24 16:12:09.942  INFO 11944 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-10-24 16:12:10.208  INFO 11944 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUserUsingGET_1
+2019-10-24 16:12:10.211  INFO 11944 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editUserUsingGET_1
+2019-10-24 16:12:10.231  INFO 11944 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUserUsingPOST_1
+2019-10-24 16:12:10.235  INFO 11944 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingGET_1
+2019-10-24 16:12:10.236  INFO 11944 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingHEAD_1
+2019-10-24 16:12:10.237  INFO 11944 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingPOST_1
+2019-10-24 16:12:10.238  INFO 11944 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingPUT_1
+2019-10-24 16:12:10.239  INFO 11944 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingPATCH_1
+2019-10-24 16:12:10.241  INFO 11944 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingDELETE_1
+2019-10-24 16:12:10.242  INFO 11944 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingOPTIONS_1
+2019-10-24 16:12:10.243  INFO 11944 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingTRACE_1
+2019-10-24 16:12:10.323  INFO 11944 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUserUsingGET_2
+2019-10-24 16:12:10.326  INFO 11944 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editUserUsingGET_2
+2019-10-24 16:12:10.355  INFO 11944 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUserUsingGET_1
+2019-10-24 16:12:10.381  INFO 11944 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUserUsingGET_3
+2019-10-24 16:12:10.384  INFO 11944 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editUserUsingGET_3
+2019-10-24 16:12:10.409  INFO 11944 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUserUsingPOST_1
+2019-10-24 16:12:10.411  INFO 11944 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUserUsingPOST_2
+2019-10-24 16:12:10.466  INFO 11944 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-10-24 16:12:10.469  INFO 11944 --- [main] com.tcrl.App                             : Started App in 7.033 seconds (JVM running for 8.462)
+2019-10-24 16:12:15.653  INFO 11944 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-24 16:12:15.653  INFO 11944 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-24 16:12:15.663  INFO 11944 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2019-10-24 16:12:23.009 DEBUG 11944 --- [http-nio-8080-exec-3] com.tcrl.dao.UsersMapper.selectList      : ==>  Preparing: SELECT id,username,password,phone,dept,email,headimage,gangweimingcheng,status,createtime,updatetime,birthday,sex FROM sys_users WHERE username = ? 
+2019-10-24 16:12:23.136 DEBUG 11944 --- [http-nio-8080-exec-3] com.tcrl.dao.UsersMapper.selectList      : ==> Parameters: admin(String)
+2019-10-24 16:12:23.165 DEBUG 11944 --- [http-nio-8080-exec-3] com.tcrl.dao.UsersMapper.selectList      : <==      Total: 1
+2019-10-24 16:12:23.179 DEBUG 11944 --- [http-nio-8080-exec-3] c.t.dao.PermissionMapper.listByUserId    : ==>  Preparing: select distinct sp.* from sys_user_role sru inner join sys_role_permission srp on srp.roleid=sru.roleid left join sys_permission sp on srp.permissionid = sp.id where sru.userid=? 
+2019-10-24 16:12:23.183 DEBUG 11944 --- [http-nio-8080-exec-3] c.t.dao.PermissionMapper.listByUserId    : ==> Parameters: 1(Integer)
+2019-10-24 16:12:23.193 DEBUG 11944 --- [http-nio-8080-exec-3] c.t.dao.PermissionMapper.listByUserId    : <==      Total: 28
+2019-10-24 16:12:23.328  INFO 11944 --- [http-nio-8080-exec-3] c.t.s.a.MyAuthenticationSuccessHandler   : 登录成功
+2019-10-24 16:12:24.392 DEBUG 11944 --- [http-nio-8080-exec-10] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-10-24 16:12:24.395 DEBUG 11944 --- [http-nio-8080-exec-10] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-10-24 16:12:24.401 DEBUG 11944 --- [http-nio-8080-exec-10] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 14
+2019-10-24 16:12:24.442 DEBUG 11944 --- [http-nio-8080-exec-1] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-10-24 16:12:24.443 DEBUG 11944 --- [http-nio-8080-exec-1] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-10-24 16:12:24.454 DEBUG 11944 --- [http-nio-8080-exec-1] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 14
+2019-10-24 16:12:24.457 DEBUG 11944 --- [http-nio-8080-exec-2] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-10-24 16:12:24.457 DEBUG 11944 --- [http-nio-8080-exec-2] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-10-24 16:12:24.461 DEBUG 11944 --- [http-nio-8080-exec-2] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 14
+2019-10-24 16:12:24.551 DEBUG 11944 --- [http-nio-8080-exec-4] c.t.dao.PermissionMapper.listByUserId    : ==>  Preparing: select distinct sp.* from sys_user_role sru inner join sys_role_permission srp on srp.roleid=sru.roleid left join sys_permission sp on srp.permissionid = sp.id where sru.userid=? 
+2019-10-24 16:12:24.552 DEBUG 11944 --- [http-nio-8080-exec-4] c.t.dao.PermissionMapper.listByUserId    : ==> Parameters: 1(Integer)
+2019-10-24 16:12:24.566 DEBUG 11944 --- [http-nio-8080-exec-4] c.t.dao.PermissionMapper.listByUserId    : <==      Total: 28
+2019-10-24 16:12:25.124 DEBUG 11944 --- [http-nio-8080-exec-3] c.t.d.P.selectList                       : ==>  Preparing: SELECT id,beikaohedanwei,beizhu,biaozhun,caozuofu,danwei,kaohedanwei,kaohejieguo,kaohexiangmu,kaoheyuefen,mubiaozhi,shijizhi,zhouqi,status FROM kpi_performance_result WHERE kaoheyuefen = ? 
+2019-10-24 16:12:25.126 DEBUG 11944 --- [http-nio-8080-exec-3] c.t.d.P.selectList                       : ==> Parameters: 2019-10(String)
+2019-10-24 16:12:25.146 DEBUG 11944 --- [http-nio-8080-exec-7] com.tcrl.dao.UsersMapper.selectOne       : ==>  Preparing: SELECT id,username,password,phone,dept,email,headimage,gangweimingcheng,status,createtime,updatetime,birthday,sex FROM sys_users WHERE username = ? 
+2019-10-24 16:12:25.148 DEBUG 11944 --- [http-nio-8080-exec-7] com.tcrl.dao.UsersMapper.selectOne       : ==> Parameters: admin(String)
+2019-10-24 16:12:25.151 DEBUG 11944 --- [http-nio-8080-exec-7] com.tcrl.dao.UsersMapper.selectOne       : <==      Total: 1
+2019-10-24 16:12:25.160 DEBUG 11944 --- [http-nio-8080-exec-7] c.t.d.D.selectCount                      : ==>  Preparing: SELECT COUNT( 1 ) FROM kpi_detailedrule_result WHERE kaohedanwei = ? AND kaoheyuefen = ? 
+2019-10-24 16:12:25.171 DEBUG 11944 --- [http-nio-8080-exec-7] c.t.d.D.selectCount                      : ==> Parameters: 人力资源部(String), 2019-10(String)
+2019-10-24 16:12:25.173 DEBUG 11944 --- [http-nio-8080-exec-7] c.t.d.D.selectCount                      : <==      Total: 1
+2019-10-24 16:12:25.176 DEBUG 11944 --- [http-nio-8080-exec-7] c.t.d.D.selectList                       : ==>  Preparing: SELECT id,kaoheyuefen,beikaohedanwei,kaoheshiyou,kaohejine,kaohedanwei,status,xiangmumingcheng FROM kpi_detailedrule_result WHERE kaohedanwei = ? AND kaoheyuefen = ? 
+2019-10-24 16:12:25.178 DEBUG 11944 --- [http-nio-8080-exec-7] c.t.d.D.selectList                       : ==> Parameters: 人力资源部(String), 2019-10(String)
+2019-10-24 16:12:25.183 DEBUG 11944 --- [http-nio-8080-exec-3] c.t.d.P.selectList                       : <==      Total: 201
+2019-10-24 16:12:25.184 DEBUG 11944 --- [http-nio-8080-exec-3] c.t.d.PerformanceInitMapper.selectList   : ==>  Preparing: SELECT id,beikaohedanwei,beizhu,biaozhun,caozuofu,danwei,kaohedanwei,kaohejieguo,kaohexiangmu,kaoheyuefen,mubiaozhi,shijizhi,zhouqi,status FROM kpi_performance_init 
+2019-10-24 16:12:25.185 DEBUG 11944 --- [http-nio-8080-exec-7] c.t.d.D.selectList                       : <==      Total: 4
+2019-10-24 16:12:25.186 DEBUG 11944 --- [http-nio-8080-exec-3] c.t.d.PerformanceInitMapper.selectList   : ==> Parameters: 
+2019-10-24 16:12:25.222 DEBUG 11944 --- [http-nio-8080-exec-3] c.t.d.PerformanceInitMapper.selectList   : <==      Total: 201
+2019-10-24 16:12:25.225 DEBUG 11944 --- [http-nio-8080-exec-3] c.t.d.P.countAllPerformances1            : ==>  Preparing: select count(*) from kpi_performance_result t where t.kaoheyuefen=? 
+2019-10-24 16:12:25.227 DEBUG 11944 --- [http-nio-8080-exec-3] c.t.d.P.countAllPerformances1            : ==> Parameters: 2019-10(String)
+2019-10-24 16:12:25.228 DEBUG 11944 --- [http-nio-8080-exec-5] c.t.d.P.selectList                       : ==>  Preparing: SELECT id,beikaohedanwei,beizhu,biaozhun,caozuofu,danwei,kaohedanwei,kaohejieguo,kaohexiangmu,kaoheyuefen,mubiaozhi,shijizhi,zhouqi,status FROM kpi_performance_result WHERE kaoheyuefen = ? AND beikaohedanwei = ? 
+2019-10-24 16:12:25.229 DEBUG 11944 --- [http-nio-8080-exec-3] c.t.d.P.countAllPerformances1            : <==      Total: 1
+2019-10-24 16:12:25.231 DEBUG 11944 --- [http-nio-8080-exec-5] c.t.d.P.selectList                       : ==> Parameters: 2019-10(String), 铸轧分厂(String)
+2019-10-24 16:12:25.231 DEBUG 11944 --- [http-nio-8080-exec-3] c.t.d.P.getallPerformancesByPage1        : ==>  Preparing: select * from kpi_performance_result t where t.kaoheyuefen=? order by t.id limit ?,? 
+2019-10-24 16:12:25.236 DEBUG 11944 --- [http-nio-8080-exec-3] c.t.d.P.getallPerformancesByPage1        : ==> Parameters: 2019-10(String), 0(Integer), 10(Integer)
+2019-10-24 16:12:25.238 DEBUG 11944 --- [http-nio-8080-exec-5] c.t.d.P.selectList                       : <==      Total: 30
+2019-10-24 16:12:25.239 DEBUG 11944 --- [http-nio-8080-exec-3] c.t.d.P.getallPerformancesByPage1        : <==      Total: 10
+2019-10-24 16:12:25.240 DEBUG 11944 --- [http-nio-8080-exec-5] c.t.d.P.selectCount                      : ==>  Preparing: SELECT COUNT( 1 ) FROM kpi_performance_result WHERE kaoheyuefen = ? AND beikaohedanwei = ? 
+2019-10-24 16:12:25.243 DEBUG 11944 --- [http-nio-8080-exec-5] c.t.d.P.selectCount                      : ==> Parameters: 2019-10(String), 铸轧分厂(String)
+2019-10-24 16:12:25.249 DEBUG 11944 --- [http-nio-8080-exec-9] c.t.d.D.selectList                       : ==>  Preparing: SELECT id,kaoheyuefen,beikaohedanwei,kaoheshiyou,kaohejine,kaohedanwei,status,xiangmumingcheng FROM kpi_detailedrule_result WHERE kaoheyuefen = ? AND beikaohedanwei = ? 
+2019-10-24 16:12:25.249 DEBUG 11944 --- [http-nio-8080-exec-5] c.t.d.P.selectCount                      : <==      Total: 1
+2019-10-24 16:12:25.252 DEBUG 11944 --- [http-nio-8080-exec-9] c.t.d.D.selectList                       : ==> Parameters: 2019-10(String), 铸轧分厂(String)
+2019-10-24 16:12:25.259 DEBUG 11944 --- [http-nio-8080-exec-9] c.t.d.D.selectList                       : <==      Total: 1
+2019-10-24 16:12:25.263 DEBUG 11944 --- [http-nio-8080-exec-9] c.t.d.D.selectCount                      : ==>  Preparing: SELECT COUNT( 1 ) FROM kpi_detailedrule_result WHERE kaoheyuefen = ? AND beikaohedanwei = ? 
+2019-10-24 16:12:25.265 DEBUG 11944 --- [http-nio-8080-exec-9] c.t.d.D.selectCount                      : ==> Parameters: 2019-10(String), 铸轧分厂(String)
+2019-10-24 16:12:25.267 DEBUG 11944 --- [http-nio-8080-exec-9] c.t.d.D.selectCount                      : <==      Total: 1
+2019-10-24 16:12:47.997 DEBUG 11944 --- [http-nio-8080-exec-10] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-10-24 16:12:48.003 DEBUG 11944 --- [http-nio-8080-exec-10] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-10-24 16:12:48.007 DEBUG 11944 --- [http-nio-8080-exec-10] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 14
+2019-10-24 16:12:48.333 DEBUG 11944 --- [http-nio-8080-exec-2] com.tcrl.dao.RoleMapper.countAllRoles    : ==>  Preparing: select count(*) from sys_role t 
+2019-10-24 16:12:48.334 DEBUG 11944 --- [http-nio-8080-exec-2] com.tcrl.dao.RoleMapper.countAllRoles    : ==> Parameters: 
+2019-10-24 16:12:48.335 DEBUG 11944 --- [http-nio-8080-exec-2] com.tcrl.dao.RoleMapper.countAllRoles    : <==      Total: 1
+2019-10-24 16:12:48.336 DEBUG 11944 --- [http-nio-8080-exec-2] c.tcrl.dao.RoleMapper.getallRolesByPage  : ==>  Preparing: select * from sys_role t order by t.id limit ?,? 
+2019-10-24 16:12:48.337 DEBUG 11944 --- [http-nio-8080-exec-2] c.tcrl.dao.RoleMapper.getallRolesByPage  : ==> Parameters: 0(Integer), 10(Integer)
+2019-10-24 16:12:48.342 DEBUG 11944 --- [http-nio-8080-exec-2] c.tcrl.dao.RoleMapper.getallRolesByPage  : <==      Total: 10
+2019-10-24 16:12:54.039 DEBUG 11944 --- [http-nio-8080-exec-8] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-10-24 16:12:54.040 DEBUG 11944 --- [http-nio-8080-exec-8] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-10-24 16:12:54.045 DEBUG 11944 --- [http-nio-8080-exec-8] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 14
+2019-10-24 16:12:54.356 DEBUG 11944 --- [http-nio-8080-exec-7] c.tcrl.dao.PermissionMapper.selectCount  : ==>  Preparing: SELECT COUNT( 1 ) FROM sys_permission 
+2019-10-24 16:12:54.358 DEBUG 11944 --- [http-nio-8080-exec-7] c.tcrl.dao.PermissionMapper.selectCount  : ==> Parameters: 
+2019-10-24 16:12:54.360 DEBUG 11944 --- [http-nio-8080-exec-7] c.tcrl.dao.PermissionMapper.selectCount  : <==      Total: 1
+2019-10-24 16:12:54.361 DEBUG 11944 --- [http-nio-8080-exec-7] c.tcrl.dao.PermissionMapper.selectList   : ==>  Preparing: SELECT id,parentid,name,css,href,type,permission,sort FROM sys_permission 
+2019-10-24 16:12:54.363 DEBUG 11944 --- [http-nio-8080-exec-7] c.tcrl.dao.PermissionMapper.selectList   : ==> Parameters: 
+2019-10-24 16:12:54.367 DEBUG 11944 --- [http-nio-8080-exec-7] c.tcrl.dao.PermissionMapper.selectList   : <==      Total: 29
+2019-10-24 16:13:54.872 DEBUG 11944 --- [http-nio-8080-exec-10] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-10-24 16:13:54.872 DEBUG 11944 --- [http-nio-8080-exec-10] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-10-24 16:13:54.879 DEBUG 11944 --- [http-nio-8080-exec-10] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 14
+2019-10-24 16:13:55.195 DEBUG 11944 --- [http-nio-8080-exec-8] com.tcrl.dao.UsersMapper.countAllUsers   : ==>  Preparing: select count(*) from sys_users t 
+2019-10-24 16:13:55.197 DEBUG 11944 --- [http-nio-8080-exec-8] com.tcrl.dao.UsersMapper.countAllUsers   : ==> Parameters: 
+2019-10-24 16:13:55.199 DEBUG 11944 --- [http-nio-8080-exec-8] com.tcrl.dao.UsersMapper.countAllUsers   : <==      Total: 1
+2019-10-24 16:13:55.201 DEBUG 11944 --- [http-nio-8080-exec-8] c.t.dao.UsersMapper.getallUsersByPage    : ==>  Preparing: select * from sys_users t order by t.id limit ?,? 
+2019-10-24 16:13:55.203 DEBUG 11944 --- [http-nio-8080-exec-8] c.t.dao.UsersMapper.getallUsersByPage    : ==> Parameters: 0(Integer), 10(Integer)
+2019-10-24 16:13:55.206 DEBUG 11944 --- [http-nio-8080-exec-8] c.t.dao.UsersMapper.getallUsersByPage    : <==      Total: 10
+2019-10-24 16:16:02.045  INFO 10336 --- [main] com.tcrl.App                             : Starting App on PC-20190301SZZL with PID 10336 (D:\123\rlzyjx\target\classes started by Administrator in D:\123\rlzyjx)
+2019-10-24 16:16:02.050 DEBUG 10336 --- [main] com.tcrl.App                             : Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2019-10-24 16:16:02.051  INFO 10336 --- [main] com.tcrl.App                             : The following profiles are active: dev
+2019-10-24 16:16:03.814  INFO 10336 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 16:16:03.824  INFO 10336 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 16:16:03.847  INFO 10336 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 16:16:03.850  INFO 10336 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@5136207f' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 16:16:03.853  INFO 10336 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 16:16:03.856  INFO 10336 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 16:16:04.183  INFO 10336 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-10-24 16:16:04.193  INFO 10336 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-24 16:16:04.193  INFO 10336 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-10-24 16:16:04.362  INFO 10336 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-24 16:16:04.362  INFO 10336 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2205 ms
+2019-10-24 16:16:05.036  INFO 10336 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-10-24 16:16:05.408  WARN 10336 --- [main] c.b.m.core.toolkit.TableInfoHelper       : Warn: Could not find @TableId in Class: com.tcrl.entity.UserRole.
+2019-10-24 16:16:05.687  WARN 10336 --- [main] c.b.m.core.toolkit.TableInfoHelper       : Warn: Could not find @TableId in Class: com.tcrl.entity.RolePermission.
+2019-10-24 16:16:06.326  INFO 10336 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2019-10-24 16:16:06.465  INFO 10336 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/xadmin/**'], []
+2019-10-24 16:16:06.466  INFO 10336 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/treetable-lay/**'], []
+2019-10-24 16:16:06.466  INFO 10336 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/dtree/**'], []
+2019-10-24 16:16:06.466  INFO 10336 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/myjs/**'], []
+2019-10-24 16:16:06.523  INFO 10336 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6d672bd4, org.springframework.security.web.context.SecurityContextPersistenceFilter@66bf40e5, org.springframework.security.web.header.HeaderWriterFilter@183ade54, org.springframework.security.web.authentication.logout.LogoutFilter@5856dbe4, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@73041b7d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5e26f1ed, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@32f32623, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@4cc65c2, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@67770b37, org.springframework.security.web.session.SessionManagementFilter@5974b7e8, org.springframework.security.web.access.ExceptionTranslationFilter@707ca986, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7792d851]
+2019-10-24 16:16:06.611  INFO 10336 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-24 16:16:06.672  INFO 10336 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-10-24 16:16:06.886  INFO 10336 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-10-24 16:16:06.904  INFO 10336 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-10-24 16:16:06.959  INFO 10336 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-10-24 16:16:07.222  INFO 10336 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUserUsingGET_1
+2019-10-24 16:16:07.225  INFO 10336 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editUserUsingGET_1
+2019-10-24 16:16:07.244  INFO 10336 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUserUsingPOST_1
+2019-10-24 16:16:07.249  INFO 10336 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingGET_1
+2019-10-24 16:16:07.250  INFO 10336 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingHEAD_1
+2019-10-24 16:16:07.251  INFO 10336 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingPOST_1
+2019-10-24 16:16:07.253  INFO 10336 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingPUT_1
+2019-10-24 16:16:07.254  INFO 10336 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingPATCH_1
+2019-10-24 16:16:07.255  INFO 10336 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingDELETE_1
+2019-10-24 16:16:07.256  INFO 10336 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingOPTIONS_1
+2019-10-24 16:16:07.257  INFO 10336 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingTRACE_1
+2019-10-24 16:16:07.340  INFO 10336 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUserUsingGET_2
+2019-10-24 16:16:07.343  INFO 10336 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editUserUsingGET_2
+2019-10-24 16:16:07.366  INFO 10336 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUserUsingGET_1
+2019-10-24 16:16:07.390  INFO 10336 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUserUsingGET_3
+2019-10-24 16:16:07.393  INFO 10336 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editUserUsingGET_3
+2019-10-24 16:16:07.411  INFO 10336 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUserUsingPOST_1
+2019-10-24 16:16:07.413  INFO 10336 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUserUsingPOST_2
+2019-10-24 16:16:07.468  INFO 10336 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-10-24 16:16:07.473  INFO 10336 --- [main] com.tcrl.App                             : Started App in 6.664 seconds (JVM running for 8.271)
+2019-10-24 16:16:18.468  INFO 10336 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-24 16:16:18.468  INFO 10336 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-24 16:16:18.478  INFO 10336 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2019-10-24 16:16:26.275 DEBUG 10336 --- [http-nio-8080-exec-8] com.tcrl.dao.UsersMapper.selectList      : ==>  Preparing: SELECT id,username,password,phone,dept,email,headimage,gangweimingcheng,status,createtime,updatetime,birthday,sex FROM sys_users WHERE username = ? 
+2019-10-24 16:16:26.402 DEBUG 10336 --- [http-nio-8080-exec-8] com.tcrl.dao.UsersMapper.selectList      : ==> Parameters: admin(String)
+2019-10-24 16:16:26.432 DEBUG 10336 --- [http-nio-8080-exec-8] com.tcrl.dao.UsersMapper.selectList      : <==      Total: 1
+2019-10-24 16:16:26.445 DEBUG 10336 --- [http-nio-8080-exec-8] c.t.dao.PermissionMapper.listByUserId    : ==>  Preparing: select distinct sp.* from sys_user_role sru inner join sys_role_permission srp on srp.roleid=sru.roleid left join sys_permission sp on srp.permissionid = sp.id where sru.userid=? 
+2019-10-24 16:16:26.451 DEBUG 10336 --- [http-nio-8080-exec-8] c.t.dao.PermissionMapper.listByUserId    : ==> Parameters: 1(Integer)
+2019-10-24 16:16:26.460 DEBUG 10336 --- [http-nio-8080-exec-8] c.t.dao.PermissionMapper.listByUserId    : <==      Total: 28
+2019-10-24 16:16:26.627  INFO 10336 --- [http-nio-8080-exec-8] c.t.s.a.MyAuthenticationSuccessHandler   : 登录成功
+2019-10-24 16:16:27.671 DEBUG 10336 --- [http-nio-8080-exec-6] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-10-24 16:16:27.673 DEBUG 10336 --- [http-nio-8080-exec-6] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-10-24 16:16:27.680 DEBUG 10336 --- [http-nio-8080-exec-6] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 14
+2019-10-24 16:16:27.728 DEBUG 10336 --- [http-nio-8080-exec-9] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-10-24 16:16:27.729 DEBUG 10336 --- [http-nio-8080-exec-9] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-10-24 16:16:27.735 DEBUG 10336 --- [http-nio-8080-exec-9] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 14
+2019-10-24 16:16:27.741 DEBUG 10336 --- [http-nio-8080-exec-10] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-10-24 16:16:27.742 DEBUG 10336 --- [http-nio-8080-exec-10] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-10-24 16:16:27.750 DEBUG 10336 --- [http-nio-8080-exec-10] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 14
+2019-10-24 16:16:27.782 DEBUG 10336 --- [http-nio-8080-exec-1] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-10-24 16:16:27.783 DEBUG 10336 --- [http-nio-8080-exec-1] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-10-24 16:16:27.786 DEBUG 10336 --- [http-nio-8080-exec-1] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 14
+2019-10-24 16:16:27.803 DEBUG 10336 --- [http-nio-8080-exec-2] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-10-24 16:16:27.804 DEBUG 10336 --- [http-nio-8080-exec-2] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-10-24 16:16:27.816 DEBUG 10336 --- [http-nio-8080-exec-2] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 14
+2019-10-24 16:16:27.818 DEBUG 10336 --- [http-nio-8080-exec-4] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-10-24 16:16:27.819 DEBUG 10336 --- [http-nio-8080-exec-4] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-10-24 16:16:27.833 DEBUG 10336 --- [http-nio-8080-exec-4] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 14
+2019-10-24 16:16:28.679 DEBUG 10336 --- [http-nio-8080-exec-5] com.tcrl.dao.RoleMapper.countAllRoles    : ==>  Preparing: select count(*) from sys_role t 
+2019-10-24 16:16:28.680 DEBUG 10336 --- [http-nio-8080-exec-5] com.tcrl.dao.RoleMapper.countAllRoles    : ==> Parameters: 
+2019-10-24 16:16:28.682 DEBUG 10336 --- [http-nio-8080-exec-5] com.tcrl.dao.RoleMapper.countAllRoles    : <==      Total: 1
+2019-10-24 16:16:28.683 DEBUG 10336 --- [http-nio-8080-exec-5] c.tcrl.dao.RoleMapper.getallRolesByPage  : ==>  Preparing: select * from sys_role t order by t.id limit ?,? 
+2019-10-24 16:16:28.688 DEBUG 10336 --- [http-nio-8080-exec-5] c.tcrl.dao.RoleMapper.getallRolesByPage  : ==> Parameters: 0(Integer), 10(Integer)
+2019-10-24 16:16:28.694 DEBUG 10336 --- [http-nio-8080-exec-5] c.tcrl.dao.RoleMapper.getallRolesByPage  : <==      Total: 10
+2019-10-24 16:16:28.730 DEBUG 10336 --- [http-nio-8080-exec-7] com.tcrl.dao.UsersMapper.countAllUsers   : ==>  Preparing: select count(*) from sys_users t 
+2019-10-24 16:16:28.731 DEBUG 10336 --- [http-nio-8080-exec-7] com.tcrl.dao.UsersMapper.countAllUsers   : ==> Parameters: 
+2019-10-24 16:16:28.734 DEBUG 10336 --- [http-nio-8080-exec-7] com.tcrl.dao.UsersMapper.countAllUsers   : <==      Total: 1
+2019-10-24 16:16:28.737 DEBUG 10336 --- [http-nio-8080-exec-7] c.t.dao.UsersMapper.getallUsersByPage    : ==>  Preparing: select * from sys_users t order by t.id limit ?,? 
+2019-10-24 16:16:28.743 DEBUG 10336 --- [http-nio-8080-exec-7] c.t.dao.UsersMapper.getallUsersByPage    : ==> Parameters: 0(Integer), 10(Integer)
+2019-10-24 16:16:28.752 DEBUG 10336 --- [http-nio-8080-exec-7] c.t.dao.UsersMapper.getallUsersByPage    : <==      Total: 10
+2019-10-24 16:16:28.790 DEBUG 10336 --- [http-nio-8080-exec-6] c.t.d.P.selectList                       : ==>  Preparing: SELECT id,beikaohedanwei,beizhu,biaozhun,caozuofu,danwei,kaohedanwei,kaohejieguo,kaohexiangmu,kaoheyuefen,mubiaozhi,shijizhi,zhouqi,status FROM kpi_performance_result WHERE kaoheyuefen = ? AND beikaohedanwei = ? 
+2019-10-24 16:16:28.793 DEBUG 10336 --- [http-nio-8080-exec-6] c.t.d.P.selectList                       : ==> Parameters: 2019-10(String), 铸轧分厂(String)
+2019-10-24 16:16:28.802 DEBUG 10336 --- [http-nio-8080-exec-10] c.t.d.D.selectList                       : ==>  Preparing: SELECT id,kaoheyuefen,beikaohedanwei,kaoheshiyou,kaohejine,kaohedanwei,status,xiangmumingcheng FROM kpi_detailedrule_result WHERE kaoheyuefen = ? AND beikaohedanwei = ? 
+2019-10-24 16:16:28.805 DEBUG 10336 --- [http-nio-8080-exec-10] c.t.d.D.selectList                       : ==> Parameters: 2019-10(String), 铸轧分厂(String)
+2019-10-24 16:16:28.808 DEBUG 10336 --- [http-nio-8080-exec-10] c.t.d.D.selectList                       : <==      Total: 1
+2019-10-24 16:16:28.810 DEBUG 10336 --- [http-nio-8080-exec-10] c.t.d.D.selectCount                      : ==>  Preparing: SELECT COUNT( 1 ) FROM kpi_detailedrule_result WHERE kaoheyuefen = ? AND beikaohedanwei = ? 
+2019-10-24 16:16:28.811 DEBUG 10336 --- [http-nio-8080-exec-6] c.t.d.P.selectList                       : <==      Total: 30
+2019-10-24 16:16:28.815 DEBUG 10336 --- [http-nio-8080-exec-6] c.t.d.P.selectCount                      : ==>  Preparing: SELECT COUNT( 1 ) FROM kpi_performance_result WHERE kaoheyuefen = ? AND beikaohedanwei = ? 
+2019-10-24 16:16:28.818 DEBUG 10336 --- [http-nio-8080-exec-10] c.t.d.D.selectCount                      : ==> Parameters: 2019-10(String), 铸轧分厂(String)
+2019-10-24 16:16:28.821 DEBUG 10336 --- [http-nio-8080-exec-6] c.t.d.P.selectCount                      : ==> Parameters: 2019-10(String), 铸轧分厂(String)
+2019-10-24 16:16:28.823 DEBUG 10336 --- [http-nio-8080-exec-10] c.t.d.D.selectCount                      : <==      Total: 1
+2019-10-24 16:16:28.830 DEBUG 10336 --- [http-nio-8080-exec-9] c.tcrl.dao.PermissionMapper.selectCount  : ==>  Preparing: SELECT COUNT( 1 ) FROM sys_permission 
+2019-10-24 16:16:28.832 DEBUG 10336 --- [http-nio-8080-exec-9] c.tcrl.dao.PermissionMapper.selectCount  : ==> Parameters: 
+2019-10-24 16:16:28.833 DEBUG 10336 --- [http-nio-8080-exec-6] c.t.d.P.selectCount                      : <==      Total: 1
+2019-10-24 16:16:28.839 DEBUG 10336 --- [http-nio-8080-exec-9] c.tcrl.dao.PermissionMapper.selectCount  : <==      Total: 1
+2019-10-24 16:16:28.841 DEBUG 10336 --- [http-nio-8080-exec-9] c.tcrl.dao.PermissionMapper.selectList   : ==>  Preparing: SELECT id,parentid,name,css,href,type,permission,sort FROM sys_permission 
+2019-10-24 16:16:28.842 DEBUG 10336 --- [http-nio-8080-exec-9] c.tcrl.dao.PermissionMapper.selectList   : ==> Parameters: 
+2019-10-24 16:16:28.849 DEBUG 10336 --- [http-nio-8080-exec-9] c.tcrl.dao.PermissionMapper.selectList   : <==      Total: 29
+2019-10-24 16:16:28.867 DEBUG 10336 --- [http-nio-8080-exec-1] c.t.d.P.selectList                       : ==>  Preparing: SELECT id,beikaohedanwei,beizhu,biaozhun,caozuofu,danwei,kaohedanwei,kaohejieguo,kaohexiangmu,kaoheyuefen,mubiaozhi,shijizhi,zhouqi,status FROM kpi_performance_result WHERE kaoheyuefen = ? 
+2019-10-24 16:16:28.868 DEBUG 10336 --- [http-nio-8080-exec-1] c.t.d.P.selectList                       : ==> Parameters: 2019-10(String)
+2019-10-24 16:16:28.900 DEBUG 10336 --- [http-nio-8080-exec-1] c.t.d.P.selectList                       : <==      Total: 201
+2019-10-24 16:16:28.902 DEBUG 10336 --- [http-nio-8080-exec-1] c.t.d.PerformanceInitMapper.selectList   : ==>  Preparing: SELECT id,beikaohedanwei,beizhu,biaozhun,caozuofu,danwei,kaohedanwei,kaohejieguo,kaohexiangmu,kaoheyuefen,mubiaozhi,shijizhi,zhouqi,status FROM kpi_performance_init 
+2019-10-24 16:16:28.904 DEBUG 10336 --- [http-nio-8080-exec-1] c.t.d.PerformanceInitMapper.selectList   : ==> Parameters: 
+2019-10-24 16:16:28.912 DEBUG 10336 --- [http-nio-8080-exec-2] com.tcrl.dao.UsersMapper.selectOne       : ==>  Preparing: SELECT id,username,password,phone,dept,email,headimage,gangweimingcheng,status,createtime,updatetime,birthday,sex FROM sys_users WHERE username = ? 
+2019-10-24 16:16:28.913 DEBUG 10336 --- [http-nio-8080-exec-2] com.tcrl.dao.UsersMapper.selectOne       : ==> Parameters: admin(String)
+2019-10-24 16:16:28.916 DEBUG 10336 --- [http-nio-8080-exec-2] com.tcrl.dao.UsersMapper.selectOne       : <==      Total: 1
+2019-10-24 16:16:28.921 DEBUG 10336 --- [http-nio-8080-exec-2] c.t.d.D.selectCount                      : ==>  Preparing: SELECT COUNT( 1 ) FROM kpi_detailedrule_result WHERE kaohedanwei = ? AND kaoheyuefen = ? 
+2019-10-24 16:16:28.926 DEBUG 10336 --- [http-nio-8080-exec-2] c.t.d.D.selectCount                      : ==> Parameters: 人力资源部(String), 2019-10(String)
+2019-10-24 16:16:28.934 DEBUG 10336 --- [http-nio-8080-exec-2] c.t.d.D.selectCount                      : <==      Total: 1
+2019-10-24 16:16:28.935 DEBUG 10336 --- [http-nio-8080-exec-1] c.t.d.PerformanceInitMapper.selectList   : <==      Total: 201
+2019-10-24 16:16:28.937 DEBUG 10336 --- [http-nio-8080-exec-2] c.t.d.D.selectList                       : ==>  Preparing: SELECT id,kaoheyuefen,beikaohedanwei,kaoheshiyou,kaohejine,kaohedanwei,status,xiangmumingcheng FROM kpi_detailedrule_result WHERE kaohedanwei = ? AND kaoheyuefen = ? 
+2019-10-24 16:16:28.938 DEBUG 10336 --- [http-nio-8080-exec-1] c.t.d.P.countAllPerformances1            : ==>  Preparing: select count(*) from kpi_performance_result t where t.kaoheyuefen=? 
+2019-10-24 16:16:28.938 DEBUG 10336 --- [http-nio-8080-exec-2] c.t.d.D.selectList                       : ==> Parameters: 人力资源部(String), 2019-10(String)
+2019-10-24 16:16:28.940 DEBUG 10336 --- [http-nio-8080-exec-1] c.t.d.P.countAllPerformances1            : ==> Parameters: 2019-10(String)
+2019-10-24 16:16:28.941 DEBUG 10336 --- [http-nio-8080-exec-1] c.t.d.P.countAllPerformances1            : <==      Total: 1
+2019-10-24 16:16:28.943 DEBUG 10336 --- [http-nio-8080-exec-1] c.t.d.P.getallPerformancesByPage1        : ==>  Preparing: select * from kpi_performance_result t where t.kaoheyuefen=? order by t.id limit ?,? 
+2019-10-24 16:16:28.943 DEBUG 10336 --- [http-nio-8080-exec-2] c.t.d.D.selectList                       : <==      Total: 4
+2019-10-24 16:16:28.945 DEBUG 10336 --- [http-nio-8080-exec-1] c.t.d.P.getallPerformancesByPage1        : ==> Parameters: 2019-10(String), 0(Integer), 10(Integer)
+2019-10-24 16:16:28.950 DEBUG 10336 --- [http-nio-8080-exec-1] c.t.d.P.getallPerformancesByPage1        : <==      Total: 10
+2019-10-24 16:16:29.255 DEBUG 10336 --- [http-nio-8080-exec-4] c.t.dao.PermissionMapper.listByUserId    : ==>  Preparing: select distinct sp.* from sys_user_role sru inner join sys_role_permission srp on srp.roleid=sru.roleid left join sys_permission sp on srp.permissionid = sp.id where sru.userid=? 
+2019-10-24 16:16:29.257 DEBUG 10336 --- [http-nio-8080-exec-4] c.t.dao.PermissionMapper.listByUserId    : ==> Parameters: 1(Integer)
+2019-10-24 16:16:29.261 DEBUG 10336 --- [http-nio-8080-exec-4] c.t.dao.PermissionMapper.listByUserId    : <==      Total: 28
+2019-10-24 16:17:20.245  INFO 12164 --- [main] com.tcrl.App                             : Starting App on PC-20190301SZZL with PID 12164 (D:\123\rlzyjx\target\classes started by Administrator in D:\123\rlzyjx)
+2019-10-24 16:17:20.250 DEBUG 12164 --- [main] com.tcrl.App                             : Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2019-10-24 16:17:20.251  INFO 12164 --- [main] com.tcrl.App                             : The following profiles are active: dev
+2019-10-24 16:17:21.959  INFO 12164 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 16:17:21.967  INFO 12164 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 16:17:21.989  INFO 12164 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 16:17:21.992  INFO 12164 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@53ac845a' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 16:17:21.994  INFO 12164 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 16:17:21.998  INFO 12164 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 16:17:22.319  INFO 12164 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-10-24 16:17:22.329  INFO 12164 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-24 16:17:22.330  INFO 12164 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-10-24 16:17:22.474  INFO 12164 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-24 16:17:22.476  INFO 12164 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2039 ms
+2019-10-24 16:17:23.207  INFO 12164 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-10-24 16:17:23.540  WARN 12164 --- [main] c.b.m.core.toolkit.TableInfoHelper       : Warn: Could not find @TableId in Class: com.tcrl.entity.UserRole.
+2019-10-24 16:17:23.863  WARN 12164 --- [main] c.b.m.core.toolkit.TableInfoHelper       : Warn: Could not find @TableId in Class: com.tcrl.entity.RolePermission.
+2019-10-24 16:17:24.590  INFO 12164 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2019-10-24 16:17:24.735  INFO 12164 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/xadmin/**'], []
+2019-10-24 16:17:24.735  INFO 12164 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/treetable-lay/**'], []
+2019-10-24 16:17:24.735  INFO 12164 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/dtree/**'], []
+2019-10-24 16:17:24.735  INFO 12164 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/myjs/**'], []
+2019-10-24 16:17:24.802  INFO 12164 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@664632e9, org.springframework.security.web.context.SecurityContextPersistenceFilter@77d381e6, org.springframework.security.web.header.HeaderWriterFilter@3a36cd5, org.springframework.security.web.authentication.logout.LogoutFilter@2291d9a0, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@7af443a3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3f6f3cc, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@707ca986, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@68ddd415, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@494c8f29, org.springframework.security.web.session.SessionManagementFilter@47acd13b, org.springframework.security.web.access.ExceptionTranslationFilter@1450131a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@5eabff6b]
+2019-10-24 16:17:24.894  INFO 12164 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-24 16:17:24.963  INFO 12164 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-10-24 16:17:25.311  INFO 12164 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-10-24 16:17:25.340  INFO 12164 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-10-24 16:17:25.418  INFO 12164 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-10-24 16:17:25.741  INFO 12164 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUserUsingGET_1
+2019-10-24 16:17:25.744  INFO 12164 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editUserUsingGET_1
+2019-10-24 16:17:25.763  INFO 12164 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUserUsingPOST_1
+2019-10-24 16:17:25.768  INFO 12164 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingGET_1
+2019-10-24 16:17:25.770  INFO 12164 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingHEAD_1
+2019-10-24 16:17:25.771  INFO 12164 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingPOST_1
+2019-10-24 16:17:25.773  INFO 12164 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingPUT_1
+2019-10-24 16:17:25.774  INFO 12164 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingPATCH_1
+2019-10-24 16:17:25.775  INFO 12164 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingDELETE_1
+2019-10-24 16:17:25.777  INFO 12164 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingOPTIONS_1
+2019-10-24 16:17:25.778  INFO 12164 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingTRACE_1
+2019-10-24 16:17:25.876  INFO 12164 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUserUsingGET_2
+2019-10-24 16:17:25.878  INFO 12164 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editUserUsingGET_2
+2019-10-24 16:17:25.904  INFO 12164 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUserUsingGET_1
+2019-10-24 16:17:25.932  INFO 12164 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUserUsingGET_3
+2019-10-24 16:17:25.935  INFO 12164 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editUserUsingGET_3
+2019-10-24 16:17:25.962  INFO 12164 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUserUsingPOST_1
+2019-10-24 16:17:25.964  INFO 12164 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUserUsingPOST_2
+2019-10-24 16:17:26.022  INFO 12164 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-10-24 16:17:26.026  INFO 12164 --- [main] com.tcrl.App                             : Started App in 6.841 seconds (JVM running for 8.839)
+2019-10-24 16:17:31.462  INFO 12164 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-24 16:17:31.462  INFO 12164 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-24 16:17:31.473  INFO 12164 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 11 ms
+2019-10-24 16:17:39.239 DEBUG 12164 --- [http-nio-8080-exec-7] com.tcrl.dao.UsersMapper.selectList      : ==>  Preparing: SELECT id,username,password,phone,dept,email,headimage,gangweimingcheng,status,createtime,updatetime,birthday,sex FROM sys_users WHERE username = ? 
+2019-10-24 16:17:39.371 DEBUG 12164 --- [http-nio-8080-exec-7] com.tcrl.dao.UsersMapper.selectList      : ==> Parameters: admin(String)
+2019-10-24 16:17:39.401 DEBUG 12164 --- [http-nio-8080-exec-7] com.tcrl.dao.UsersMapper.selectList      : <==      Total: 1
+2019-10-24 16:17:39.417 DEBUG 12164 --- [http-nio-8080-exec-7] c.t.dao.PermissionMapper.listByUserId    : ==>  Preparing: select distinct sp.* from sys_user_role sru inner join sys_role_permission srp on srp.roleid=sru.roleid left join sys_permission sp on srp.permissionid = sp.id where sru.userid=? 
+2019-10-24 16:17:39.422 DEBUG 12164 --- [http-nio-8080-exec-7] c.t.dao.PermissionMapper.listByUserId    : ==> Parameters: 1(Integer)
+2019-10-24 16:17:39.434 DEBUG 12164 --- [http-nio-8080-exec-7] c.t.dao.PermissionMapper.listByUserId    : <==      Total: 28
+2019-10-24 16:17:39.572  INFO 12164 --- [http-nio-8080-exec-7] c.t.s.a.MyAuthenticationSuccessHandler   : 登录成功
+2019-10-24 16:17:40.633 DEBUG 12164 --- [http-nio-8080-exec-1] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-10-24 16:17:40.635 DEBUG 12164 --- [http-nio-8080-exec-1] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-10-24 16:17:40.641 DEBUG 12164 --- [http-nio-8080-exec-1] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 14
+2019-10-24 16:17:40.672 DEBUG 12164 --- [http-nio-8080-exec-3] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-10-24 16:17:40.675 DEBUG 12164 --- [http-nio-8080-exec-3] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-10-24 16:17:40.682 DEBUG 12164 --- [http-nio-8080-exec-3] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 14
+2019-10-24 16:17:40.694 DEBUG 12164 --- [http-nio-8080-exec-2] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-10-24 16:17:40.694 DEBUG 12164 --- [http-nio-8080-exec-2] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-10-24 16:17:40.698 DEBUG 12164 --- [http-nio-8080-exec-2] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 14
+2019-10-24 16:17:40.722 DEBUG 12164 --- [http-nio-8080-exec-6] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-10-24 16:17:40.727 DEBUG 12164 --- [http-nio-8080-exec-6] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-10-24 16:17:40.730 DEBUG 12164 --- [http-nio-8080-exec-6] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 14
+2019-10-24 16:17:40.735 DEBUG 12164 --- [http-nio-8080-exec-9] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-10-24 16:17:40.736 DEBUG 12164 --- [http-nio-8080-exec-9] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-10-24 16:17:40.739 DEBUG 12164 --- [http-nio-8080-exec-9] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 14
+2019-10-24 16:17:40.765 DEBUG 12164 --- [http-nio-8080-exec-5] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-10-24 16:17:40.765 DEBUG 12164 --- [http-nio-8080-exec-5] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-10-24 16:17:40.768 DEBUG 12164 --- [http-nio-8080-exec-5] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 14
+2019-10-24 16:17:41.086 DEBUG 12164 --- [http-nio-8080-exec-7] c.t.dao.PermissionMapper.listByUserId    : ==>  Preparing: select distinct sp.* from sys_user_role sru inner join sys_role_permission srp on srp.roleid=sru.roleid left join sys_permission sp on srp.permissionid = sp.id where sru.userid=? 
+2019-10-24 16:17:41.087 DEBUG 12164 --- [http-nio-8080-exec-7] c.t.dao.PermissionMapper.listByUserId    : ==> Parameters: 1(Integer)
+2019-10-24 16:17:41.096 DEBUG 12164 --- [http-nio-8080-exec-7] c.t.dao.PermissionMapper.listByUserId    : <==      Total: 28
+2019-10-24 16:17:41.703 DEBUG 12164 --- [http-nio-8080-exec-4] c.t.d.P.selectList                       : ==>  Preparing: SELECT id,beikaohedanwei,beizhu,biaozhun,caozuofu,danwei,kaohedanwei,kaohejieguo,kaohexiangmu,kaoheyuefen,mubiaozhi,shijizhi,zhouqi,status FROM kpi_performance_result WHERE kaoheyuefen = ? 
+2019-10-24 16:17:41.707 DEBUG 12164 --- [http-nio-8080-exec-4] c.t.d.P.selectList                       : ==> Parameters: 2019-10(String)
+2019-10-24 16:17:41.719 DEBUG 12164 --- [http-nio-8080-exec-10] com.tcrl.dao.UsersMapper.selectOne       : ==>  Preparing: SELECT id,username,password,phone,dept,email,headimage,gangweimingcheng,status,createtime,updatetime,birthday,sex FROM sys_users WHERE username = ? 
+2019-10-24 16:17:41.724 DEBUG 12164 --- [http-nio-8080-exec-10] com.tcrl.dao.UsersMapper.selectOne       : ==> Parameters: admin(String)
+2019-10-24 16:17:41.730 DEBUG 12164 --- [http-nio-8080-exec-10] com.tcrl.dao.UsersMapper.selectOne       : <==      Total: 1
+2019-10-24 16:17:41.737 DEBUG 12164 --- [http-nio-8080-exec-10] c.t.d.D.selectCount                      : ==>  Preparing: SELECT COUNT( 1 ) FROM kpi_detailedrule_result WHERE kaohedanwei = ? AND kaoheyuefen = ? 
+2019-10-24 16:17:41.742 DEBUG 12164 --- [http-nio-8080-exec-10] c.t.d.D.selectCount                      : ==> Parameters: 人力资源部(String), 2019-10(String)
+2019-10-24 16:17:41.746 DEBUG 12164 --- [http-nio-8080-exec-10] c.t.d.D.selectCount                      : <==      Total: 1
+2019-10-24 16:17:41.749 DEBUG 12164 --- [http-nio-8080-exec-10] c.t.d.D.selectList                       : ==>  Preparing: SELECT id,kaoheyuefen,beikaohedanwei,kaoheshiyou,kaohejine,kaohedanwei,status,xiangmumingcheng FROM kpi_detailedrule_result WHERE kaohedanwei = ? AND kaoheyuefen = ? 
+2019-10-24 16:17:41.751 DEBUG 12164 --- [http-nio-8080-exec-10] c.t.d.D.selectList                       : ==> Parameters: 人力资源部(String), 2019-10(String)
+2019-10-24 16:17:41.754 DEBUG 12164 --- [http-nio-8080-exec-10] c.t.d.D.selectList                       : <==      Total: 4
+2019-10-24 16:17:41.799 DEBUG 12164 --- [http-nio-8080-exec-4] c.t.d.P.selectList                       : <==      Total: 201
+2019-10-24 16:17:41.801 DEBUG 12164 --- [http-nio-8080-exec-4] c.t.d.PerformanceInitMapper.selectList   : ==>  Preparing: SELECT id,beikaohedanwei,beizhu,biaozhun,caozuofu,danwei,kaohedanwei,kaohejieguo,kaohexiangmu,kaoheyuefen,mubiaozhi,shijizhi,zhouqi,status FROM kpi_performance_init 
+2019-10-24 16:17:41.803 DEBUG 12164 --- [http-nio-8080-exec-4] c.t.d.PerformanceInitMapper.selectList   : ==> Parameters: 
+2019-10-24 16:17:41.840 DEBUG 12164 --- [http-nio-8080-exec-4] c.t.d.PerformanceInitMapper.selectList   : <==      Total: 201
+2019-10-24 16:17:41.842 DEBUG 12164 --- [http-nio-8080-exec-4] c.t.d.P.countAllPerformances1            : ==>  Preparing: select count(*) from kpi_performance_result t where t.kaoheyuefen=? 
+2019-10-24 16:17:41.844 DEBUG 12164 --- [http-nio-8080-exec-4] c.t.d.P.countAllPerformances1            : ==> Parameters: 2019-10(String)
+2019-10-24 16:17:41.847 DEBUG 12164 --- [http-nio-8080-exec-4] c.t.d.P.countAllPerformances1            : <==      Total: 1
+2019-10-24 16:17:41.850 DEBUG 12164 --- [http-nio-8080-exec-4] c.t.d.P.getallPerformancesByPage1        : ==>  Preparing: select * from kpi_performance_result t where t.kaoheyuefen=? order by t.id limit ?,? 
+2019-10-24 16:17:41.850 DEBUG 12164 --- [http-nio-8080-exec-2] com.tcrl.dao.RoleMapper.countAllRoles    : ==>  Preparing: select count(*) from sys_role t 
+2019-10-24 16:17:41.852 DEBUG 12164 --- [http-nio-8080-exec-2] com.tcrl.dao.RoleMapper.countAllRoles    : ==> Parameters: 
+2019-10-24 16:17:41.857 DEBUG 12164 --- [http-nio-8080-exec-2] com.tcrl.dao.RoleMapper.countAllRoles    : <==      Total: 1
+2019-10-24 16:17:41.858 DEBUG 12164 --- [http-nio-8080-exec-1] com.tcrl.dao.UsersMapper.countAllUsers   : ==>  Preparing: select count(*) from sys_users t 
+2019-10-24 16:17:41.859 DEBUG 12164 --- [http-nio-8080-exec-1] com.tcrl.dao.UsersMapper.countAllUsers   : ==> Parameters: 
+2019-10-24 16:17:41.861 DEBUG 12164 --- [http-nio-8080-exec-2] c.tcrl.dao.RoleMapper.getallRolesByPage  : ==>  Preparing: select * from sys_role t order by t.id limit ?,? 
+2019-10-24 16:17:41.863 DEBUG 12164 --- [http-nio-8080-exec-2] c.tcrl.dao.RoleMapper.getallRolesByPage  : ==> Parameters: 0(Integer), 10(Integer)
+2019-10-24 16:17:41.867 DEBUG 12164 --- [http-nio-8080-exec-4] c.t.d.P.getallPerformancesByPage1        : ==> Parameters: 2019-10(String), 0(Integer), 10(Integer)
+2019-10-24 16:17:41.868 DEBUG 12164 --- [http-nio-8080-exec-2] c.tcrl.dao.RoleMapper.getallRolesByPage  : <==      Total: 10
+2019-10-24 16:17:41.871 DEBUG 12164 --- [http-nio-8080-exec-1] com.tcrl.dao.UsersMapper.countAllUsers   : <==      Total: 1
+2019-10-24 16:17:41.874 DEBUG 12164 --- [http-nio-8080-exec-1] c.t.dao.UsersMapper.getallUsersByPage    : ==>  Preparing: select * from sys_users t order by t.id limit ?,? 
+2019-10-24 16:17:41.876 DEBUG 12164 --- [http-nio-8080-exec-1] c.t.dao.UsersMapper.getallUsersByPage    : ==> Parameters: 0(Integer), 10(Integer)
+2019-10-24 16:17:41.876 DEBUG 12164 --- [http-nio-8080-exec-4] c.t.d.P.getallPerformancesByPage1        : <==      Total: 10
+2019-10-24 16:17:41.883 DEBUG 12164 --- [http-nio-8080-exec-1] c.t.dao.UsersMapper.getallUsersByPage    : <==      Total: 10
+2019-10-24 16:17:41.890 DEBUG 12164 --- [http-nio-8080-exec-3] c.tcrl.dao.PermissionMapper.selectCount  : ==>  Preparing: SELECT COUNT( 1 ) FROM sys_permission 
+2019-10-24 16:17:41.892 DEBUG 12164 --- [http-nio-8080-exec-3] c.tcrl.dao.PermissionMapper.selectCount  : ==> Parameters: 
+2019-10-24 16:17:41.896 DEBUG 12164 --- [http-nio-8080-exec-3] c.tcrl.dao.PermissionMapper.selectCount  : <==      Total: 1
+2019-10-24 16:17:41.899 DEBUG 12164 --- [http-nio-8080-exec-3] c.tcrl.dao.PermissionMapper.selectList   : ==>  Preparing: SELECT id,parentid,name,css,href,type,permission,sort FROM sys_permission 
+2019-10-24 16:17:41.901 DEBUG 12164 --- [http-nio-8080-exec-3] c.tcrl.dao.PermissionMapper.selectList   : ==> Parameters: 
+2019-10-24 16:17:41.905 DEBUG 12164 --- [http-nio-8080-exec-3] c.tcrl.dao.PermissionMapper.selectList   : <==      Total: 29
+2019-10-24 16:17:42.313 DEBUG 12164 --- [http-nio-8080-exec-6] c.t.d.P.selectList                       : ==>  Preparing: SELECT id,beikaohedanwei,beizhu,biaozhun,caozuofu,danwei,kaohedanwei,kaohejieguo,kaohexiangmu,kaoheyuefen,mubiaozhi,shijizhi,zhouqi,status FROM kpi_performance_result WHERE kaoheyuefen = ? AND beikaohedanwei = ? 
+2019-10-24 16:17:42.316 DEBUG 12164 --- [http-nio-8080-exec-6] c.t.d.P.selectList                       : ==> Parameters: 2019-10(String), 铸轧分厂(String)
+2019-10-24 16:17:42.320 DEBUG 12164 --- [http-nio-8080-exec-6] c.t.d.P.selectList                       : <==      Total: 30
+2019-10-24 16:17:42.323 DEBUG 12164 --- [http-nio-8080-exec-6] c.t.d.P.selectCount                      : ==>  Preparing: SELECT COUNT( 1 ) FROM kpi_performance_result WHERE kaoheyuefen = ? AND beikaohedanwei = ? 
+2019-10-24 16:17:42.324 DEBUG 12164 --- [http-nio-8080-exec-6] c.t.d.P.selectCount                      : ==> Parameters: 2019-10(String), 铸轧分厂(String)
+2019-10-24 16:17:42.326 DEBUG 12164 --- [http-nio-8080-exec-6] c.t.d.P.selectCount                      : <==      Total: 1
+2019-10-24 16:17:42.344 DEBUG 12164 --- [http-nio-8080-exec-9] c.t.d.D.selectList                       : ==>  Preparing: SELECT id,kaoheyuefen,beikaohedanwei,kaoheshiyou,kaohejine,kaohedanwei,status,xiangmumingcheng FROM kpi_detailedrule_result WHERE kaoheyuefen = ? AND beikaohedanwei = ? 
+2019-10-24 16:17:42.345 DEBUG 12164 --- [http-nio-8080-exec-9] c.t.d.D.selectList                       : ==> Parameters: 2019-10(String), 铸轧分厂(String)
+2019-10-24 16:17:42.347 DEBUG 12164 --- [http-nio-8080-exec-9] c.t.d.D.selectList                       : <==      Total: 1
+2019-10-24 16:17:42.349 DEBUG 12164 --- [http-nio-8080-exec-9] c.t.d.D.selectCount                      : ==>  Preparing: SELECT COUNT( 1 ) FROM kpi_detailedrule_result WHERE kaoheyuefen = ? AND beikaohedanwei = ? 
+2019-10-24 16:17:42.351 DEBUG 12164 --- [http-nio-8080-exec-9] c.t.d.D.selectCount                      : ==> Parameters: 2019-10(String), 铸轧分厂(String)
+2019-10-24 16:17:42.352 DEBUG 12164 --- [http-nio-8080-exec-9] c.t.d.D.selectCount                      : <==      Total: 1
+2019-10-24 16:18:29.387 DEBUG 12164 --- [http-nio-8080-exec-5] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-10-24 16:18:29.388 DEBUG 12164 --- [http-nio-8080-exec-5] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-10-24 16:18:29.392 DEBUG 12164 --- [http-nio-8080-exec-5] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 14
+2019-10-24 16:18:29.405 ERROR 12164 --- [http-nio-8080-exec-5] org.thymeleaf.TemplateEngine             : [THYMELEAF][http-nio-8080-exec-5] Exception processing template "": Error resolving template [], template might not exist or might not be accessible by any of the configured Template Resolvers
+
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template [], template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+
+2019-10-24 16:18:29.411 ERROR 12164 --- [http-nio-8080-exec-5] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.thymeleaf.exceptions.TemplateInputException: Error resolving template [], template might not exist or might not be accessible by any of the configured Template Resolvers] with root cause
+
+org.thymeleaf.exceptions.TemplateInputException: Error resolving template [], template might not exist or might not be accessible by any of the configured Template Resolvers
+	at org.thymeleaf.engine.TemplateManager.resolveTemplate(TemplateManager.java:869)
+	at org.thymeleaf.engine.TemplateManager.parseAndProcess(TemplateManager.java:607)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1098)
+	at org.thymeleaf.TemplateEngine.process(TemplateEngine.java:1072)
+	at org.thymeleaf.spring5.view.ThymeleafView.renderFragment(ThymeleafView.java:362)
+	at org.thymeleaf.spring5.view.ThymeleafView.render(ThymeleafView.java:189)
+	at org.springframework.web.servlet.DispatcherServlet.render(DispatcherServlet.java:1373)
+	at org.springframework.web.servlet.DispatcherServlet.processDispatchResult(DispatcherServlet.java:1118)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1057)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:634)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at com.alibaba.druid.support.http.WebStatFilter.doFilter(WebStatFilter.java:124)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:126)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:90)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter.doFilter(RememberMeAuthenticationFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AbstractAuthenticationProcessingFilter.doFilter(AbstractAuthenticationProcessingFilter.java:200)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:526)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:861)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1579)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+

@@ -82,21 +82,19 @@
             , page: true //开启分页
             , cols: [
                 [ //表头
-                    {type: 'checkbox', fixed: 'left'}
-                    , {field: 'id', title: 'ID', width: 80, sort: true, fixed: 'left'}
+                     {field: 'id', title: 'ID', width: 80, sort: true, fixed: 'left'}
                     , {field: 'username', title: '用户名', width: 100}
-                    , {field: 'password', title: '密码', width: 100}
                     , {field: 'phone', title: '手机', width: 100}
                     , {field: 'dept', title: '部门', width: 107}
-                    , {field: 'email', title: '邮箱', width: 180}
-                    , {field: 'headimage', title: '头像地址', width: 100}
-                    , {field: 'gangweimingcheng', title: '岗位', width: 100}
+                    , {field: 'email', title: '邮箱', width: 200}
+                   // , {field: 'headimage', title: '头像地址', width: 100}
+                    , {field: 'gangweimingcheng', title: '岗位', width: 120}
                     , {
                     field: 'status', title: ' 状态', width: 100, templet: function (d) {
                         return d.status == '1' ? '启动' : '禁用';
                     }
                 }
-                    , {field: 'birthday', title: '生日', width: 100}
+                    , {field: 'birthday', title: '生日'}
                     , {fixed: 'right', title: '操作', toolbar: '#barDemo', width: 150}
                 ]
             ],
