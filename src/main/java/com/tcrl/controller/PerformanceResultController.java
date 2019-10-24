@@ -67,8 +67,7 @@ public class PerformanceResultController {
     @RequestMapping("/findByDeptResult")
     @ResponseBody
     public  Results findByDeptResult(String kaoheyuefen,String beikaohedanwei){
-        System.out.println(kaoheyuefen+"---"+beikaohedanwei);
-
+        System.out.println(kaoheyuefen+"-----"+beikaohedanwei);
         if(null==beikaohedanwei&&null==kaoheyuefen) {
             QueryWrapper<PerformanceResult> performanceResultQueryWrapper = new QueryWrapper<>();
             performanceResultQueryWrapper.eq("kaoheyuefen", DateUtils.getMonth());
@@ -76,8 +75,15 @@ public class PerformanceResultController {
             List<PerformanceResult> performanceResults = performanceResultService.list(performanceResultQueryWrapper);
             int count = performanceResultService.count(performanceResultQueryWrapper);
             return Results.success(count,performanceResults);
-        }
-        else {
+        }else if("".equals(kaoheyuefen)&&null!=beikaohedanwei){
+            QueryWrapper<PerformanceResult> performanceResultQueryWrapper = new QueryWrapper<>();
+            performanceResultQueryWrapper.eq("kaoheyuefen", DateUtils.getMonth());
+            performanceResultQueryWrapper.eq("beikaohedanwei", beikaohedanwei);
+            List<PerformanceResult> performanceResults = performanceResultService.list(performanceResultQueryWrapper);
+            int count = performanceResultService.count(performanceResultQueryWrapper);
+            return Results.success(count,performanceResults);
+
+        } else {
             QueryWrapper<PerformanceResult> performanceResultQueryWrapper = new QueryWrapper<>();
             performanceResultQueryWrapper.eq("kaoheyuefen", kaoheyuefen);
             performanceResultQueryWrapper.eq("beikaohedanwei", beikaohedanwei);

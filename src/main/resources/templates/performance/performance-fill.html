@@ -32,11 +32,13 @@
                     <div class="layui-card-body">
                         <h4 class="ui horizontal divider header teal"><i class="tag icon"></i> 绩效考核报表填报 </h4>
                         <table id="test3" lay-filter="test3"></table>
-                        <h4 class="ui horizontal divider header orange"><i class="bar chart icon"></i> 其他专项考核填报 </h4>
+                        <h4 class="ui horizontal divider header orange"><i class="bar chart icon"></i> 专项考核填报情况 </h4>
                         <table id="test4" lay-filter="member"></table>
 
+                        <h4 class="ui horizontal divider header violet"><i class="bar pencil alternate icon"></i> 专项考核填报 </h4>
 
-                        <form class="layui-form layui-form-pane" action="">
+
+                        <form class="layui-form layui-form-pane" id="myForm" action="">
 
                             <div class="layui-form-item">
                                 <div class="layui-inline">
@@ -136,9 +138,9 @@
                     , {field: 'kaoheyuefen', title: '月份', width: 90, sort: true}
                     , {field: 'beikaohedanwei', title: '部门分厂', width: 100}
                     , {field: 'kaohexiangmu', title: '项目', width: 150}
-                    , {field: 'biaozhun', title: '标准', width: 40}
-                    , {field: 'zhouqi', title: '周期', width: 40}
-                    , {field: 'danwei', title: '单位', width: 40}
+                    , {field: 'biaozhun', title: '标准', width: 60}
+                    , {field: 'zhouqi', title: '周期', width: 50}
+                    , {field: 'danwei', title: '单位', width: 50}
                     , {field: 'mubiaozhi', title: '目标值(x)', edit: true, width: 90}
                     , {field: 'shijizhi', title: '实际值(y)', edit: true, width: 90}
                     , {field: 'caozuofu', title: '运算符', edit: true, width: 110}
@@ -184,12 +186,12 @@
 
 
         //监听工具条
-        /*table.on('tool(test3)', function (obj) {
+        table.on('tool(member)', function (obj) {
             var data = obj.data;
             if (obj.event == 'del') {
                 layer.confirm('真的删除行吗', function (index) {
                     $.ajax({
-                        url: "/performanceInit/delete",
+                        url: "/detailedruleResult/delete",
                         type: "GET",
                         data: {id: data.id},
                         dataType: 'json',
@@ -205,9 +207,29 @@
 
                 });
             } else if (obj.event === 'edit') {
-                xadmin.open('编辑指标信息', '/performanceInit/edit/?id=' + data.id);
+                xadmin.open('编辑指标信息', '/detailedruleResult/edit/?id=' + data.id,1000,350);
             }
-        });*/
+        });
+
+        //专项考核填报结果
+        table.render({
+            elem: '#test4'
+            , url: '/detailedruleResult/getResult' //数据接口
+            , response: {
+                dataName: 'datas' //规定数据列表的字段名称，默认：data
+            }
+            , cols: [
+                [ //表头
+                    {field: 'id', title: 'ID', width: 70}
+                    , {field: 'kaoheyuefen', title: '月份', width: 100}
+                    , {field: 'beikaohedanwei', title: '部门分厂', width: 100}
+                    , {field: 'xiangmumingcheng', title: '考核项目', width: 150}
+                    , {field: 'kaoheshiyou', title: '考核事由',width: 490}
+                    , {field: 'kaohejine', title: '考核金额',templet: '#resultTplTwo', width: 120}
+                    , {fixed: 'right', title: '操作', toolbar: '#barDemo', width: 140}
+                ]
+            ]
+        });
 
         //监听提交
         form.on('submit(add)', function (data) {
@@ -223,25 +245,10 @@
                     if (result.code == 500) {
                         layer.alert(result.msg);
                     } else {
-                        //第一个实例
-                        table.render({
-                            elem: '#test4'
-                            , url: '/detailedruleResult/getResult' //数据接口
-                            , response: {
-                                dataName: 'datas' //规定数据列表的字段名称，默认：data
-                            }
-                            , cols: [
-                                [ //表头
-                                    {field: 'id', title: 'ID', sort: true,width: 70, fixed: 'left'}
-                                    , {field: 'kaoheyuefen', title: '月份', width: 100, sort: true}
-                                    , {field: 'beikaohedanwei', title: '部门分厂', width: 100}
-                                    , {field: 'xiangmumingcheng', title: '考核项目', width: 150}
-                                    , {field: 'kaoheshiyou', title: '考核事由',width: 490}
-                                    , {field: 'kaohejine', title: '考核金额', templet: '#resultTpl', width: 120}
-                                    , {fixed: 'right', title: '操作', toolbar: '#barDemo', width: 150}
-                                ]
-                            ]
+                        table.reload('test4', {
+                            url: '/detailedruleResult/getResult'
                         });
+                        document.getElementById("myForm").reset();
                     }
 
                 }
@@ -259,5 +266,14 @@
     <span style="color:red;">{{ d.kaohejieguo }}</span>
     {{#  } }}
 </script>
+
+<script type="text/html" id="resultTplTwo">
+    {{#  if(d.kaohejine>0){ }}
+    <span style="color:mediumblue;">{{ d.kaohejine }}</span>
+    {{#  } else { }}
+    <span style="color:red;">{{ d.kaohejine }}</span>
+    {{#  } }}
+</script>
+
 
 </html>

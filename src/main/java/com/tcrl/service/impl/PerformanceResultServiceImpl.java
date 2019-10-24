@@ -1,5 +1,6 @@
 package com.tcrl.service.impl;
 
+import com.alibaba.druid.sql.ast.statement.SQLIfStatement;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.tcrl.base.result.Results;
 import com.tcrl.dao.PerformanceInitMapper;
@@ -12,6 +13,7 @@ import com.tcrl.service.PerformanceResultService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.tcrl.utils.DateUtils;
 import com.tcrl.utils.JexlUtils;
+import org.apache.commons.lang3.math.NumberUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -46,7 +48,7 @@ public class PerformanceResultServiceImpl extends ServiceImpl<PerformanceResultM
                 .getAuthentication()
                 .getPrincipal();
         String username = principal.getUsername();
-        System.out.println("当前用户："+username);
+        System.out.println("当前用户：" + username);
         //判断是否是管理员
         if (!username.equals("admin")) {
             //如果不是管理员，查找用户所在部门
@@ -87,7 +89,7 @@ public class PerformanceResultServiceImpl extends ServiceImpl<PerformanceResultM
             performanceResultQueryWrapper1.eq("kaoheyuefen", DateUtils.getMonth());
             List<PerformanceResult> performanceResults1 = performanceResultMapper.selectList(performanceResultQueryWrapper1);
 
-            if (performanceResults1.size() !=0) {
+            if (performanceResults1.size() != 0) {
                 //如果有数据，将没有初始化表中没有填入到结果集
                 List<PerformanceInit> performanceInits = performanceInitMapper.selectList(null);
                 //获取初始化表中status的集合
@@ -98,13 +100,13 @@ public class PerformanceResultServiceImpl extends ServiceImpl<PerformanceResultM
                         .map(perresult -> perresult.getStatus()).collect(Collectors.toList());
                 //去除结果集中有的status
                 initStatusCollect.removeAll(resultStatusCollect);
-                if(initStatusCollect.size()>0){
-                    initStatusCollect.stream().forEach(i->{
-                        performanceInits.stream().forEach(perInit->{
-                               if( perInit.getStatus().equals(i)){
-                                   PerformanceResult pResult = getPerformanceResult(perInit);
-                                   performanceResultMapper.insert(pResult);
-                               }
+                if (initStatusCollect.size() > 0) {
+                    initStatusCollect.stream().forEach(i -> {
+                        performanceInits.stream().forEach(perInit -> {
+                            if (perInit.getStatus().equals(i)) {
+                                PerformanceResult pResult = getPerformanceResult(perInit);
+                                performanceResultMapper.insert(pResult);
+                            }
                         });
                     });
                 }
@@ -127,24 +129,43 @@ public class PerformanceResultServiceImpl extends ServiceImpl<PerformanceResultM
     @Override
     public Results saveResultfieldValue(Integer id, String field, String fieldValue) {
         PerformanceResult pr = performanceResultMapper.selectById(id);
-        if("mubiaozhi".equals(field)){
-            pr.setMubiaozhi(Double.parseDouble(fieldValue));
-            getKaohejieguo(pr);
-        }else if("shijizhi".equals(field)){
-            pr.setShijizhi(Double.parseDouble(fieldValue));
-            getKaohejieguo(pr);
+        if ("mubiaozhi".equals(field)) {
+            if (NumberUtils.isCreatable(fieldValue)) {
+                pr.setMubiaozhi(Double.parseDouble(fieldValue));
+                if (pr.getShijizhi() != null && pr.getCaozuofu() != null && pr.getMubiaozhi() != null) {
+                    getKaohejieguo(pr);
+                }
+            } else {
+                pr.setMubiaozhi(0.0);
+                if (pr.getShijizhi() != null && pr.getCaozuofu() != null && pr.getMubiaozhi() != null) {
+                    getKaohejieguo(pr);
+                }
+            }
+        } else if ("shijizhi".equals(field)) {
+            if (NumberUtils.isCreatable(fieldValue)) {
+                pr.setShijizhi(Double.parseDouble(fieldValue));
+                if (pr.getShijizhi() != null && pr.getCaozuofu() != null && pr.getMubiaozhi() != null) {
+                    getKaohejieguo(pr);
+                }
+            } else {
+                pr.setShijizhi(0.0);
+                if (pr.getShijizhi() != null && pr.getCaozuofu() != null && pr.getMubiaozhi() != null) {
+                    getKaohejieguo(pr);
+                }
+            }
 
-        }else if("caozuofu".equals(field)){
+        } else if ("caozuofu".equals(field)) {
             pr.setCaozuofu(fieldValue);
-            getKaohejieguo(pr);
-        }else {
+            if (pr.getShijizhi() != null && pr.getCaozuofu() != null && pr.getMubiaozhi() != null) {
+                getKaohejieguo(pr);
+            }
+        } else if ("beizhu".equals(field)) {
             pr.setBeizhu(fieldValue);
-
         }
         int insert = performanceResultMapper.updateById(pr);
-        if(insert>0){
+        if (insert > 0) {
             return Results.success();
-        }else {
+        } else {
             return Results.failure();
         }
 
@@ -152,15 +173,15 @@ public class PerformanceResultServiceImpl extends ServiceImpl<PerformanceResultM
     }
 
     private void getKaohejieguo(PerformanceResult pr) {
-        if(pr.getShijizhi()!=null&& pr.getCaozuofu()!=null&&pr.getMubiaozhi()!=null){
-            Double value=null;
-            try {
-                value= JexlUtils.getValue(pr.getShijizhi(),pr.getMubiaozhi(),pr.getCaozuofu());
-                pr.setKaohejieguo(value);
-            }catch (Exception e){
-                throw new MyParseException();
-            }
+
+        Double value = null;
+        try {
+            value = JexlUtils.getValue(pr.getShijizhi(), pr.getMubiaozhi(), pr.getCaozuofu());
+            pr.setKaohejieguo(value);
+        } catch (Exception e) {
+            throw new MyParseException();
         }
+
     }
 
 

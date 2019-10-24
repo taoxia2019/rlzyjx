@@ -27,4 +27,5 @@ public class JexlUtils {
         String format = df.format(value);
         return Double.parseDouble(format);
     }
+
 }

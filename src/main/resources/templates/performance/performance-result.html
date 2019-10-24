@@ -49,8 +49,13 @@
                         <div class="layui-fluid">
                             <div class="layui-row layui-col-space15">
                                 <div class="layui-col-md12">
+                                    <h4 class="ui horizontal divider header teal"><i class="bar chart icon"></i> 指标考核情况 </h4>
                                     <div class="layui-card">
                                         <table id="table" lay-filter="member"></table>
+                                    </div>
+                                    <h4 class="ui horizontal divider header orange"><i class="bar chart icon"></i> 专项考核情况 </h4>
+                                    <div class="layui-card">
+                                        <table id="test4" lay-filter="member1"></table>
                                     </div>
                                 </div>
                             </div>
@@ -63,20 +68,26 @@
     </div>
 </div>
 </div>
-
+<div class="layui-card-body">
+    <script type="text/html" id="barDemo">
+        <a class="layui-btn layui-btn-xs" lay-event="edit" permission="kpi:performance:edit">编辑</a>
+        <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"
+           permission="kpi:performance:del">删除</a>
+    </script>
+</div>
 
 
 </body>
 <script>
-    layui.use(['table','laydate', 'form'], function () {
+    layui.use(['table', 'laydate', 'form'], function () {
         var table = layui.table,
-            laydate=layui.laydate,
+            laydate = layui.laydate,
             form = layui.form;
 
         //年月选择器
         laydate.render({
             elem: '#kaoheyuefen'
-            ,type: 'month'
+            , type: 'month'
         });
         //第一个实例
         table.render({
@@ -90,18 +101,18 @@
             , cols: [
                 [ //表头
                     {field: 'id', title: 'ID', width: 80, sort: true}
-                    ,{field:'kaoheyuefen', title: '月份',width:100, sort: true}
+                    , {field: 'kaoheyuefen', title: '月份', width: 100}
                     //,{field:'beikaohedanwei', title: '部门分厂', width:90}
-                    ,{field:'kaohexiangmu', title: '项目', width:200}
-                    ,{field:'biaozhun', title: '标准', width:60}
-                    ,{field:'zhouqi', title: '周期', width:60}
-                    ,{field:'danwei', title: '单位', width:60}
-                    ,{field:'mubiaozhi', title: '目标值',edit:true,width:100}
-                    ,{field:'shijizhi', title: '实际值',edit:true,width:100}
+                    , {field: 'kaohexiangmu', title: '项目', width: 200}
+                    , {field: 'biaozhun', title: '标准', width: 75}
+                    , {field: 'zhouqi', title: '周期', width: 70}
+                    , {field: 'danwei', title: '单位', width: 70}
+                    , {field: 'mubiaozhi', title: '目标值', edit: true, width: 100}
+                    , {field: 'shijizhi', title: '实际值', edit: true, width: 100}
                     //,{field:'caozuofu', title: '运算符',edit:true,width:110}
-                    ,{field:'kaohejieguo', title: '考核结果',templet: '#resultTpl',width:100}
+                    , {field: 'kaohejieguo', title: '考核结果', templet: '#resultTpl', width: 100}
                     //,{field:'kaohedanwei', title: '考核单位',hide:true}
-                    ,{field:'beizhu', title: '备注',edit:true}
+                    , {field: 'beizhu', title: '备注', edit: true}
 
                 ]
             ],
@@ -110,39 +121,79 @@
             }
         });
 
+        //专项考核填报结果
+        table.render({
+            elem: '#test4'
+            , url: '/detailedruleResult/findByDeptResult' //数据接口
+            , response: {
+                dataName: 'datas' //规定数据列表的字段名称，默认：data
+            }
+            , cols: [
+                [ //表头
+                    {field: 'id', title: 'ID', width: 70}
+                    , {field: 'kaoheyuefen', title: '月份', width: 100}
+                    , {field: 'xiangmumingcheng', title: '考核项目', width: 100}
+                    , {field: 'kaoheshiyou', title: '考核事由'}
+                    , {field: 'kaohejine', title: '考核金额', templet: '#resultTplTwo', width: 90}
+                    , {field: 'kaohedanwei', title: '考核单位', width: 110}
+                    , {fixed: 'right', title: '操作', toolbar: '#barDemo', width: 140}
+                ]
+            ]
+        });
+
 
         //监听提交
         form.on('submit(search)', function (data) {
             var kaoheyuefen = data.field.kaoheyuefen;
-            var beikaohedanwei=$('#department option:selected').text();
+            var beikaohedanwei = $('#department option:selected').text();
             table.render({
                 elem: '#table'
                 , url: '/performance/findByDeptResult' //数据接口
                 , where: {
                     kaoheyuefen: kaoheyuefen,
-                    beikaohedanwei:beikaohedanwei
+                    beikaohedanwei: beikaohedanwei
                 }
-                //, toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
                 , response: {
                     dataName: 'datas' //规定数据列表的字段名称，默认：data
                 }
-                //, page: true //开启分页
                 , cols: [
                     [ //表头
                         {field: 'id', title: 'ID', width: 80, sort: true}
-                        ,{field:'kaoheyuefen', title: '月份',width:80, sort: true}
-                       // ,{field:'beikaohedanwei', title: '部门分厂', width:90}
-                        ,{field:'kaohexiangmu', title: '项目',width:140}
-                        ,{field:'biaozhun', title: '标准', width:40}
-                        ,{field:'zhouqi', title: '周期', width:40}
-                        ,{field:'danwei', title: '单位', width:40}
-                        ,{field:'mubiaozhi', title: '目标值',edit:true,width:100}
-                        ,{field:'shijizhi', title: '实际值',edit:true,width:100}
+                        , {field: 'kaoheyuefen', title: '月份', width: 100}
+                        //,{field:'beikaohedanwei', title: '部门分厂', width:90}
+                        , {field: 'kaohexiangmu', title: '项目', width: 200}
+                        , {field: 'biaozhun', title: '标准', width: 75}
+                        , {field: 'zhouqi', title: '周期', width: 70}
+                        , {field: 'danwei', title: '单位', width: 70}
+                        , {field: 'mubiaozhi', title: '目标值', edit: true, width: 100}
+                        , {field: 'shijizhi', title: '实际值', edit: true, width: 100}
                         //,{field:'caozuofu', title: '运算符',edit:true,width:110}
-                        ,{field:'kaohejieguo', title: '考核结果',templet: '#resultTpl',width:100}
+                        , {field: 'kaohejieguo', title: '考核结果', templet: '#resultTpl', width: 100}
                         //,{field:'kaohedanwei', title: '考核单位',hide:true}
-                        ,{field:'beizhu', title: '备注',width:160,edit:true}
+                        , {field: 'beizhu', title: '备注', edit: true}
 
+                    ]
+                ]
+            });
+            table.render({
+                elem: '#test4'
+                , url: '/detailedruleResult/findByDeptResult' //数据接口
+                , where: {
+                    kaoheyuefen: kaoheyuefen,
+                    beikaohedanwei: beikaohedanwei
+                }
+                , response: {
+                    dataName: 'datas' //规定数据列表的字段名称，默认：data
+                }
+                , cols: [
+                    [ //表头
+                        {field: 'id', title: 'ID', width: 70}
+                        , {field: 'kaoheyuefen', title: '月份', width: 100}
+                        , {field: 'xiangmumingcheng', title: '考核项目', width: 100}
+                        , {field: 'kaoheshiyou', title: '考核事由'}
+                        , {field: 'kaohejine', title: '考核金额', templet: '#resultTplTwo', width: 90}
+                        , {field: 'kaohedanwei', title: '考核单位', width: 110}
+                        , {fixed: 'right', title: '操作', toolbar: '#barDemo', width: 140}
                     ]
                 ]
             });
