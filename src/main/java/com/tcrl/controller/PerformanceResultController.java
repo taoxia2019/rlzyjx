@@ -42,13 +42,17 @@ public class PerformanceResultController {
 
     }
 
-
-
     @RequestMapping("/performance-fill")
     public String getFillPage() {
 
         return "performance/performance-fill";
     }
+
+   /* @RequestMapping("/detailedrule-fill")
+    public String getFillPage2() {
+
+        return "performance/detailedrule-fill";
+    }*/
 
     @RequestMapping("/fill")
     @ResponseBody

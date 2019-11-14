@@ -49,6 +49,8 @@ public class DetailedruleResultController {
     @Autowired
     private DepartmentService departmentService;
 
+
+
     @RequestMapping("/add")
     @ResponseBody
     public Results addDetailedruleResult(DetailedruleResult drr){
@@ -115,6 +117,9 @@ public class DetailedruleResultController {
     @PostMapping("/edit")
     @ResponseBody
     public Results updateUser(DetailedruleResult detailedruleResult){
+        String beikaohedanweiId = detailedruleResult.getBeikaohedanwei();
+        String deptName = departmentService.getById(Integer.parseInt(beikaohedanweiId)).getDeptName();
+        detailedruleResult.setBeikaohedanwei(deptName);
         boolean b = detailedruleResultService.updateById(detailedruleResult);
         if(b==true){
             return Results.success();
@@ -148,7 +153,7 @@ public class DetailedruleResultController {
             List<DetailedruleResult> detailedruleResults = detailedruleResultService.list(performanceResultQueryWrapper);
             int count = detailedruleResultService.count(performanceResultQueryWrapper);
             return Results.success(count,detailedruleResults);
-        }else if(null==kaoheyuefen&&null!=beikaohedanwei){
+        }else if("".equals(kaoheyuefen)&&null!=beikaohedanwei){
             QueryWrapper<DetailedruleResult> performanceResultQueryWrapper = new QueryWrapper<>();
             performanceResultQueryWrapper.eq("kaoheyuefen", DateUtils.getMonth());
             performanceResultQueryWrapper.eq("beikaohedanwei", beikaohedanwei);

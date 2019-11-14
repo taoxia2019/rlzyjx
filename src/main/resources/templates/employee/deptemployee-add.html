@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html class="x-admin-sm" xmlns:th="http://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <title>新增页面</title>
+    <header th:replace="header::html"></header>
+</head>
+<body>
+<div class="x-body">
+
+        <form class="layui-form">
+
+
+            <div class="layui-form-item">
+            <label for="L_xingming" class="layui-form-label">
+                <span class="x-red">*</span>姓名
+            </label>
+            <div class="layui-input-inline">
+                <input type="text" id="L_xingming" th:value="${deptemployee.xingming}" name="xingming" required=""
+                       autocomplete="off" class="layui-input">
+            </div>
+        </div>
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">所在单位</label>
+                <div class="layui-input-inline">
+                    <select id="dept" name="dept" lay-filter="dept">
+                        <option value=""></option>
+                        <option th:each="dept:${departments}" th:value="${dept.id}" th:text="${dept.deptName}" th:selected="${dept.flag}"></option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label for="L_gangwei" class="layui-form-label">
+                    <span class="x-red">*</span>岗位
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="L_gangwei" th:value="${deptemployee.gangwei}" name="gangwei" required=""
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label for="L_guagoudanwei" class="layui-form-label">
+                    <span class="x-red">*</span>挂钩单位
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="L_guagoudanwei" th:value="${deptemployee.guagoudanwei}" name="guagoudanwei" required=""
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label for="L_gangxu" class="layui-form-label">
+                    <span class="x-red">*</span>岗序
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="L_gangxu" th:value="${deptemployee.gangxu}" name="gangxu" required=""
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="L_dangci" class="layui-form-label">
+                    <span class="x-red">*</span>档次
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="L_dangci" th:value="${deptemployee.dangci}" name="dangci" required=""
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+            <div class="layui-form-item">
+                <label for="L_gangweigongzi" class="layui-form-label">
+                    <span class="x-red">*</span>岗位工资
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="L_gangweigongzi" th:value="${deptemployee.gangweigongzi}" name="gangweigongzi" required=""
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item">
+                <label for="L_jixiaogongzi" class="layui-form-label">
+                    <span class="x-red">*</span>绩效工资
+                </label>
+                <div class="layui-input-inline">
+                    <input type="text" id="L_jixiaogongzi" th:value="${deptemployee.jixiaogongzi}" name="jixiaogongzi" required=""
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+
+
+
+            <div class="layui-form-item">
+                <label class="layui-form-label">
+                </label>
+                <button class="layui-btn" lay-filter="add" lay-submit="">
+                    增加
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    layui.use(['form', 'layer', 'laydate'],
+    function () {
+        $ = layui.jquery;
+        var form = layui.form,
+            layer = layui.layer,
+            laydate = layui.laydate;
+
+
+       /* getAllRole(function () {
+            layui.form.render('radio')
+        });*/
+        //日期
+        laydate.render({
+            elem: '#L_birthday'
+            , format: 'yyyy-MM-dd'
+        });
+
+
+
+        //监听提交
+        form.on('submit(add)', function (data) {
+
+            data.field.dept=$('#dept option:selected').text();
+
+            $.ajax({
+                url: "/deptemployee/add",
+                type: "POST",
+                data: data.field,
+                dataType: 'json',
+                success: function (result) {
+                    if (result.code == 500) {
+                        layer.alert(result.msg);
+                    } else {
+                        layer.alert("新增成功", {icon: 6}, function () {
+                            //关闭当前frame
+                            xadmin.close();
+                            //可以对父窗口进行刷新
+                            xadmin.father_reload();
+
+                        });
+                    }
+
+                }
+            });
+            return false;
+        });
+
+    });
+
+
+</script>
+
+</body>
+
+</html>

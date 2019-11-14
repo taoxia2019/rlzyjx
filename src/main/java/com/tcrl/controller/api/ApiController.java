@@ -3,6 +3,7 @@ package com.tcrl.controller.api;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.tcrl.entity.Department;
 import com.tcrl.service.DepartmentService;
+import com.tcrl.utils.DateUtils;
 import org.apache.velocity.runtime.directive.Foreach;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -37,6 +38,7 @@ public class ApiController {
             break;
         }
         }
+        model.addAttribute("kaoheyuefen", DateUtils.getMonth());
         model.addAttribute("departments",ids);
         return mv;
     }

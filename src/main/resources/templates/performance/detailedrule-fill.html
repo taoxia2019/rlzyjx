@@ -16,7 +16,7 @@
             <a href="">首页</a>
             <a href="">绩效</a>
             <a>
-              <cite>指标填报</cite></a>
+              <cite>细则考核填报</cite></a>
           </span>
     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
        onclick="location.reload()" title="刷新">
@@ -30,27 +30,30 @@
             <div class="layui-col-md12">
                 <div class="layui-card">
                     <div class="layui-card-body">
-                        <h4 class="ui horizontal divider header teal"><i class="tag icon"></i> 绩效考核报表填报 </h4>
-                        <table id="test3" lay-filter="test3"></table>
-                        <!--<h4 class="ui horizontal divider header orange"><i class="bar chart icon"></i> 专项考核填报情况 </h4>
-                        <table id="test4" lay-filter="member"></table>-->
-                       <!-- <form class="layui-form layui-form-pane" id="myForm" action="">
+                        <h4 class="ui horizontal divider header orange"><i class="bar chart icon"></i> 专项考核填报情况 </h4>
+                        <table id="test4" lay-filter="member"></table>
+
+                        <h4 class="ui horizontal divider header violet"><i class="bar pencil alternate icon"></i> 专项考核填报 </h4>
+
+
+                        <form class="layui-form layui-form-pane" id="myForm" action="">
 
                             <div class="layui-form-item">
                                 <div class="layui-inline">
-                                    <label class="layui-form-label">日期选择</label>
+                                    <label class="layui-form-label">考核月份</label>
                                     <div class="layui-input-block">
-                                        <input type="text" name="kaoheyuefen" id="kaoheyuefen" autocomplete="off"
+                                        <input type="text" name="kaoheyuefen" id="kaoheyuefen" autocomplete="off" th:value="${kaoheyuefen}"
                                                class="layui-input" style="width: 160px;">
                                     </div>
+
                                 </div>
                                 <div class="layui-inline">
                                     <label class="layui-form-label">被考核单位</label>
                                     <div class="layui-input-inline">
-                                        &lt;!&ndash;<input type="text" name="beikaohedanwei" id="beikaohedanwei" autocomplete="off" class="layui-input">&ndash;&gt;
+                                        <!--<input type="text" name="beikaohedanwei" id="beikaohedanwei" autocomplete="off" class="layui-input">-->
                                         <select id="department" name="beikaohedanwei" lay-filter="beikaohedanwei"
                                                 style="width: 160px;">
-                                            &lt;!&ndash;<option value=""></option>&ndash;&gt;
+                                            <!--<option value=""></option>-->
                                             <option th:each="dept:${departments}" th:value="${dept.id}"
                                                     th:text="${dept.deptName}" th:selected="${dept.flag}"></option>
                                         </select>
@@ -89,16 +92,16 @@
                             <div class="layui-form-item">
                                 <button class="layui-btn" lay-submit="" lay-filter="add">提交</button>
                             </div>
-                        </form>-->
+                        </form>
 
                     </div>
-                   <!-- <div class="layui-card-body">
+                    <div class="layui-card-body">
                         <script type="text/html" id="barDemo">
                             <a class="layui-btn layui-btn-xs" lay-event="edit" permission="kpi:performance:edit">编辑</a>
                             <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del"
                                permission="kpi:performance:del">删除</a>
                         </script>
-                    </div>-->
+                    </div>
                 </div>
             </div>
         </div>
@@ -112,11 +115,11 @@
             form = layui.form;
 
         //年月选择器
-        laydate.render({
+        /*laydate.render({
             elem: '#kaoheyuefen'
             , type: 'month'
-        });
-        //第一个实例
+        });*/
+        /*//第一个实例
         table.render({
             elem: '#test3'
             , url: '/performance/fill' //数据接口
@@ -126,8 +129,8 @@
                 dataName: 'datas' //规定数据列表的字段名称，默认：data
             }
             , page: true //开启分页
-            , limit: 15
-            ,limits: [15, 30, 45]
+            // , limit: 15
+            // , limits: [15, 30, 45]
             , cols: [
                 [ //表头
                     {field: 'id', title: 'ID', width: 70, sort: true, fixed: 'left'}
@@ -146,10 +149,10 @@
 
                 ]
             ]
-        });
+        });*/
 
         //监听单元格编辑
-        table.on('edit(test3)', function (obj) {
+        /*table.on('edit(test3)', function (obj) {
 
             var value = obj.value //得到修改后的值
                 , data = obj.data //得到所在行所有键值
@@ -178,11 +181,11 @@
 
             });
 
-        });
+        });*/
 
 
         //监听工具条
-       /* table.on('tool(member)', function (obj) {
+        table.on('tool(member)', function (obj) {
             var data = obj.data;
             if (obj.event == 'del') {
                 layer.confirm('真的删除行吗', function (index) {
@@ -216,7 +219,7 @@
             }
             , cols: [
                 [ //表头
-                    {field: 'id', title: 'ID', width: 70}
+                    {type:'numbers'}
                     , {field: 'kaoheyuefen', title: '月份', width: 100}
                     , {field: 'beikaohedanwei', title: '部门分厂', width: 100}
                     , {field: 'xiangmumingcheng', title: '考核项目', width: 150}
@@ -243,6 +246,8 @@
                     } else {
                         table.reload('test4', {
                             url: '/detailedruleResult/getResult'
+                            //刷新当前页面
+                            //window.location.reload();
                         });
                         document.getElementById("myForm").reset();
                     }
@@ -250,12 +255,12 @@
                 }
             });
             return false;
-        });*/
+        });
     });
 
 </script>
 
-<!--<script type="text/html" id="resultTpl">
+<script type="text/html" id="resultTpl">
     {{#  if(d.kaohejieguo>0){ }}
     <span style="color:mediumblue;">{{ d.kaohejieguo }}</span>
     {{#  } else { }}
@@ -269,7 +274,7 @@
     {{#  } else { }}
     <span style="color:red;">{{ d.kaohejine }}</span>
     {{#  } }}
-</script>-->
+</script>
 
 
 </html>

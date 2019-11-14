@@ -170,9 +170,11 @@
 
             if (data.field.sort.length <= 0) {
                 layer.msg('请填写排序值');
-            } else if (data.field.parentId.length <= 0) {
+            }
+           /* else if (data.field.parentId.length <= 0) {
                 layer.msg('请选择对应的上级菜单');
-            } else {
+            } */
+            else {
 
                 var isUpdate = false;
                 if (data.field.id && data.field.id.length > 0) {

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.tcrl.dao.DeptemployeeMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.tcrl.entity.Deptemployee">
+        <id column="id" property="id" />
+        <result column="xingming" property="xingming" />
+        <result column="dept" property="dept" />
+        <result column="gangwei" property="gangwei" />
+        <result column="guagoudanwei" property="guagoudanwei" />
+        <result column="gangxu" property="gangxu" />
+        <result column="dangci" property="dangci" />
+        <result column="gangweigongzi" property="gangweigongzi" />
+        <result column="jixiaogongzi" property="jixiaogongzi" />
+        <result column="guagoujine" property="guagoujine" />
+        <result column="beiyongziduan1" property="beiyongziduan1" />
+        <result column="beiyongziduan2" property="beiyongziduan2" />
+        <result column="beiyongziduan3" property="beiyongziduan3" />
+        <result column="beiyongziduan4" property="beiyongziduan4" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id, xingming, dept, gangwei, guagoudanwei, gangxu, dangci, gangweigongzi, jixiaogongzi, guagoujine, beiyongziduan1, beiyongziduan2, beiyongziduan3, beiyongziduan4
+    </sql>
+
+</mapper>
