@@ -13,7 +13,8 @@ public interface Constast {
 	 */
 	public static final Integer OK=200;
 	public static final Integer ERROR=-1;
-	
+	public static final double CHANLIANGGUAGOU_COEFFICIENT=0.625;
+
 	/**
 	 * 用户默认密码
 	 */

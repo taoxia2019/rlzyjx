@@ -2,6 +2,8 @@ package com.tcrl.dao;
 
 import com.tcrl.entity.Chanliangguagou;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Param;
+import org.apache.ibatis.annotations.Select;
 
 /**
  * <p>
@@ -13,4 +15,9 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  */
 public interface ChanliangguagouMapper extends BaseMapper<Chanliangguagou> {
 
+    @Select("select sum(t.guagoujine) from emp_chanliangguagou t where t.dept=#{dept} and t.kaoheyuefen=#{kaoheyuefen}")
+    Double sumGuagoujineByDept(@Param("dept") String dept,@Param("kaoheyuefen") String kaoheyuefen);
+
+    @Select("select sum(t.guagoujine) from emp_chanliangguagou t where t.kaoheyuefen=#{kaoheyuefen}")
+    Double sumGuagoujineByKaoheyuefen(@Param("kaoheyuefen") String kaoheyuefen);
 }

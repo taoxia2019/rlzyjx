@@ -107,8 +107,8 @@
                     , {field: 'biaozhun', title: '标准', width: 75}
                     , {field: 'zhouqi', title: '周期', width: 70}
                     , {field: 'danwei', title: '单位', width: 70}
-                    , {field: 'mubiaozhi', title: '目标值', edit: true, width: 100}
-                    , {field: 'shijizhi', title: '实际值', edit: true, width: 100}
+                    , {field: 'mubiaozhi', title: '目标值', width: 100}
+                    , {field: 'shijizhi', title: '实际值', width: 100}
                     //,{field:'caozuofu', title: '运算符',edit:true,width:110}
                     , {field: 'kaohejieguo', title: '考核结果', templet: '#resultTpl', width: 100}
                     //,{field:'kaohedanwei', title: '考核单位',hide:true}
@@ -208,8 +208,10 @@
 <script type="text/html" id="resultTpl">
     {{#  if(d.kaohejieguo>0){ }}
     <span style="color:mediumblue;">{{ d.kaohejieguo }}</span>
-    {{#  } else { }}
+    {{#  } else if((d.kaohejieguo<0)){ }}
     <span style="color:red;">{{ d.kaohejieguo }}</span>
+    {{#  } else { }}
+    <span style="color:#686a76;">{{ d.kaohejieguo }}</span>
     {{#  } }}
 </script>
 

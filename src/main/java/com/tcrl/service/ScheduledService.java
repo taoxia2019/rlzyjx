@@ -62,6 +62,7 @@ public class ScheduledService {
         PerformanceResult pResult = new PerformanceResult();
         BeanUtils.copyProperties(perInit, pResult);
         pResult.setKaoheyuefen(DateUtils.getMonth());
+        pResult.setKaohejieguo(0.0);
         pResult.setId(null);
         return pResult;
     }

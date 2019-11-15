@@ -2,9 +2,12 @@ package com.tcrl.service.impl;
 
 import com.alibaba.druid.sql.ast.statement.SQLIfStatement;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.tcrl.base.Constast;
 import com.tcrl.base.result.Results;
+import com.tcrl.dao.ChanliangguagouMapper;
 import com.tcrl.dao.PerformanceInitMapper;
 import com.tcrl.dao.UsersMapper;
+import com.tcrl.entity.Chanliangguagou;
 import com.tcrl.entity.PerformanceInit;
 import com.tcrl.entity.PerformanceResult;
 import com.tcrl.dao.PerformanceResultMapper;
@@ -20,6 +23,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
+import java.text.DecimalFormat;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -40,6 +44,9 @@ public class PerformanceResultServiceImpl extends ServiceImpl<PerformanceResultM
 
     @Autowired
     private UsersMapper usersMapper;
+
+    @Autowired
+    private ChanliangguagouMapper chanliangguagouMapper;
 
     @Override
     public Results<PerformanceResult> getList(Integer offset, Integer limit) {
@@ -105,7 +112,44 @@ public class PerformanceResultServiceImpl extends ServiceImpl<PerformanceResultM
         } else if ("beizhu".equals(field)) {
             pr.setBeizhu(fieldValue);
         }
+
         int insert = performanceResultMapper.updateById(pr);
+
+            //调用方法，生成部门员工产量挂钩金额以及部门挂钩总额
+        if("铸轧分厂".equals(pr.getBeikaohedanwei())||"线材分厂".equals(pr.getBeikaohedanwei())||"苏州分公司".equals(pr.getBeikaohedanwei())){
+            Double scrM;
+            Double scrS;
+            Double xiancM;
+            Double xiancS;
+            Double suzM;
+            Double suzS;
+            QueryWrapper<PerformanceResult> queryWrapper = new QueryWrapper<>();
+            queryWrapper.eq("kaoheyuefen", DateUtils.getMonth());
+            List<PerformanceResult> performanceResults = performanceResultMapper.selectList(queryWrapper);
+            scrM = performanceResults.stream()
+                    .filter(p -> "铸轧分厂".equals(p.getBeikaohedanwei()))
+                    .map(p -> p.getMubiaozhi()).findAny().get();
+            scrS = performanceResults.stream()
+                    .filter(p -> "铸轧分厂".equals(p.getBeikaohedanwei()))
+                    .map(p -> p.getShijizhi()).findAny().get();
+            xiancM = performanceResults.stream()
+                    .filter(p -> "线材分厂".equals(p.getBeikaohedanwei()))
+                    .map(p -> p.getMubiaozhi()).findAny().get();
+            xiancS = performanceResults.stream()
+                    .filter(p -> "线材分厂".equals(p.getBeikaohedanwei()))
+                    .map(p -> p.getShijizhi()).findAny().get();
+            suzM = performanceResults.stream()
+                    .filter(p -> "苏州分公司".equals(p.getBeikaohedanwei()))
+                    .map(p -> p.getMubiaozhi()).findAny().get();
+            suzS = performanceResults.stream()
+                    .filter(p -> "苏州分公司".equals(p.getBeikaohedanwei()))
+                    .map(p -> p.getShijizhi()).findAny().get();
+
+            if (scrM != null && scrS != null && xiancM != null && xiancS != null && suzM != null && suzS != null) {
+                fillChanliangguagou(scrM, scrS, xiancM, xiancS, suzM, suzS);
+            }
+    }
+
         if (insert > 0) {
             return Results.success();
         } else {
@@ -120,11 +164,61 @@ public class PerformanceResultServiceImpl extends ServiceImpl<PerformanceResultM
         Double value = null;
         try {
             value = JexlUtils.getValue(pr.getShijizhi(), pr.getMubiaozhi(), pr.getCaozuofu());
+            value=Math.round(value*10)/10.0;
             pr.setKaohejieguo(value);
         } catch (Exception e) {
             throw new MyParseException();
         }
 
+    }
+
+    //设置部门产量挂钩个人数据以及部门金额总额。
+    // 未考虑累计超产因素
+    private void fillChanliangguagou(Double scrM,Double scrS,Double xiancM,Double xiancS,Double suzM,Double suzS){
+        QueryWrapper<Chanliangguagou> chanliangguagouQueryWrapper = new QueryWrapper<>();
+        chanliangguagouQueryWrapper.eq("kaoheyuefen",DateUtils.getMonth());
+
+        List<Chanliangguagou> chanliangguagous = chanliangguagouMapper.selectList(chanliangguagouQueryWrapper);
+        chanliangguagous.forEach(clgg->{
+            if("铸轧分厂".equals(clgg.getGuagoudanwei())){
+                Double value=clgg.getJixiaogongzi()* Constast.CHANLIANGGUAGOU_COEFFICIENT*(scrS/scrM-1);
+                value=Math.round(value*10)/10.0;
+                clgg.setGuagoujine(value);
+
+                chanliangguagouMapper.updateById(clgg);
+            }else if("线材分厂".equals(clgg.getGuagoudanwei())){
+                Double value=clgg.getJixiaogongzi()* Constast.CHANLIANGGUAGOU_COEFFICIENT*(xiancS/xiancM-1);
+                value=Math.round(value*10)/10.0;
+                clgg.setGuagoujine(value);
+                chanliangguagouMapper.updateById(clgg);
+            }else if("铸轧分厂+线材分厂".equals(clgg.getGuagoudanwei())){
+                Double guagouS=clgg.getJixiaogongzi()*Constast.CHANLIANGGUAGOU_COEFFICIENT*(scrS/scrM-1)/2;
+                guagouS=Math.round(guagouS*10)/10.0;
+                Double guagouX=clgg.getJixiaogongzi()*Constast.CHANLIANGGUAGOU_COEFFICIENT*((xiancS+suzS)/(xiancM+suzM)-1)/2;
+                guagouX=Math.round(guagouX*10)/10.0;
+                clgg.setGuagoujine(guagouS+guagouX);
+                chanliangguagouMapper.updateById(clgg);
+            }
+            //调用方法，生成部门挂钩总额
+            fillDeptChanliangguagou();
+        });
+
+
+    }
+
+    //生成部门挂钩总额方法
+    public void fillDeptChanliangguagou(){
+        QueryWrapper<PerformanceResult> queryWrapper = new QueryWrapper<>();
+        queryWrapper.eq("kaoheyuefen",DateUtils.getMonth());
+        performanceResultMapper.selectList(queryWrapper).forEach(p->{
+            if("分厂生产计划完成率".equals(p.getKaohexiangmu())){
+                Double deptGuagoujine=chanliangguagouMapper.sumGuagoujineByDept(p.getBeikaohedanwei(),DateUtils.getMonth());
+                deptGuagoujine=Math.round(deptGuagoujine*10)/10.0;
+                p.setKaohejieguo(deptGuagoujine);
+                performanceResultMapper.updateById(p);
+            }
+
+        });
     }
 
 
