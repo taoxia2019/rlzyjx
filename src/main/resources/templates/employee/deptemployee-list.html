@@ -29,8 +29,8 @@
             <div class="layui-col-md12">
                 <div class="layui-card">
                     <div class="layui-card-header">
-                            <button type="button" class="layui-btn" onclick="xadmin.open('新增员工','/deptemployee/add')" permission="emp:employee:add">添加</button>
-                            <button type="button" class="layui-btn layui-btn-danger" id="updateExcel" permission="emp:employee:edit">上传/初始化</button>
+                            <button type="button" class="layui-btn" onclick="xadmin.open('新增员工','/deptemployee/add')" permission="emp:employee:init">添加</button>
+                            <button type="button" class="layui-btn layui-btn-danger" id="updateExcel" permission="emp:employee:init">上传/初始化</button>
                             <button type="button" class="layui-btn" id="exportExcel" permission="emp:employee:query" onclick="exportall()">下载</button>
                     </div>
                     <div class="layui-card-body">
@@ -165,6 +165,7 @@
                 xadmin.open('编辑指标信息', '/deptemployee/edit/?id=' + data.id);
             }
         });
+        checkPermission();
     });
 
 </script>

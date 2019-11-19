@@ -62,6 +62,7 @@ public class PerformanceResultController {
 
     @ResponseBody
     @RequestMapping("editField")
+    @PreAuthorize("hasAuthority('kpi:performance:edit')")
     public Results getResultField(Integer id,String field,String fieldValue){
         System.out.println(id+"--"+field+"---"+fieldValue);
         return performanceResultService.saveResultfieldValue(id,field,fieldValue);
@@ -69,6 +70,7 @@ public class PerformanceResultController {
     }
 
     @RequestMapping("/performance-fill")
+    @PreAuthorize("hasAuthority('kpi:performance:query')")
     public String getFillPage() {
 
         return "performance/performance-fill";
@@ -82,6 +84,7 @@ public class PerformanceResultController {
 
     @RequestMapping("/fill")
     @ResponseBody
+    @PreAuthorize("hasAuthority('kpi:performance:add')")
     public Results<PerformanceResult> getPerformanceResultList(PageTableRequest page) {
         page.countOffset();
         return performanceResultService.getList(page.getOffset(), page.getLimit());
@@ -96,6 +99,7 @@ public class PerformanceResultController {
 
     @RequestMapping("/findByDeptResult")
     @ResponseBody
+    @PreAuthorize("hasAuthority('kpi:performance:query')")
     public  Results findByDeptResult(String kaoheyuefen,String beikaohedanwei){
         System.out.println(kaoheyuefen+"-----"+beikaohedanwei);
         if(null==beikaohedanwei&&null==kaoheyuefen) {
@@ -204,7 +208,7 @@ public class PerformanceResultController {
 
    //模板方式
    @RequestMapping("/export")
-   @PreAuthorize("hasAuthority('kpi:performance:fill')")
+   @PreAuthorize("hasAuthority('kpi:performance:query')")
    public void exportAll(HttpServletRequest request,
                          HttpServletResponse response) throws IOException {
        List<PerformanceResult> list=new ArrayList<>();

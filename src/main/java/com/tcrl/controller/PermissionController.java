@@ -12,6 +12,7 @@ import com.tcrl.entity.Permission;
 import com.tcrl.service.PermissionService;
 import com.tcrl.service.RolePermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -39,12 +40,14 @@ public class PermissionController {
 
     @RequestMapping(value="/menu",method=RequestMethod.GET)
     @ResponseBody
+    @PreAuthorize("hasAuthority('sys:menu:query')")
     public Results getmenu(Integer userId){
         return permissionService.getMenu(userId);
     }
 
 
     @RequestMapping(value = "/add",method = RequestMethod.GET)
+    @PreAuthorize("hasAuthority('sys:menu:add')")
     public String addPermission(Model model){
         model.addAttribute("permission",new Permission());
         return "permission/permission-add";
@@ -52,6 +55,7 @@ public class PermissionController {
 
     @RequestMapping(value = "/add",method=RequestMethod.POST)
     @ResponseBody
+    @PreAuthorize("hasAuthority('sys:menu:add')")
     public Results<Permission> savePermission(@RequestBody Permission permission){
         return permissionService.savePermission(permission);
     }
@@ -59,6 +63,7 @@ public class PermissionController {
 
 
     @RequestMapping(value = "/edit",method = RequestMethod.GET)
+    @PreAuthorize("hasAuthority('sys:menu:edit')")
     public String editPermission(Model model,Permission permission){
         model.addAttribute("permission",permissionService.getById(permission.getId()));
         return "permission/permission-add";
@@ -66,6 +71,7 @@ public class PermissionController {
 
     @RequestMapping(value = "/edit",method=RequestMethod.POST)
     @ResponseBody
+    @PreAuthorize("hasAuthority('sys:menu:edit')")
     public Results<Permission> editPermission(@RequestBody Permission permission){
         System.out.println("----");
         System.out.println(permission.toString());
@@ -75,18 +81,21 @@ public class PermissionController {
 
     @RequestMapping("/delete")
     @ResponseBody
+    @PreAuthorize("hasAuthority('sys:menu:edit')")
     public Results<Permission> deletePermission(Permission permission){
         return permissionService.delectPermission(permission.getId());
     }
 
     @GetMapping("/menuAll")
     @ResponseBody
+    @PreAuthorize("hasAuthority('sys:menu:query')")
     public DataGridView getMenuAll(){
         return permissionService.getMenuAll();
     }
 
     @RequestMapping("/listAllPermission")
     @ResponseBody
+    @PreAuthorize("hasAuthority('sys:menu:query')")
     public DataGridView listAllPermission(){
 
         List<Permission> list = permissionService.list();

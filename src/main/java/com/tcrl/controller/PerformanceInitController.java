@@ -42,13 +42,14 @@ public class PerformanceInitController {
 
     @GetMapping("/list")
     @ResponseBody
+    @PreAuthorize("hasAuthority('kpi:performance:init')")
     public Results<PerformanceInit> getPerformanceInit(PageTableRequest page){
         page.countOffset();
         return performanceInitService.getAllPerformanceInitByPage(page.getOffset(),page.getLimit());
     }
 
     @GetMapping("/add")
-    @PreAuthorize("hasAuthority('kpi:performance:add')")
+    @PreAuthorize("hasAuthority('kpi:performance:init')")
     public String addUser(Model model){
         model.addAttribute(new PerformanceInit());
         model.addAttribute("departments",departmentService.list(new QueryWrapper<Department>().ne("id", 1)));
@@ -58,7 +59,7 @@ public class PerformanceInitController {
 
     @PostMapping("/add")
     @ResponseBody
-    @PreAuthorize("hasAuthority('kpi:performance:add')")
+    @PreAuthorize("hasAuthority('kpi:performance:init')")
     public Results<PerformanceInit> saveUser(PerformanceInit performanceInit){
 
         return performanceInitService.savePerformanceInits(performanceInit);
@@ -66,7 +67,7 @@ public class PerformanceInitController {
 
     //跳转编辑页面
     @GetMapping("/edit")
-    @PreAuthorize("hasAuthority('kpi:performance:edit')")
+    @PreAuthorize("hasAuthority('kpi:performance:init')")
     public String editUser(Model model,PerformanceInit performanceInit1){
         PerformanceInit p = performanceInitService.getById(performanceInit1.getId());
         //获取被考核部门start
@@ -97,7 +98,7 @@ public class PerformanceInitController {
 
     @PostMapping("/edit")
     @ResponseBody
-    @PreAuthorize("hasAuthority('kpi:performance:edit')")
+    @PreAuthorize("hasAuthority('kpi:performance:init')")
     public Results<PerformanceInit> updateUser(PerformanceInit performanceInit){
 
         return performanceInitService.updatePerformanceInit(performanceInit);
@@ -106,7 +107,7 @@ public class PerformanceInitController {
     //删除
     @GetMapping("/delete")
     @ResponseBody
-    @PreAuthorize("hasAuthority('kpi:performance:del')")
+    @PreAuthorize("hasAuthority('kpi:performance:init')")
     public Results deleteUser(PerformanceInit performanceInit){
         boolean b = performanceInitService.removeById(performanceInit.getId());
         if(b==true){

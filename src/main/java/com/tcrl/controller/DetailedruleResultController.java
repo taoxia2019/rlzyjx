@@ -57,6 +57,8 @@ public class DetailedruleResultController {
 
     @RequestMapping("/add")
     @ResponseBody
+    //kpi:performance:query
+    @PreAuthorize("hasAuthority('kpi:performance:add')")
     public Results addDetailedruleResult(DetailedruleResult drr){
 
         //获取目前登录用户
@@ -77,6 +79,7 @@ public class DetailedruleResultController {
 
     @RequestMapping("/getResult")
     @ResponseBody
+    @PreAuthorize("hasAuthority('kpi:performance:query')")
     public Results getDetailedruleResult(){
         //获取目前登录用户
 
@@ -100,6 +103,7 @@ public class DetailedruleResultController {
 
     //跳转编辑页面
     @RequestMapping("/edit")
+    @PreAuthorize("hasAuthority('kpi:performance:edit')")
     public String editUser(Model model,DetailedruleResult detailedruleResult){
 
         DetailedruleResult byId = detailedruleResultService.getById(detailedruleResult.getId());
@@ -120,6 +124,7 @@ public class DetailedruleResultController {
 
     @PostMapping("/edit")
     @ResponseBody
+    @PreAuthorize("hasAuthority('kpi:performance:edit')")
     public Results updateUser(DetailedruleResult detailedruleResult){
         String beikaohedanweiId = detailedruleResult.getBeikaohedanwei();
         String deptName = departmentService.getById(Integer.parseInt(beikaohedanweiId)).getDeptName();
@@ -135,6 +140,7 @@ public class DetailedruleResultController {
     //删除
     @GetMapping("/delete")
     @ResponseBody
+    @PreAuthorize("hasAuthority('kpi:performance:del')")
     public Results deleteUser(DetailedruleResult detailedruleResult){
         boolean b = detailedruleResultService.removeById(detailedruleResult.getId());
         if(b==true){
@@ -146,6 +152,7 @@ public class DetailedruleResultController {
 
     @RequestMapping("/findByDeptResult")
     @ResponseBody
+    @PreAuthorize("hasAuthority('kpi:performance:query')")
     public  Results findByDeptResult(String kaoheyuefen,String beikaohedanwei){
         System.out.println("===========");
         System.out.println(kaoheyuefen+"-----"+beikaohedanwei);

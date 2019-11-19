@@ -32,7 +32,7 @@
                         <from class="layui-form layui-col-md12 x-so" id="layuiformPermission">
                             <!--<a class="layui-btn" id="crollAll">折叠展开</a>-->
                             <!--<a class="layui-btn" onclick="xadmin.open('新增权限','/permission/add')" permission=""></a>-->
-                            <button class="layui-btn" onclick="xadmin.open('新增权限','/permission/add')"><i class="layui-icon"></i>添加</button>
+                            <button class="layui-btn" onclick="xadmin.open('新增权限','/permission/add')" permission="kpi:performance:add"><i class="layui-icon"></i>添加</button>
 
                         </from>
                     </div>
@@ -129,6 +129,7 @@
                 xadmin.open('编辑权限信息', '/permission/edit/?id=' + data.id);
             }
         });
+        checkPermission();
     });
 
 </script>

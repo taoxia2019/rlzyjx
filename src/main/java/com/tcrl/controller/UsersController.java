@@ -63,6 +63,7 @@ public class UsersController {
 
     @GetMapping("/findByFuzzyUsername")
     @ResponseBody
+    @PreAuthorize("hasAuthority('sys:user:query')")
     public Results<Users> findByFuzzyUsername(PageTableRequest page,String username){
         page.countOffset();
 
@@ -82,6 +83,7 @@ public class UsersController {
     @PostMapping("/changePassword")
     @ApiOperation(value="修改密码")
     @ResponseBody
+    @PreAuthorize("hasAuthority('sys:user:password')")
     public Results<Users> changePassword(String username,String oldPassword,String newPassword){
         return usersService.changePassword(username,oldPassword,newPassword);
     }
@@ -112,6 +114,7 @@ public class UsersController {
 
     //跳转编辑页面
     @GetMapping("/edit")
+    @PreAuthorize("hasAuthority('sys:user:edit')")
     public String editUser(Model model,Users users){
         Users user = usersService.getById(users.getId());
         List<UserRole> userRoles = userRoleService.
@@ -159,6 +162,7 @@ public class UsersController {
 
     @PostMapping("/edit")
     @ResponseBody
+    @PreAuthorize("hasAuthority('sys:user:edit')")
     public Results<Users> updateUser(UsersDTO usersDTO){
         Users user=null;
 
@@ -172,6 +176,7 @@ public class UsersController {
     //删除
     @GetMapping("/delete")
     @ResponseBody
+    @PreAuthorize("hasAuthority('sys:user:del')")
     public Results deleteUser(UsersDTO usersDTO){
         int count = usersService.deleteUserByid(usersDTO.getId());
         if(count>0){

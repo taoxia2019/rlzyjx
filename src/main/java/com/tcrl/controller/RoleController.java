@@ -10,6 +10,7 @@ import com.tcrl.entity.Role;
 import com.tcrl.service.RolePermissionService;
 import com.tcrl.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
@@ -40,6 +41,7 @@ public class RoleController {
 
     @ResponseBody
     @RequestMapping("/all")
+    @PreAuthorize("hasAuthority('sys:role:query')")
     public Results<Role> getRoleAll(){
 
         return roleService.selectRoleAll();
@@ -47,6 +49,7 @@ public class RoleController {
 
     @GetMapping("/list")
     @ResponseBody
+    @PreAuthorize("hasAuthority('sys:role:query')")
     public Results<Role> getRole(PageTableRequest page){
         page.countOffset();
 
@@ -55,6 +58,7 @@ public class RoleController {
 
     @GetMapping("/findByFuzzyRoleName")
     @ResponseBody
+    @PreAuthorize("hasAuthority('sys:role:query')")
     public Results<Role> findByFuzzyRoleName(PageTableRequest page,String rolename){
         page.countOffset();
 
@@ -62,6 +66,7 @@ public class RoleController {
     }
 
     @GetMapping("/add")
+    @PreAuthorize("hasAuthority('sys:role:add')")
     public String addRole(Model model){
         model.addAttribute("role",new Role());
         return "role/role-add2";
@@ -69,6 +74,7 @@ public class RoleController {
 
     @PostMapping("/add")
     @ResponseBody
+    @PreAuthorize("hasAuthority('sys:role:add')")
     public Results<Role> saveRole(@RequestBody RoleDTO roleDTO){
         roleDTO.setCreatetime(new Date());
         roleDTO.setUpdatetime(new Date());
@@ -78,6 +84,7 @@ public class RoleController {
 
     //跳转编辑页面
     @GetMapping("/edit")
+    @PreAuthorize("hasAuthority('sys:role:edit')")
     public String editUser(Model model,RoleDTO roleDTO){
         Role role1 = roleService.getById(roleDTO.getId());
         model.addAttribute(role1);
@@ -86,6 +93,7 @@ public class RoleController {
 
     @PostMapping("/edit")
     @ResponseBody
+    @PreAuthorize("hasAuthority('sys:role:edit')")
     public Results<Role> updateRole(@RequestBody RoleDTO roleDTO){
         roleService.updateRole(roleDTO);
 
@@ -95,6 +103,7 @@ public class RoleController {
     //删除
     @GetMapping("/delete")
     @ResponseBody
+    @PreAuthorize("hasAuthority('sys:role:del')")
     public Results deleteUser(RoleDTO roleDTO){
         return roleService.delete(roleDTO.getId());
 
