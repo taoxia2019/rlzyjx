@@ -81,7 +81,7 @@ public class PermissionController {
 
     @RequestMapping("/delete")
     @ResponseBody
-    @PreAuthorize("hasAuthority('sys:menu:edit')")
+    @PreAuthorize("hasAuthority('sys:menu:del')")
     public Results<Permission> deletePermission(Permission permission){
         return permissionService.delectPermission(permission.getId());
     }
@@ -112,6 +112,7 @@ public class PermissionController {
 
     @RequestMapping("/initPermissionByRoleId")
     @ResponseBody
+    @PreAuthorize("hasAuthority('sys:menu:query')")
     public DataGridView initPermissionByRoleId(Integer roleid) {
 
         System.out.println("角色ID"+roleid);
