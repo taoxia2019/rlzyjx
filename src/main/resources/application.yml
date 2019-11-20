@@ -3,6 +3,8 @@ spring:
     mode: HTML
   profiles:
     active: dev
+server:
+  address: 0.0.0.0
 
 
 
