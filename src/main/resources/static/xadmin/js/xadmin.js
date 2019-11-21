@@ -272,10 +272,8 @@ layui.use(['layer','element','jquery'],function() {
     $('.left-nav #nav').on('mouseout', '.left-nav-li', function(event) {
         layer.close(left_tips_index); 
     })
-
     // 隐藏左侧
     $('.container .left_open i').click(function(event) {
-
         if($('.left-nav').css('width')=='220px'){
             $('.left-nav .open').click();
             $('.left-nav i').css('font-size','18px');
@@ -294,25 +292,6 @@ layui.use(['layer','element','jquery'],function() {
         }
 
     });
-   /* $('.container .left_open i').click(function(event) {
-        if($('.left-nav').css('width')=='220px'){
-            $('.left-nav .open').click();
-            $('.left-nav i').css('font-size','18px');
-            $('.left-nav').animate({width: '60px'}, 100);
-            $('.left-nav cite,.left-nav .nav_right').hide();
-            $('.page-content').animate({left: '60px'}, 100);
-            $('.page-content-bg').hide();
-        }else{
-            $('.left-nav').animate({width: '220px'}, 100);
-            $('.page-content').animate({left: '220px'}, 100);
-            $('.left-nav i').css('font-size','14px');
-            $('.left-nav cite,.left-nav .nav_right').show();
-            if($(window).width()<768){
-                $('.page-content-bg').show();
-            }
-        }
-
-    });*/
 
     $('.page-content-bg').click(function(event) {
         $('.left-nav .open').click();

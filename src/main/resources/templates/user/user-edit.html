@@ -84,8 +84,8 @@
             <div class="layui-form-item">
                 <label class="layui-form-label">性别</label>
                 <div class="layui-input-block">
-                    <input type="radio" th:value="${users.sex}" name="sex" value="1" title="男" checked="">
-                    <input type="radio" th:value="${users.sex}" name="sex" value="0" title="女">
+                    <input type="radio" th:each="users:${users}" th:value=1 name="sex" title="男" th:checked="${users.sex == 1?true:false}">
+                    <input type="radio" th:each="users:${users}" th:value=0 name="sex" title="女" th:checked="${users.sex == 0?true:false}">
                 </div>
             </div>
             <!--<input type="text" id="roleid" name="roleid" style=""/>-->
@@ -138,6 +138,7 @@
             });
             data.field.roleIds=roleIds.join(',');
             data.field.sex=$("input[type='radio']:checked").val();
+
             data.field.dept=$('#department option:selected').text();
             $.ajax({
                 url: "/user/edit",

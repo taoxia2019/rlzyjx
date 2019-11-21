@@ -132,7 +132,7 @@ public class UsersController {
                 //如果不等于空
                 if(null!=rd.getRoleid()) {
                     //赋值给DTO
-                    if (rd.getRoleid() == roleDTO.getId()) {
+                    if (rd.getRoleid().equals(roleDTO.getId())) {
                         roleDTO.setFlag(true);
                     }
                 }
