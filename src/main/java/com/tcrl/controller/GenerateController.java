@@ -4,6 +4,7 @@ package com.tcrl.controller;
 import com.sxbang.friday.dto.GenerateDetail;
 import com.sxbang.friday.dto.GenerateInput;
 import com.sxbang.friday.service.GenerateService;*/
+import com.tcrl.base.result.Results;
 import com.tcrl.dto.BeanField;
 import com.tcrl.dto.GenerateDetail;
 import com.tcrl.dto.GenerateInput;
@@ -41,8 +42,10 @@ public class GenerateController {
 	@ApiOperation("生成代码")
 	@PostMapping(value = "/save")
 	@ResponseBody
-	public void save(@RequestBody GenerateInput input) {
+	public Results save(@RequestBody GenerateInput input) {
+
 		generateService.saveCode(input);
+		return Results.success();
 	}
 
 }

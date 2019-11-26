@@ -2,8 +2,9 @@ package {beanPackageName};
 
 {import}
 
-public class {beanName} extends BaseEntity<Integer> {
+@Data
+public class {beanName}  {
 
 {filelds}
-{getset}
+
 }

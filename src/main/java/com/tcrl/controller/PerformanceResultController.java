@@ -64,7 +64,7 @@ public class PerformanceResultController {
     @RequestMapping("editField")
     @PreAuthorize("hasAuthority('kpi:performance:edit')")
     public Results getResultField(Integer id,String field,String fieldValue){
-        System.out.println(id+"--"+field+"---"+fieldValue);
+
         return performanceResultService.saveResultfieldValue(id,field,fieldValue);
 
     }
@@ -76,11 +76,6 @@ public class PerformanceResultController {
         return "performance/performance-fill";
     }
 
-   /* @RequestMapping("/detailedrule-fill")
-    public String getFillPage2() {
-
-        return "performance/detailedrule-fill";
-    }*/
 
     @RequestMapping("/fill")
     @ResponseBody
@@ -90,12 +85,6 @@ public class PerformanceResultController {
         return performanceResultService.getList(page.getOffset(), page.getLimit());
     }
 
-    /*@RequestMapping("/performance-result")
-    public String getResultPage(Model model) {
-        model.addAttribute("departments",departmentService.list(new QueryWrapper<Department>().ne("id", 1)));
-        System.out.println(departmentService.list().stream().count()+"---------");
-        return "performance/performance-result";
-    }*/
 
     @RequestMapping("/findByDeptResult")
     @ResponseBody
@@ -131,9 +120,9 @@ public class PerformanceResultController {
     }
 
     //下载备份数据填报表,无模板模式
-   /* @RequestMapping("/export")
-    @PreAuthorize("hasAuthority('kpi:performance:fill')")
-    public void exportAll(HttpServletRequest request,
+    @RequestMapping("/exportMonthResult")
+    @PreAuthorize("hasAuthority('kpi:performance:query')")
+    public void exportMonthResult(HttpServletRequest request,
                           HttpServletResponse response) throws IOException {
         List<PerformanceResult> list=new ArrayList<>();
         String dept = usersService.getOne(new QueryWrapper<Users>()
@@ -142,17 +131,17 @@ public class PerformanceResultController {
 
         // 加載數據庫數據
         if("admin".equals(GetSecurityUsername.getSecurityUsername())) {
-            list = performanceResultService.list();
+            list = performanceResultService.list(new QueryWrapper<PerformanceResult>().eq("kaoheyuefen",DateUtils.getMonth()));
         }else {
 
-            list = performanceResultService.list(new QueryWrapper<PerformanceResult>().eq("kaohedanwei",dept));
+            list = performanceResultService.list(new QueryWrapper<PerformanceResult>().eq("beikaohedanwei",dept).eq("kaoheyuefen",DateUtils.getMonth()));
         }
         // 建立工作簿
         HSSFWorkbook wb = new HSSFWorkbook();
         // 建立sheet表格
         HSSFSheet sheet = wb.createSheet(DateUtils.getMonth());
         //文件名稱
-        String fileName = dept+"组织绩效数据填报表("+DateUtils.getMonth()+")";
+        String fileName = dept+"组织绩效数据考核结果("+DateUtils.getMonth()+")";
         // 表格行標題
         HSSFRow row = sheet.createRow(0);
         String[] header = {"序号", "部门分厂", "项目", "标准", "周期", "单位", "目标值", "实际值", "考核结果","备注"};
@@ -204,7 +193,7 @@ public class PerformanceResultController {
         response.setContentType("application/msexcel");
         wb.write(output);
         output.close();
-    }*/
+    }
 
    //模板方式
    @RequestMapping("/export")
@@ -218,10 +207,10 @@ public class PerformanceResultController {
 
        // 加載數據庫數據
        if("admin".equals(GetSecurityUsername.getSecurityUsername())) {
-           list = performanceResultService.list();
+           list = performanceResultService.list(new QueryWrapper<PerformanceResult>().eq("kaoheyuefen",DateUtils.getMonth()));
        }else {
 
-           list = performanceResultService.list(new QueryWrapper<PerformanceResult>().eq("kaohedanwei",dept));
+           list = performanceResultService.list(new QueryWrapper<PerformanceResult>().eq("kaohedanwei",dept).eq("kaoheyuefen",DateUtils.getMonth()));
        }
        File file= ResourceUtils.getFile(ResourceUtils.CLASSPATH_URL_PREFIX+"static/excel/performaceresult_template.xls");
        InputStream in=new FileInputStream(file);

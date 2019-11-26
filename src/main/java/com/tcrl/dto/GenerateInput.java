@@ -8,7 +8,8 @@ import java.util.List;
 @Data
 public class GenerateInput implements Serializable {
 
-	private static final long serialVersionUID = -2870071259702969061L;
+	private static final long serialVersionUID = 0;
+
 
 	/**
 	 * 保存路径

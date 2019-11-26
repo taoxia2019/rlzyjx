@@ -12,7 +12,7 @@
                 <span class="x-red">*</span>表名
             </label>
             <div class="layui-input-inline">
-                <input type="text" id="tableName"  value="sys_user" name="tableName" lay-verify="required" autocomplete="off" class="layui-input">
+                <input type="text" id="tableName"  value="sys_users" name="tableName" lay-verify="required" autocomplete="off" class="layui-input">
             </div>
         </div>
 
@@ -51,7 +51,7 @@
                 <div class="layui-inline">
                     <label class="layui-form-label">bean包名</label>
                     <div class="layui-input-inline">
-                        <input type="text" name="beanPackageName" id="beanPackageName" value="com.tcrl.model" lay-verify="required" autocomplete="off" class="layui-input">
+                        <input type="text" name="beanPackageName" id="beanPackageName" value="com.tcrl.entity" lay-verify="required" autocomplete="off" class="layui-input">
                     </div>
                 </div>
                 <div class="layui-inline">
@@ -189,10 +189,12 @@
         });
         //监听提交
         form.on('submit(save)', function(data){
+
             if($("#detail").is(':hidden')) {
                 return;
             }
             var formdata = $("#form").serializeObject();
+            alert(formdata.beanFieldValue+"页面编辑位置1")
             $.ajax({
                 url:"/generate/save",
                 type:"POST",
@@ -208,12 +210,14 @@
         });
     });
     $.fn.serializeObject = function() {
+
         var o = {};
         var a = this.serializeArray();
         $.each(a, function() {
-            if (o[this.name]) {
+            //o[this.name] !== undefined修改本行才能操作
+            if (o[this.name] !== undefined) {
                 if (!o[this.name].push) {
-                    o[this.name] = [ o[this.name] ];
+                    o[this.name] = [o[this.name]];
                 }
                 o[this.name].push(this.value || '');
             } else {

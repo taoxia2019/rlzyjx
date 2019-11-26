@@ -51,6 +51,15 @@ class RlzyjxApplicationTests {
 
 	@Autowired
 	private DeptemployeeMapper deptemployeeMapper;
+
+
+	@Test
+	public void testConcat(){
+		String otherStr="woaixizao";
+		String newStr="tabuaixizao".concat(otherStr);
+
+		System.out.println(newStr);
+	}
 	@Test
 	void password(){
 		String encode = new BCryptPasswordEncoder().encode("123456");

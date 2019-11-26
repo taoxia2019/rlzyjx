@@ -5,7 +5,7 @@ import java.util.List;
 
 public class GenerateDetail implements Serializable {
 
-	private static final long serialVersionUID = -164567294469931676L;
+	private static final long serialVersionUID = 0;
 
 	private String beanName;
 
