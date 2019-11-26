@@ -229,10 +229,10 @@ body{
     color: #148cf1;
 }*/
 .left-nav #nav li .sub-menu li a i{
-    font-size: 12px;
+    font-size: 14px;
 }
 .left-nav #nav li a i{
-    padding-right: 10px;
+    padding-right: 12px;
     line-height: 14px;
 }
 .left-nav #nav li .nav_right{
@@ -446,10 +446,10 @@ table th, table td {
 /*精细版样式*/
 
 .x-admin-sm{
-    font-size: 12px;
+    font-size: 14px;
 }
 .x-admin-sm body{
-    font-size: 12px;
+    font-size: 14px;
 }
 /*登录页面样式*/
 .x-admin-sm .login input[type=submit],.x-admin-sm .login input[type=button]{
@@ -466,23 +466,23 @@ table th, table td {
 }
 
 .x-admin-sm .layui-table td, .x-admin-sm .layui-table th{
-    font-size: 12px;
+    font-size: 14px;
 }
 .x-admin-sm .layui-elem-field legend{
-    font-size: 18px;
+    font-size: 20px;
 }
 
 .x-admin-sm .x-admin-backlog-body p cite{
     font-size: 24px;
 }
 .x-admin-sm .left-nav #nav li a cite{
-    font-size: 12px;
+    font-size: 14px;
 }
 .x-admin-sm .iconfont{
     font-size: 14px;
 }
 .x-admin-sm .layui-tab-title li{
-    font-size: 12px;
+    font-size: 14px;
 }
 .x-admin-sm .layui-icon{
     font-size: 14px;

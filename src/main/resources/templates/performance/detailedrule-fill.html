@@ -30,10 +30,15 @@
             <div class="layui-col-md12">
                 <div class="layui-card">
                     <div class="layui-card-body">
-                        <h4 class="ui horizontal divider header orange"><i class="bar chart icon"></i> 专项考核填报情况 </h4>
+                        <div class="layui-card-header">
+                            <button type="button" class="layui-btn" id="exportExcel" permission="kpi:performance:add" onclick="exportall()">下载</button>
+                        </div>
                         <table id="test4" lay-filter="member"></table>
 
-                        <h4 class="ui horizontal divider header violet"><i class="bar pencil alternate icon"></i> 专项考核填报 </h4>
+
+                        <fieldset class="layui-elem-field layui-field-title" style="margin-top: 30px;">
+                            <legend>专项考核填报</legend>
+                        </fieldset>
 
 
                         <form class="layui-form layui-form-pane" id="myForm" action="">
@@ -109,6 +114,11 @@
 </div>
 </body>
 <script>
+
+    function exportall() {
+        var url = "/detailedruleResult/export";
+        window.open(url);
+    };
     layui.use(['table', 'laydate', 'form'], function () {
         var table = layui.table,
             laydate = layui.laydate,

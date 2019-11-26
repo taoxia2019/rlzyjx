@@ -5,10 +5,7 @@
     <title>首页</title>
     <header th:replace="header::html"></header>
 
-    <script>
-        /*// 是否开启刷新记忆tab功能*/
-        var is_remember = false;
-    </script>
+
 </head>
 
 
@@ -100,7 +97,9 @@
 
 
 <script type="text/javascript">
+
     $(document).ready(function () {
+
         var username = localStorage.username;
         $("#show-username").text((username != null && username != undefined) ? username : "---");
 
