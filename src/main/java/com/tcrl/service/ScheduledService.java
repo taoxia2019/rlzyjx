@@ -4,8 +4,8 @@ import com.tcrl.dao.ChanliangguagouMapper;
 import com.tcrl.dao.DeptemployeeMapper;
 import com.tcrl.dao.PerformanceInitMapper;
 import com.tcrl.dao.PerformanceResultMapper;
-import com.tcrl.entity.Chanliangguagou;
 import com.tcrl.entity.Deptemployee;
+import com.tcrl.entity.EmpChanliangguagou;
 import com.tcrl.entity.PerformanceInit;
 import com.tcrl.entity.PerformanceResult;
 import com.tcrl.utils.DateUtils;
@@ -52,7 +52,7 @@ public class ScheduledService {
         //将所有数据存储到RESULT表
         List<Deptemployee> deptemployees = deptemployeeMapper.selectList(null);
         deptemployees.stream().forEach(deptEmp -> {
-            Chanliangguagou chanliangguagou = getChanliangguagou(deptEmp);
+            EmpChanliangguagou chanliangguagou = getChanliangguagou(deptEmp);
             chanliangguagouMapper.insert(chanliangguagou);
         });
     }
@@ -68,8 +68,8 @@ public class ScheduledService {
     }
 
     //两个类对拷 员工信息表与产量挂钩表
-    private Chanliangguagou getChanliangguagou(Deptemployee deptEmp) {
-        Chanliangguagou chanliangguagou = new Chanliangguagou();
+    private EmpChanliangguagou getChanliangguagou(Deptemployee deptEmp) {
+        EmpChanliangguagou chanliangguagou = new EmpChanliangguagou();
         BeanUtils.copyProperties(deptEmp, chanliangguagou);
         chanliangguagou.setKaoheyuefen(DateUtils.getMonth());
         chanliangguagou.setId(null);

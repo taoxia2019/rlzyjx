@@ -94,7 +94,7 @@ public class GenerateServiceImpl implements GenerateService {
 
 	@Override
 	public void saveCode(GenerateInput input) {
-		System.out.println(input.getBeanName()+"serviceimpl位置");
+
 		TemplateUtil.saveJava(input);
 		TemplateUtil.saveJavaDao(input);
 		TemplateUtil.saveController(input);

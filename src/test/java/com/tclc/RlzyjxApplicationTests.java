@@ -4,29 +4,23 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.tcrl.App;
-import com.tcrl.base.result.Results;
 import com.tcrl.dao.ChanliangguagouMapper;
 import com.tcrl.dao.DeptemployeeMapper;
 import com.tcrl.dao.DetailedruleResultMapper;
 import com.tcrl.dao.PerformanceInitMapper;
 import com.tcrl.dao.PerformanceResultMapper;
 import com.tcrl.dao.UsersMapper;
-import com.tcrl.entity.Chanliangguagou;
 import com.tcrl.entity.Deptemployee;
-import com.tcrl.entity.PerformanceInit;
+import com.tcrl.entity.EmpChanliangguagou;
 import com.tcrl.entity.PerformanceResult;
 import com.tcrl.entity.Users;
-import com.tcrl.service.impl.PerformanceResultServiceImpl;
 import com.tcrl.utils.DateUtils;
-import com.tcrl.utils.GetSecurityUsername;
 import org.apache.commons.lang3.math.NumberUtils;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
-import java.text.DecimalFormat;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -245,8 +239,8 @@ class RlzyjxApplicationTests {
 
 	@Test
 	public void testSum(){
-		List<Chanliangguagou> chanliangguagous = chanliangguagouMapper.
-				selectList(new QueryWrapper<Chanliangguagou>().eq("kaoheyuefen", DateUtils.getMonth()));
+		List<EmpChanliangguagou> chanliangguagous = chanliangguagouMapper.
+				selectList(new QueryWrapper<EmpChanliangguagou>().eq("kaoheyuefen", DateUtils.getMonth()));
 		chanliangguagous.forEach(c->{
 			c.setGuagoujine(1.0);
 			chanliangguagouMapper.updateById(c);

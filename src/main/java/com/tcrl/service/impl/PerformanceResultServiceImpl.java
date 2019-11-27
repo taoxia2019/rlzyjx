@@ -1,14 +1,12 @@
 package com.tcrl.service.impl;
 
-import com.alibaba.druid.sql.ast.statement.SQLIfStatement;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.tcrl.base.Constast;
 import com.tcrl.base.result.Results;
 import com.tcrl.dao.ChanliangguagouMapper;
 import com.tcrl.dao.PerformanceInitMapper;
 import com.tcrl.dao.UsersMapper;
-import com.tcrl.entity.Chanliangguagou;
-import com.tcrl.entity.PerformanceInit;
+import com.tcrl.entity.EmpChanliangguagou;
 import com.tcrl.entity.PerformanceResult;
 import com.tcrl.dao.PerformanceResultMapper;
 import com.tcrl.exception.MyParseException;
@@ -17,15 +15,12 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.tcrl.utils.DateUtils;
 import com.tcrl.utils.JexlUtils;
 import org.apache.commons.lang3.math.NumberUtils;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
-import java.text.DecimalFormat;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * <p>
@@ -116,7 +111,8 @@ public class PerformanceResultServiceImpl extends ServiceImpl<PerformanceResultM
         int insert = performanceResultMapper.updateById(pr);
 
             //调用方法，生成部门员工产量挂钩金额以及部门挂钩总额
-        if("铸轧分厂".equals(pr.getBeikaohedanwei())||"线材分厂".equals(pr.getBeikaohedanwei())||"苏州分公司".equals(pr.getBeikaohedanwei())){
+        //优化执行效率11.27
+        if("scr生产计划完成率".equals(pr.getKaohexiangmu())||"细线生产计划完成率".equals(pr.getKaohexiangmu())||"并绞线生产计划完成率".equals(pr.getKaohexiangmu())){
             Double scrM;
             Double scrS;
             Double xiancM;
@@ -175,10 +171,10 @@ public class PerformanceResultServiceImpl extends ServiceImpl<PerformanceResultM
     //设置部门产量挂钩个人数据以及部门金额总额。
     // 未考虑累计超产因素
     private void fillChanliangguagou(Double scrM,Double scrS,Double xiancM,Double xiancS,Double suzM,Double suzS){
-        QueryWrapper<Chanliangguagou> chanliangguagouQueryWrapper = new QueryWrapper<>();
+        QueryWrapper<EmpChanliangguagou> chanliangguagouQueryWrapper = new QueryWrapper<>();
         chanliangguagouQueryWrapper.eq("kaoheyuefen",DateUtils.getMonth());
 
-        List<Chanliangguagou> chanliangguagous = chanliangguagouMapper.selectList(chanliangguagouQueryWrapper);
+        List<EmpChanliangguagou> chanliangguagous = chanliangguagouMapper.selectList(chanliangguagouQueryWrapper);
         chanliangguagous.forEach(clgg->{
             if("铸轧分厂".equals(clgg.getGuagoudanwei())){
                 Double value=clgg.getJixiaogongzi()* Constast.CHANLIANGGUAGOU_COEFFICIENT*(scrS/scrM-1);

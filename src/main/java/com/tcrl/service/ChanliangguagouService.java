@@ -1,7 +1,7 @@
 package com.tcrl.service;
 
-import com.tcrl.entity.Chanliangguagou;
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.tcrl.entity.EmpChanliangguagou;
 
 /**
  * <p>
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author taoxia
  * @since 2019-11-14
  */
-public interface ChanliangguagouService extends IService<Chanliangguagou> {
+public interface ChanliangguagouService extends IService<EmpChanliangguagou> {
 
 }

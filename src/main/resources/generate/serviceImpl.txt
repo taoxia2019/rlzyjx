@@ -19,8 +19,8 @@ public class  {serviceImplName} implements {serviceName} {
     private {daoName} {daoParamName};
 
     @Override
-    public Results<{beanName}> getByPage(Map<String, Object> params,Integer offset, Integer limit) {
-        return new Results(0,"",null,{daoParamName}.count(params), {daoParamName}.list(params,offset, limit));
+    public Results<{beanName}> getByPage(Integer offset, Integer limit) {
+        return new Results(0,"",null,{daoParamName}.count(), {daoParamName}.list(offset, limit));
 
     }
 

@@ -29,8 +29,8 @@ public interface {daoName} extends BaseMapper<{beanName}> {
     @Insert("insert into {table_name}({insert_columns}) values({insert_values})")
     int save({beanName} {beanParamName});
     
-    int count(@Param("params") Map<String, Object> params);
+    int count();
 
-    List<{beanName}> list(@Param("params") Map<String, Object> params, @Param("offset") Integer offset, @Param("limit") Integer limit);
+    List<{beanName}> list(@Param("offset") Integer offset, @Param("limit") Integer limit);
 
 }

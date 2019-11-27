@@ -7,7 +7,7 @@ import java.util.Map;
 
 public interface {serviceName} {
 
-   Results<{beanName}>  getByPage(Map<String, Object> params,Integer offset, Integer limit);
+   Results<{beanName}>  getByPage(Integer offset, Integer limit);
 
    Results  save({beanName} {beanParamName});
 

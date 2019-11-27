@@ -2,20 +2,21 @@ package {controllerPkgName};
 
 import {beanPackageName}.{beanName};
 import io.swagger.annotations.ApiOperation;
-import {groupPkgName}.util.StrUtil;
+import {groupPkgName}.utils.StrUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
+import lombok.extern.slf4j.Slf4j;
 import javax.servlet.http.HttpServletRequest;
 import {groupPkgName}.base.result.Results;
-import {groupPkgName}.base.result.page.PageTableRequest;
+import {groupPkgName}.base.result.PageTableRequest;
 import {servicePkgName}.{serviceName};
 import org.springframework.web.servlet.ModelAndView;
 import java.util.Map;
 
 @Controller
+@Slf4j
 @RequestMapping("/{beanParamName}s")
 public class {controllerName} {
 
@@ -46,13 +47,8 @@ public class {controllerName} {
     @ResponseBody
     public Results<{beanName}> list(PageTableRequest request, {beanName} {beanParamName}) {
           request.countOffset();
-          Map<String, Object> param = null;
-          try {
-              param =   StrUtil.convertToMap(sysLogs);
-          } catch (Exception e) {
-              e.printStackTrace();
-          }
-        return {serviceParamName}.getByPage(param, request.getOffset(), request.getLimit());
+
+        return {serviceParamName}.getByPage(request.getOffset(), request.getLimit());
     }
 
     @RequestMapping(value = "/delete", method = RequestMethod.GET)

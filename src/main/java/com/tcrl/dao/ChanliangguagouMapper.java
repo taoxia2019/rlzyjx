@@ -1,7 +1,7 @@
 package com.tcrl.dao;
 
-import com.tcrl.entity.Chanliangguagou;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.tcrl.entity.EmpChanliangguagou;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Repository;
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Repository;
  * @since 2019-11-14
  */
 @Repository
-public interface ChanliangguagouMapper extends BaseMapper<Chanliangguagou> {
+public interface ChanliangguagouMapper extends BaseMapper<EmpChanliangguagou> {
 
     @Select("select sum(t.guagoujine) from emp_chanliangguagou t where t.dept=#{dept} and t.kaoheyuefen=#{kaoheyuefen}")
     Double sumGuagoujineByDept(@Param("dept") String dept,@Param("kaoheyuefen") String kaoheyuefen);
