@@ -41,7 +41,7 @@ public class ScheduledService {
     private ChanliangguagouMapper chanliangguagouMapper;
 
     //定时备份方案
-    @Scheduled(cron="0 0 12 * * ? ")   //@Scheduled(cron=" * * 0/1 * * ? ") 每小时一次
+    @Scheduled(cron="0 0 18 * * ? ")   //@Scheduled(cron=" * * 0/1 * * ? ") 每小时一次
     public void back(){
         System.out.println("现在时间是"+new Date());
         Runtime runtime = Runtime.getRuntime();  //获取Runtime实例
