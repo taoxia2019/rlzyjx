@@ -32,10 +32,10 @@ private static final long serialVersionUID=1L;
     private String descirption;
 
     @JsonFormat(pattern = "yyyy-MM-dd  HH:mm:ss")
-    private Date createtime= new Date();
+    private Date createtime;
 
     @JsonFormat(pattern = "yyyy-MM-dd  HH:mm:ss")
-    private Date updatetime= new Date();
+    private Date updatetime;
 
 
 }

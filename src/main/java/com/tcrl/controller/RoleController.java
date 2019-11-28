@@ -80,6 +80,8 @@ public class RoleController {
     @ResponseBody
     @PreAuthorize("hasAuthority('sys:role:add')")
     public Results<Role> saveRole(@RequestBody RoleDTO roleDTO){
+        roleDTO.setCreatetime(new Date());
+        roleDTO.setUpdatetime(new Date());
         return roleService.saveRole(roleDTO);
     }
 
@@ -96,6 +98,7 @@ public class RoleController {
     @ResponseBody
     @PreAuthorize("hasAuthority('sys:role:edit')")
     public Results<Role> updateRole(@RequestBody RoleDTO roleDTO){
+        roleDTO.setUpdatetime(new Date());
         roleService.updateRole(roleDTO);
 
         return Results.success();

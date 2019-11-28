@@ -52,12 +52,7 @@ class RlzyjxApplicationTests {
 
 	@Test
 	public void testrole(){
-		Role role =new Role();
-		role.setName("Test4");
-		roleMapper.insert(role);
-		System.out.println(new Date());
-		System.out.println(role.getCreatetime());
-		System.out.println(roleMapper.selectOne(new QueryWrapper<Role>().eq("name", "Test4")).getUpdatetime());
+		roleMapper.selectList(null).forEach(role-> System.out.println(role.getUpdatetime()));
 
 	}
 
