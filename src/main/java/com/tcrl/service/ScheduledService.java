@@ -9,11 +9,16 @@ import com.tcrl.entity.Chanliangguagou;
 import com.tcrl.entity.PerformanceInit;
 import com.tcrl.entity.PerformanceResult;
 import com.tcrl.utils.DateUtils;
+import org.apache.commons.io.IOUtils;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -34,6 +39,52 @@ public class ScheduledService {
     private DeptemployeeMapper deptemployeeMapper;
     @Autowired
     private ChanliangguagouMapper chanliangguagouMapper;
+
+    //定时备份方案
+    @Scheduled(cron="0 0 12 * * ? ")   //@Scheduled(cron=" * * 0/1 * * ? ") 每小时一次
+    public void back(){
+        System.out.println("现在时间是"+new Date());
+        Runtime runtime = Runtime.getRuntime();  //获取Runtime实例
+        String user = "root";
+        String password = "root";
+        String database1 = "tcrljx"; // 需要备份的数据库名
+        String table1 = "kpi_performance_result";
+        String table2 = "kpi_performance_init";
+        String table3 = "kpi_detailedrule_result";
+        String table4 = "emp_deptemployee";
+        String table5 = "emp_chanliangguagou";
+        String table6 = "sys_department";
+        String table7 = "sys_permission";
+        String table8 = "sys_role";
+        String table9 = "sys_role_permission";
+        String table10 = "sys_user_role";
+        String table11 = "sys_users";
+
+
+        Date currentDate = new Date();
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss");
+        String sdfDate = sdf.format(currentDate);
+        String filepath = "d:\\time_" + sdfDate + ".sql"; // 备份的路径地址
+        //执行命令
+        String stmt = "mysqldump  -h localhost -u "+user+" -p"+password+" --databases "+database1+" --tables "+table1+" "+table2+" "+table3+" "+table4+" "+table5+" "+table6+" "+table7+" "+table8+" "+table9+" "+table10+" "+table11+" > "+filepath;
+
+        System.out.println(stmt);
+        try {
+            String[] command = { "cmd", "/c", stmt};
+            Process process = runtime.exec(command);
+            InputStream input = process.getInputStream();
+
+           /* System.out.println(IOUtils.toString(input, "UTF-8"));
+            //若有错误信息则输出
+            InputStream errorStream = process.getErrorStream();
+            System.out.println(IOUtils.toString(errorStream, "UTF-8"));*/
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.out.println("本次备份结束。");
+    }
+
 
     //初始化月度考核填报表
     @Scheduled(cron="0 0 0 1 * ?")
