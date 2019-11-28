@@ -3,6 +3,7 @@ package com.tcrl.entity;
 import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import java.time.LocalDateTime;
@@ -30,9 +31,11 @@ private static final long serialVersionUID=1L;
 
     private String descirption;
 
-    private Date createtime;
+    @JsonFormat(pattern = "yyyy-MM-dd  HH:mm:ss")
+    private Date createtime= new Date();
 
-    private Date updatetime;
+    @JsonFormat(pattern = "yyyy-MM-dd  HH:mm:ss")
+    private Date updatetime= new Date();
 
 
 }

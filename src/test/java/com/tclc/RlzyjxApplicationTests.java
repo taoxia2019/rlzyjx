@@ -9,10 +9,12 @@ import com.tcrl.dao.DeptemployeeMapper;
 import com.tcrl.dao.DetailedruleResultMapper;
 import com.tcrl.dao.PerformanceInitMapper;
 import com.tcrl.dao.PerformanceResultMapper;
+import com.tcrl.dao.RoleMapper;
 import com.tcrl.dao.UsersMapper;
 import com.tcrl.entity.Deptemployee;
 import com.tcrl.entity.Chanliangguagou;
 import com.tcrl.entity.PerformanceResult;
+import com.tcrl.entity.Role;
 import com.tcrl.entity.Users;
 import com.tcrl.utils.DateUtils;
 import org.apache.commons.lang3.math.NumberUtils;
@@ -36,6 +38,8 @@ class RlzyjxApplicationTests {
 	private DetailedruleResultMapper detailedruleResultMapper;
 
 
+	@Autowired
+	private RoleMapper roleMapper;
 
 	@Autowired
 	private UsersMapper usersMapper;
@@ -45,6 +49,17 @@ class RlzyjxApplicationTests {
 
 	@Autowired
 	private DeptemployeeMapper deptemployeeMapper;
+
+	@Test
+	public void testrole(){
+		Role role =new Role();
+		role.setName("Test4");
+		roleMapper.insert(role);
+		System.out.println(new Date());
+		System.out.println(role.getCreatetime());
+		System.out.println(roleMapper.selectOne(new QueryWrapper<Role>().eq("name", "Test4")).getUpdatetime());
+
+	}
 
 	@Test
 	public void testguagoukaohe(){
