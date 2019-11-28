@@ -1,7 +1,8 @@
 package com.tcrl.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.tcrl.entity.EmpChanliangguagou;
+import com.tcrl.base.result.Results;
+import com.tcrl.entity.Chanliangguagou;
 
 /**
  * <p>
@@ -11,6 +12,7 @@ import com.tcrl.entity.EmpChanliangguagou;
  * @author taoxia
  * @since 2019-11-14
  */
-public interface ChanliangguagouService extends IService<EmpChanliangguagou> {
+public interface ChanliangguagouService extends IService<Chanliangguagou> {
 
+    Results<Chanliangguagou> getAllDeptGuagoujineByPage();
 }

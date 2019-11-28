@@ -6,7 +6,7 @@ import com.tcrl.base.result.Results;
 import com.tcrl.dao.ChanliangguagouMapper;
 import com.tcrl.dao.PerformanceInitMapper;
 import com.tcrl.dao.UsersMapper;
-import com.tcrl.entity.EmpChanliangguagou;
+import com.tcrl.entity.Chanliangguagou;
 import com.tcrl.entity.PerformanceResult;
 import com.tcrl.dao.PerformanceResultMapper;
 import com.tcrl.exception.MyParseException;
@@ -171,10 +171,10 @@ public class PerformanceResultServiceImpl extends ServiceImpl<PerformanceResultM
     //设置部门产量挂钩个人数据以及部门金额总额。
     // 未考虑累计超产因素
     private void fillChanliangguagou(Double scrM,Double scrS,Double xiancM,Double xiancS,Double suzM,Double suzS){
-        QueryWrapper<EmpChanliangguagou> chanliangguagouQueryWrapper = new QueryWrapper<>();
+        QueryWrapper<Chanliangguagou> chanliangguagouQueryWrapper = new QueryWrapper<>();
         chanliangguagouQueryWrapper.eq("kaoheyuefen",DateUtils.getMonth());
 
-        List<EmpChanliangguagou> chanliangguagous = chanliangguagouMapper.selectList(chanliangguagouQueryWrapper);
+        List<Chanliangguagou> chanliangguagous = chanliangguagouMapper.selectList(chanliangguagouQueryWrapper);
         chanliangguagous.forEach(clgg->{
             if("铸轧分厂".equals(clgg.getGuagoudanwei())){
                 Double value=clgg.getJixiaogongzi()* Constast.CHANLIANGGUAGOU_COEFFICIENT*(scrS/scrM-1);

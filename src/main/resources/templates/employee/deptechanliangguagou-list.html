@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html class="x-admin-sm" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>产量挂钩列表</title>
+    <header th:replace="header::html"></header>
+
+    <link rel="stylesheet" href="../static/treetable-lay/treetable.css" th:href="@{/treetable-lay/treetable.css}">
+    <script type="text/javascript" src="../static/treetable-lay/treetable.js" th:src="@{/treetable-lay/treetable.js}"></script>
+
+</head>
+<body>
+<div class="x-nav">
+          <span class="layui-breadcrumb">
+            <a href="">首页</a>
+            <a href="">员工</a>
+            <a>
+              <cite>产量挂钩列表</cite></a>
+          </span>
+    <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"
+       onclick="location.reload()" title="刷新">
+        <i class="layui-icon layui-icon-refresh" style="line-height:30px"></i></a>
+</div>
+
+
+<div class="x-body">
+    <div class="layui-fluid">
+        <div class="layui-row layui-col-space15">
+            <div class="layui-col-md12">
+                <div class="layui-card">
+                    <div class="layui-card-header">
+                        <button type="button" class="layui-btn" id="exportExcel" permission="emp:employee:query" onclick="exportall()">下载</button>
+                    </div>
+                    <div class="layui-card-body">
+                        <table id="test3" lay-filter="test3"></table>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+
+    function exportall() {
+        var url = "/chanliangguagou/exportByDept";
+        window.open(url);
+    };
+
+    layui.use(['table','upload'], function() {
+        var table = layui.table
+            ,upload = layui.upload;
+
+
+
+
+        //第一个实例
+        table.render({
+            elem: '#test3'
+            , url: '/chanliangguagou/list' //数据接口
+            // , toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
+            , response: {
+                dataName: 'datas' //规定数据列表的字段名称，默认：data
+            }
+            ,totalRow: true
+            //, page: true //开启分页
+            , cols: [
+                [ //表头
+                    {type:'numbers', fixed: 'left', totalRowText: '合计'}
+                    ,{field:'xingming', title: '姓名'}
+                    ,{field:'dept', title: '所在部门'}
+                    ,{field:'gangwei', title: '岗位'}
+                    ,{field:'guagoudanwei', title: '挂钩单位'}
+                    ,{field:'gangxu', title: '岗序'}
+                    ,{field:'dangci', title: '档次'}
+                    ,{field:'gangweigongzi', title: '岗位工资', totalRow: true}
+                    ,{field:'jixiaogongzi', title: '绩效工资', totalRow: true}
+                    ,{field:'guagoujine', title: '挂钩金额', totalRow: true}
+                ]
+            ]
+        });
+
+        checkPermission();
+    });
+
+</script>
+
+</html>

@@ -11,7 +11,7 @@ import com.tcrl.dao.PerformanceInitMapper;
 import com.tcrl.dao.PerformanceResultMapper;
 import com.tcrl.dao.UsersMapper;
 import com.tcrl.entity.Deptemployee;
-import com.tcrl.entity.EmpChanliangguagou;
+import com.tcrl.entity.Chanliangguagou;
 import com.tcrl.entity.PerformanceResult;
 import com.tcrl.entity.Users;
 import com.tcrl.utils.DateUtils;
@@ -45,6 +45,13 @@ class RlzyjxApplicationTests {
 
 	@Autowired
 	private DeptemployeeMapper deptemployeeMapper;
+
+	@Test
+	public void testguagoukaohe(){
+		System.out.println(chanliangguagouMapper.countAllDeptGuagoujineByDept());
+		System.out.println(chanliangguagouMapper.countAllDeptGuagoujineByDept("市场营销部"));
+		chanliangguagouMapper.getallDeptGuagoujineByDept(0,10).stream().forEach(y-> System.out.println(y.getXingming()));
+	}
 
 
 	@Test
@@ -239,8 +246,8 @@ class RlzyjxApplicationTests {
 
 	@Test
 	public void testSum(){
-		List<EmpChanliangguagou> chanliangguagous = chanliangguagouMapper.
-				selectList(new QueryWrapper<EmpChanliangguagou>().eq("kaoheyuefen", DateUtils.getMonth()));
+		List<Chanliangguagou> chanliangguagous = chanliangguagouMapper.
+				selectList(new QueryWrapper<Chanliangguagou>().eq("kaoheyuefen", DateUtils.getMonth()));
 		chanliangguagous.forEach(c->{
 			c.setGuagoujine(1.0);
 			chanliangguagouMapper.updateById(c);
