@@ -81,7 +81,10 @@
                     ,{field:'beizhu', title: '备注',width:150}
                     , {fixed: 'right', title: '操作', toolbar: '#barDemo', width: 140}
                 ]
-            ]
+            ],
+            done:function(){
+                checkPermission();
+            }
         });
 
 

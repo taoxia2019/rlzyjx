@@ -124,76 +124,6 @@
             laydate = layui.laydate,
             form = layui.form;
 
-        //年月选择器
-        /*laydate.render({
-            elem: '#kaoheyuefen'
-            , type: 'month'
-        });*/
-        /*//第一个实例
-        table.render({
-            elem: '#test3'
-            , url: '/performance/fill' //数据接口
-            //,toolbar: '#toolbarDemo' //开启头部工具栏，并为其绑定左侧模板
-            //,defaultToolbar: ['filter', 'exports', 'print']
-            , response: {
-                dataName: 'datas' //规定数据列表的字段名称，默认：data
-            }
-            , page: true //开启分页
-            // , limit: 15
-            // , limits: [15, 30, 45]
-            , cols: [
-                [ //表头
-                    {field: 'id', title: 'ID', width: 70, sort: true, fixed: 'left'}
-                    , {field: 'kaoheyuefen', title: '月份', width: 90, sort: true}
-                    , {field: 'beikaohedanwei', title: '部门分厂', width: 100}
-                    , {field: 'kaohexiangmu', title: '项目', width: 150}
-                    , {field: 'biaozhun', title: '标准', width: 60}
-                    , {field: 'zhouqi', title: '周期', width: 50}
-                    , {field: 'danwei', title: '单位', width: 50}
-                    , {field: 'mubiaozhi', title: '目标值(x)', edit: true, width: 90}
-                    , {field: 'shijizhi', title: '实际值(y)', edit: true, width: 90}
-                    , {field: 'caozuofu', title: '运算符', edit: true, width: 110}
-                    , {field: 'kaohejieguo', title: '考核结果', templet: '#resultTpl', width: 90}
-                    , {field: 'kaohedanwei', title: '考核单位', hide: true}
-                    , {field: 'beizhu', title: '备注', edit: true}
-
-                ]
-            ]
-        });*/
-
-        //监听单元格编辑
-        /*table.on('edit(test3)', function (obj) {
-
-            var value = obj.value //得到修改后的值
-                , data = obj.data //得到所在行所有键值
-                , field = obj.field; //得到字段
-            //layer.msg('[ID: '+ data.id +'] ' + field + ' 字段更改为：'+ value);
-            $.ajax({
-                url: "/performance/editField",
-                type: "POST",
-                data: {
-                    id: data.id,
-                    field: field,
-                    fieldValue: value
-                },
-                dataType: 'json',
-                success: function (result) {
-                    // layer.alert("设置成功", {icon: 6,time: 500}, function () {
-
-                    //刷新当前页面
-                    //window.location.reload();
-                    //刷新当前表格
-                    table.reload('test3', {
-                        url: '/performance/fill'
-                    });
-
-                }
-
-            });
-
-        });*/
-
-
         //监听工具条
         table.on('tool(member)', function (obj) {
             var data = obj.data;
@@ -237,7 +167,10 @@
                     , {field: 'kaohejine', title: '考核金额',templet: '#resultTplTwo', width: 120}
                     , {fixed: 'right', title: '操作', toolbar: '#barDemo', width: 140}
                 ]
-            ]
+            ],
+            done:function(){
+                checkPermission();
+            }
         });
 
         //监听提交

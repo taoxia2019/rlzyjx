@@ -3,6 +3,7 @@ package com.tclc;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+
 import com.tcrl.App;
 import com.tcrl.dao.ChanliangguagouMapper;
 import com.tcrl.dao.DeptemployeeMapper;
@@ -15,15 +16,23 @@ import com.tcrl.entity.Deptemployee;
 import com.tcrl.entity.Chanliangguagou;
 import com.tcrl.entity.PerformanceResult;
 import com.tcrl.entity.Role;
+import com.tcrl.entity.UserRole;
 import com.tcrl.entity.Users;
+import com.tcrl.service.RoleService;
+import com.tcrl.service.UserRoleService;
+import com.tcrl.service.UsersService;
 import com.tcrl.utils.DateUtils;
+
 import org.apache.commons.lang3.math.NumberUtils;
-import org.junit.jupiter.api.Test;
+
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 import java.util.ArrayList;
+
 import java.util.Date;
 import java.util.List;
 
@@ -43,12 +52,57 @@ class RlzyjxApplicationTests {
 
 	@Autowired
 	private UsersMapper usersMapper;
+	@Autowired
+	private UserRoleService userRoleService;
 
+	@Autowired
+	private UsersService usersService;
+	@Autowired
+	private RoleService roleService;
 	@Autowired
 	private ChanliangguagouMapper chanliangguagouMapper;
 
 	@Autowired
 	private DeptemployeeMapper deptemployeeMapper;
+
+	@Test
+	private void testpri3(){
+		ArrayList<String> strings = new ArrayList<>();
+		strings.add("java");
+		strings.add("python");
+		strings.add("c");
+		strings.add("c++");
+		boolean b = strings.contains("java");
+		System.out.println(b);
+
+
+		//获取目前登录用户
+		/*UserDetails principal = (UserDetails) SecurityContextHolder.getContext()
+				.getAuthentication()
+				.getPrincipal();
+		Collection<? extends GrantedAuthority> authorities = principal.getAuthorities();
+		authorities.forEach(a-> System.out.println(a));*/
+
+	}
+
+	@Test
+	public void testPri(){
+		//String securityUsername = GetSecurityUsername.getSecurityUsername();
+		String securityUsername = "熊垠";
+		List<Role> roles=new ArrayList<>();
+		Integer usernameId = usersService.getOne(new QueryWrapper<Users>()
+				//.eq("username", GetSecurityUsername.getSecurityUsername())).getId();
+				.eq("username", securityUsername)).getId();
+		List<UserRole> userRoles = userRoleService.list(new QueryWrapper<UserRole>()
+				.eq("userid", usernameId));
+		userRoles.forEach(y->{
+			roles.add(roleService.getById(y.getRoleid()));
+
+		});
+
+		roles.forEach(System.out::println);
+
+	}
 
 	@Test
 	public void testrole(){

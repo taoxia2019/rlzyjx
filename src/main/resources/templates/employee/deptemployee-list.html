@@ -101,44 +101,11 @@
 
                     , {fixed: 'right', title: '操作', toolbar: '#barDemo', width: 140}
                 ]
-            ]
+            ],
+            done:function(){
+                checkPermission();
+            }
         });
-
-
-        //监听单元格编辑
-       /* table.on('edit(test3)', function(obj){
-            alert("判断是否进入监听");
-            var value = obj.value //得到修改后的值
-                ,data = obj.data //得到所在行所有键值
-                ,field = obj.field; //得到字段
-            layer.msg('[ID: '+ data.id +'] ' + field + ' 字段更改为：'+ value);
-            $.ajax({
-                url: "/editfield",
-                type: "POST",
-                data: {
-                    id:data.id,
-                    apprField:field,
-                    fieldValue:value
-                },
-                dataType: 'json',
-                success: function (result) {
-                    // layer.alert("设置成功", {icon: 6,time: 500}, function () {
-
-                    //刷新当前页面
-                    //window.location.reload();
-                    //刷新当前表格
-                    table.reload('test3', {
-                        url: '/performanceInit/list'
-                    });
-
-
-                    // });
-                }
-
-            });
-
-        });*/
-
 
         //监听工具条
         table.on('tool(test3)', function (obj) {

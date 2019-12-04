@@ -101,7 +101,10 @@
                     , {field: 'updatetime', title: '最后操作时间'}
                     , {fixed: 'right', title: '操作', toolbar: '#barDemo', width: 150}
                 ]
-            ]
+            ],
+            done:function(){
+                checkPermission();
+            }
         });
         //监听工具条
         table.on('tool(member)', function (obj) {

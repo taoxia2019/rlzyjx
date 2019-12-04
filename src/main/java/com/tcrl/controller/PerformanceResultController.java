@@ -2,6 +2,7 @@ package com.tcrl.controller;
 
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.sun.org.apache.xpath.internal.SourceTree;
 import com.tcrl.base.result.PageTableRequest;
 import com.tcrl.base.result.Results;
 import com.tcrl.entity.Department;
@@ -23,6 +24,8 @@ import org.apache.poi.ss.usermodel.BorderStyle;
 import org.apache.poi.ss.usermodel.HorizontalAlignment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.ui.Model;
 import org.springframework.util.ResourceUtils;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -91,32 +94,51 @@ public class PerformanceResultController {
     @PreAuthorize("hasAuthority('kpi:performance:query')")
     public  Results findByDeptResult(String kaoheyuefen,String beikaohedanwei){
         System.out.println(kaoheyuefen+"-----"+beikaohedanwei);
-        if(null==beikaohedanwei&&null==kaoheyuefen) {
-            QueryWrapper<PerformanceResult> performanceResultQueryWrapper = new QueryWrapper<>();
-            performanceResultQueryWrapper.eq("kaoheyuefen", DateUtils.getMonth());
-            performanceResultQueryWrapper.eq("beikaohedanwei", "铸轧分厂");
-            List<PerformanceResult> performanceResults = performanceResultService.list(performanceResultQueryWrapper);
-            int count = performanceResultService.count(performanceResultQueryWrapper);
-            return Results.success(count,performanceResults);
-        }else if("".equals(kaoheyuefen)&&null!=beikaohedanwei){
-            QueryWrapper<PerformanceResult> performanceResultQueryWrapper = new QueryWrapper<>();
-            performanceResultQueryWrapper.eq("kaoheyuefen", DateUtils.getMonth());
-            performanceResultQueryWrapper.eq("beikaohedanwei", beikaohedanwei);
-            List<PerformanceResult> performanceResults = performanceResultService.list(performanceResultQueryWrapper);
-            int count = performanceResultService.count(performanceResultQueryWrapper);
-            return Results.success(count,performanceResults);
+        String dept = usersService.getOne(new QueryWrapper<Users>()
+                .eq("username", GetSecurityUsername.getSecurityUsername()))
+                .getDept();
+        if("admin".equals(GetSecurityUsername.getSecurityUsername())) {
+            if (null == beikaohedanwei && null == kaoheyuefen) {
+                QueryWrapper<PerformanceResult> performanceResultQueryWrapper = new QueryWrapper<>();
+                performanceResultQueryWrapper.eq("kaoheyuefen", DateUtils.getMonth());
+                performanceResultQueryWrapper.eq("beikaohedanwei", "铸轧分厂");
+                List<PerformanceResult> performanceResults = performanceResultService.list(performanceResultQueryWrapper);
+                int count = performanceResultService.count(performanceResultQueryWrapper);
+                return Results.success(count, performanceResults);
+            } else if ("".equals(kaoheyuefen) && null != beikaohedanwei) {
+                QueryWrapper<PerformanceResult> performanceResultQueryWrapper = new QueryWrapper<>();
+                performanceResultQueryWrapper.eq("kaoheyuefen", DateUtils.getMonth());
+                performanceResultQueryWrapper.eq("beikaohedanwei", beikaohedanwei);
+                List<PerformanceResult> performanceResults = performanceResultService.list(performanceResultQueryWrapper);
+                int count = performanceResultService.count(performanceResultQueryWrapper);
+                return Results.success(count, performanceResults);
 
-        } else {
-            QueryWrapper<PerformanceResult> performanceResultQueryWrapper = new QueryWrapper<>();
-            performanceResultQueryWrapper.eq("kaoheyuefen", kaoheyuefen);
-            performanceResultQueryWrapper.eq("beikaohedanwei", beikaohedanwei);
-            List<PerformanceResult> performanceResults = performanceResultService.list(performanceResultQueryWrapper);
-            int count = performanceResultService.count(performanceResultQueryWrapper);
-            return Results.success(count,performanceResults);
+            } else {
+                QueryWrapper<PerformanceResult> performanceResultQueryWrapper = new QueryWrapper<>();
+                performanceResultQueryWrapper.eq("kaoheyuefen", kaoheyuefen);
+                performanceResultQueryWrapper.eq("beikaohedanwei", beikaohedanwei);
+                List<PerformanceResult> performanceResults = performanceResultService.list(performanceResultQueryWrapper);
+                int count = performanceResultService.count(performanceResultQueryWrapper);
+                return Results.success(count, performanceResults);
+            }
+        }else {
+            if (null == beikaohedanwei ||"".equals(kaoheyuefen)) {
+                QueryWrapper<PerformanceResult> performanceResultQueryWrapper = new QueryWrapper<>();
+                performanceResultQueryWrapper.eq("kaoheyuefen", DateUtils.getMonth());
+                performanceResultQueryWrapper.eq("beikaohedanwei", dept);
+                List<PerformanceResult> performanceResults = performanceResultService.list(performanceResultQueryWrapper);
+                int count = performanceResultService.count(performanceResultQueryWrapper);
+                return Results.success(count, performanceResults);
+            } else {
+                QueryWrapper<PerformanceResult> performanceResultQueryWrapper = new QueryWrapper<>();
+                performanceResultQueryWrapper.eq("kaoheyuefen", kaoheyuefen);
+                performanceResultQueryWrapper.eq("beikaohedanwei", dept);
+                List<PerformanceResult> performanceResults = performanceResultService.list(performanceResultQueryWrapper);
+                int count = performanceResultService.count(performanceResultQueryWrapper);
+                return Results.success(count, performanceResults);
+            }
+
         }
-
-
-
     }
 
     //下载备份数据填报表,无模板模式
