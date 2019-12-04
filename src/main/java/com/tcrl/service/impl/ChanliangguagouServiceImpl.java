@@ -10,6 +10,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.tcrl.utils.GetSecurityUsername;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * <p>
@@ -20,6 +21,7 @@ import org.springframework.stereotype.Service;
  * @since 2019-11-28
  */
 @Service
+@Transactional
 public class ChanliangguagouServiceImpl extends ServiceImpl<ChanliangguagouMapper, Chanliangguagou> implements ChanliangguagouService {
 
     @Autowired

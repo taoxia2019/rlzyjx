@@ -11,6 +11,7 @@ import com.tcrl.service.PerformanceInitService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * <p>
@@ -21,6 +22,7 @@ import org.springframework.stereotype.Service;
  * @since 2019-10-17
  */
 @Service
+@Transactional
 public class PerformanceInitServiceImpl extends ServiceImpl<PerformanceInitMapper, PerformanceInit> implements PerformanceInitService {
 
     @Autowired

@@ -13,6 +13,7 @@ import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.tcrl.utils.GetSecurityUsername;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -26,6 +27,7 @@ import java.util.List;
  * @since 2019-11-12
  */
 @Service
+@Transactional
 public class DeptemployeeServiceImpl extends ServiceImpl<DeptemployeeMapper, Deptemployee> implements DeptemployeeService {
 
     @Autowired
