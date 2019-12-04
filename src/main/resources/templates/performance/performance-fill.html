@@ -74,7 +74,8 @@
             , page: true //开启分页
             , cols: [
                 [ //表头
-                    {field: 'id', title: 'ID', width: 70, sort: true, fixed: 'left'}
+                    {type:'numbers'}
+                    , {field: 'id', title: 'ID', hide:true, sort: true}
                     , {field: 'kaoheyuefen', title: '月份', width: 90, sort: true}
                     , {field: 'beikaohedanwei', title: '部门分厂', width: 100}
                     , {field: 'kaohexiangmu', title: '项目', width: 150}

@@ -7,6 +7,7 @@ import com.tcrl.entity.Chanliangguagou;
 import com.tcrl.dao.ChanliangguagouMapper;
 import com.tcrl.service.ChanliangguagouService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.tcrl.utils.DateUtils;
 import com.tcrl.utils.GetSecurityUsername;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,11 +40,16 @@ public class ChanliangguagouServiceImpl extends ServiceImpl<ChanliangguagouMappe
         String securityUsername = GetSecurityUsername.getSecurityUsername();
         if("admin".equals(securityUsername)) {
             //管理员，加载全部部门数据
-            return Results.success(chanliangguagouMapper.selectCount(null), chanliangguagouMapper.selectList(null));
+            QueryWrapper<Chanliangguagou> chanliangguagouQueryWrapper = new QueryWrapper<>();
+            chanliangguagouQueryWrapper.eq("kaoheyuefen", DateUtils.getMonth());
+            return Results.success(chanliangguagouMapper.selectCount(chanliangguagouQueryWrapper), chanliangguagouMapper.selectList(chanliangguagouQueryWrapper));
         }else {
             //非管理员，加载对应部门数据
             String dept = usersMapper.getUser(securityUsername).getDept();
-            return Results.success(chanliangguagouMapper.selectCount(new QueryWrapper<Chanliangguagou>().eq("dept",dept)), chanliangguagouMapper.selectList(new QueryWrapper<Chanliangguagou>().eq("dept",dept)));
+            QueryWrapper<Chanliangguagou> chanliangguagouQueryWrapper = new QueryWrapper<>();
+            chanliangguagouQueryWrapper.eq("dept",dept)
+                    .eq("kaoheyuefen", DateUtils.getMonth());
+            return Results.success(chanliangguagouMapper.selectCount(chanliangguagouQueryWrapper), chanliangguagouMapper.selectList(chanliangguagouQueryWrapper));
         }
     }
 
