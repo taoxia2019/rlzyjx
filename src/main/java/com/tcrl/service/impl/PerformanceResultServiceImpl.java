@@ -110,7 +110,7 @@ public class PerformanceResultServiceImpl extends ServiceImpl<PerformanceResultM
 
         int insert = performanceResultMapper.updateById(pr);
 
-            //调用方法，生成部门员工产量挂钩金额以及部门挂钩总额
+        //调用方法，生成部门员工产量挂钩金额以及部门挂钩总额
         //优化执行效率11.27
         if("scr生产计划完成率".equals(pr.getKaohexiangmu())||"细线生产计划完成率".equals(pr.getKaohexiangmu())||"并绞线生产计划完成率".equals(pr.getKaohexiangmu())){
             Double scrM;
@@ -124,21 +124,28 @@ public class PerformanceResultServiceImpl extends ServiceImpl<PerformanceResultM
             List<PerformanceResult> performanceResults = performanceResultMapper.selectList(queryWrapper);
             scrM = performanceResults.stream()
                     .filter(p -> "铸轧分厂".equals(p.getBeikaohedanwei()))
-                    .map(p -> p.getMubiaozhi()).findAny().get();
+                    .filter(p->"scr生产计划完成率".equals(p.getKaohexiangmu()))
+                    .map(p -> p.getMubiaozhi()).findFirst().get();
+            System.out.println(scrM);
             scrS = performanceResults.stream()
                     .filter(p -> "铸轧分厂".equals(p.getBeikaohedanwei()))
+                    .filter(p->"scr生产计划完成率".equals(p.getKaohexiangmu()))
                     .map(p -> p.getShijizhi()).findAny().get();
             xiancM = performanceResults.stream()
                     .filter(p -> "线材分厂".equals(p.getBeikaohedanwei()))
+                    .filter(p->"细线生产计划完成率".equals(p.getKaohexiangmu()))
                     .map(p -> p.getMubiaozhi()).findAny().get();
             xiancS = performanceResults.stream()
                     .filter(p -> "线材分厂".equals(p.getBeikaohedanwei()))
+                    .filter(p->"细线生产计划完成率".equals(p.getKaohexiangmu()))
                     .map(p -> p.getShijizhi()).findAny().get();
             suzM = performanceResults.stream()
                     .filter(p -> "苏州分公司".equals(p.getBeikaohedanwei()))
+                    .filter(p->"并绞线生产计划完成率".equals(p.getKaohexiangmu()))
                     .map(p -> p.getMubiaozhi()).findAny().get();
             suzS = performanceResults.stream()
                     .filter(p -> "苏州分公司".equals(p.getBeikaohedanwei()))
+                    .filter(p->"并绞线生产计划完成率".equals(p.getKaohexiangmu()))
                     .map(p -> p.getShijizhi()).findAny().get();
 
             if (scrM != null && scrS != null && xiancM != null && xiancS != null && suzM != null && suzS != null) {
@@ -195,9 +202,10 @@ public class PerformanceResultServiceImpl extends ServiceImpl<PerformanceResultM
                 clgg.setGuagoujine(guagouS+guagouX);
                 chanliangguagouMapper.updateById(clgg);
             }
-            //调用方法，生成部门挂钩总额
-            fillDeptChanliangguagou();
+
         });
+        //调用方法，生成部门挂钩总额
+        fillDeptChanliangguagou();
 
 
     }

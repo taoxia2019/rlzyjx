@@ -74,11 +74,6 @@ public class ScheduledService {
             Process process = runtime.exec(command);
             InputStream input = process.getInputStream();
 
-           /* System.out.println(IOUtils.toString(input, "UTF-8"));
-            //若有错误信息则输出
-            InputStream errorStream = process.getErrorStream();
-            System.out.println(IOUtils.toString(errorStream, "UTF-8"));*/
-
         } catch (IOException e) {
             e.printStackTrace();
         }

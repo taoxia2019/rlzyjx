@@ -72,7 +72,6 @@
                 dataName: 'datas' //规定数据列表的字段名称，默认：data
             }
             , page: true //开启分页
-
             , cols: [
                 [ //表头
                     {field: 'id', title: 'ID', width: 70, sort: true, fixed: 'left'}
@@ -99,7 +98,7 @@
             var value = obj.value //得到修改后的值
                 , data = obj.data //得到所在行所有键值
                 , field = obj.field; //得到字段
-            //layer.msg('[ID: '+ data.id +'] ' + field + ' 字段更改为：'+ value);
+
             $.ajax({
                 url: "/performance/editField",
                 type: "POST",
@@ -110,92 +109,13 @@
                 },
                 dataType: 'json',
                 success: function (result) {
-                    // layer.alert("设置成功", {icon: 6,time: 500}, function () {
-
-                    //刷新当前页面
-                    //window.location.reload();
                     //刷新当前表格
                     table.reload('test3', {
                         url: '/performance/fill'
                     });
-
-                }
-
-            });
-
-        });
-
-
-        //监听工具条
-       /* table.on('tool(member)', function (obj) {
-            var data = obj.data;
-            if (obj.event == 'del') {
-                layer.confirm('真的删除行吗', function (index) {
-                    $.ajax({
-                        url: "/detailedruleResult/delete",
-                        type: "GET",
-                        data: {id: data.id},
-                        dataType: 'json',
-                        success: function (result) {
-                            layer.alert("删除成功", {icon: 1}, function (index1) {
-                                layer.close(index1);
-                                location.reload()
-                                //xadmin.father_reload();
-                                //table.reload('menuTable');
-                            });
-                        },
-                    });
-
-                });
-            } else if (obj.event === 'edit') {
-                xadmin.open('编辑指标信息', '/detailedruleResult/edit/?id=' + data.id,1000,350);
-            }
-        });
-
-        //专项考核填报结果
-        table.render({
-            elem: '#test4'
-            , url: '/detailedruleResult/getResult' //数据接口
-            , response: {
-                dataName: 'datas' //规定数据列表的字段名称，默认：data
-            }
-            , cols: [
-                [ //表头
-                    {field: 'id', title: 'ID', width: 70}
-                    , {field: 'kaoheyuefen', title: '月份', width: 100}
-                    , {field: 'beikaohedanwei', title: '部门分厂', width: 100}
-                    , {field: 'xiangmumingcheng', title: '考核项目', width: 150}
-                    , {field: 'kaoheshiyou', title: '考核事由',width: 490}
-                    , {field: 'kaohejine', title: '考核金额',templet: '#resultTplTwo', width: 120}
-                    , {fixed: 'right', title: '操作', toolbar: '#barDemo', width: 140}
-                ]
-            ]
-        });
-
-        //监听提交
-        form.on('submit(add)', function (data) {
-
-            var kaoheyuefen = data.field.kaoheyuefen;
-            data.field.beikaohedanwei=$('#department option:selected').text();
-            $.ajax({
-                url: "/detailedruleResult/add",
-                type: "POST",
-                data:data.field,
-                dataType: 'json',
-                success: function (result) {
-                    if (result.code == 500) {
-                        layer.alert(result.msg);
-                    } else {
-                        table.reload('test4', {
-                            url: '/detailedruleResult/getResult'
-                        });
-                        document.getElementById("myForm").reset();
-                    }
-
                 }
             });
-            return false;
-        });*/
+        });
         checkPermission();
     });
 
@@ -210,6 +130,4 @@
     <span style="color:#686a76;">{{ d.kaohejieguo }}</span>
     {{#  } }}
 </script>
-
-
 </html>
