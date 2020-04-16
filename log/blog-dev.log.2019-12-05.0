@@ -1,0 +1,133 @@
+2019-12-05 08:20:25.522  INFO 18192 --- [main] com.tcrl.App                             : Starting App on PC-20190301SZZL with PID 18192 (D:\123\rlzyjx\target\classes started by Administrator in D:\123\rlzyjx)
+2019-12-05 08:20:25.535 DEBUG 18192 --- [main] com.tcrl.App                             : Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2019-12-05 08:20:25.535  INFO 18192 --- [main] com.tcrl.App                             : The following profiles are active: dev
+2019-12-05 08:20:27.076  WARN 18192 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'chanliangguagouMapper' and 'com.tcrl.dao.ChanliangguagouMapper' mapperInterface. Bean already defined with the same name!
+2019-12-05 08:20:27.077  WARN 18192 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'departmentMapper' and 'com.tcrl.dao.DepartmentMapper' mapperInterface. Bean already defined with the same name!
+2019-12-05 08:20:27.077  WARN 18192 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'deptemployeeMapper' and 'com.tcrl.dao.DeptemployeeMapper' mapperInterface. Bean already defined with the same name!
+2019-12-05 08:20:27.077  WARN 18192 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'detailedruleResultMapper' and 'com.tcrl.dao.DetailedruleResultMapper' mapperInterface. Bean already defined with the same name!
+2019-12-05 08:20:27.077  WARN 18192 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'performanceInitMapper' and 'com.tcrl.dao.PerformanceInitMapper' mapperInterface. Bean already defined with the same name!
+2019-12-05 08:20:27.078  WARN 18192 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'performanceResultMapper' and 'com.tcrl.dao.PerformanceResultMapper' mapperInterface. Bean already defined with the same name!
+2019-12-05 08:20:27.078  WARN 18192 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'permissionMapper' and 'com.tcrl.dao.PermissionMapper' mapperInterface. Bean already defined with the same name!
+2019-12-05 08:20:27.078  WARN 18192 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'roleMapper' and 'com.tcrl.dao.RoleMapper' mapperInterface. Bean already defined with the same name!
+2019-12-05 08:20:27.078  WARN 18192 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'rolePermissionMapper' and 'com.tcrl.dao.RolePermissionMapper' mapperInterface. Bean already defined with the same name!
+2019-12-05 08:20:27.079  WARN 18192 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'userRoleMapper' and 'com.tcrl.dao.UserRoleMapper' mapperInterface. Bean already defined with the same name!
+2019-12-05 08:20:27.079  WARN 18192 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'usersMapper' and 'com.tcrl.dao.UsersMapper' mapperInterface. Bean already defined with the same name!
+2019-12-05 08:20:27.080  WARN 18192 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.tcrl.dao]' package. Please check your configuration.
+2019-12-05 08:20:27.656  INFO 18192 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-05 08:20:27.673  INFO 18192 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-05 08:20:27.680  INFO 18192 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-05 08:20:27.684  INFO 18192 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@4e31c3ec' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-05 08:20:27.688  INFO 18192 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-05 08:20:27.692  INFO 18192 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-05 08:20:28.110  INFO 18192 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2019-12-05 08:20:28.124  INFO 18192 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-05 08:20:28.125  INFO 18192 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2019-12-05 08:20:28.276  INFO 18192 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-05 08:20:28.277  INFO 18192 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2621 ms
+2019-12-05 08:20:28.957  INFO 18192 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2019-12-05 08:20:29.157  WARN 18192 --- [main] c.b.m.core.toolkit.TableInfoHelper       : Warn: Could not find @TableId in Class: com.tcrl.entity.UserRole.
+2019-12-05 08:20:29.259 ERROR 18192 --- [main] c.b.m.core.MybatisConfiguration          : mapper[com.tcrl.dao.ChanliangguagouMapper.countAllDeptGuagoujineByDept] is ignored, because it exists, maybe from xml file
+2019-12-05 08:20:29.260 ERROR 18192 --- [main] c.b.m.core.MybatisConfiguration          : mapper[com.tcrl.dao.ChanliangguagouMapper.getallDeptGuagoujineByDept] is ignored, because it exists, maybe from xml file
+2019-12-05 08:20:29.585  WARN 18192 --- [main] c.b.m.core.toolkit.TableInfoHelper       : Warn: Could not find @TableId in Class: com.tcrl.entity.RolePermission.
+2019-12-05 08:20:30.283  INFO 18192 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2019-12-05 08:20:30.437  INFO 18192 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/xadmin/**'], []
+2019-12-05 08:20:30.437  INFO 18192 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/treetable-lay/**'], []
+2019-12-05 08:20:30.437  INFO 18192 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/dtree/**'], []
+2019-12-05 08:20:30.437  INFO 18192 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/myjs/**'], []
+2019-12-05 08:20:30.489  INFO 18192 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1bbddada, org.springframework.security.web.context.SecurityContextPersistenceFilter@202898d7, org.springframework.security.web.header.HeaderWriterFilter@6f25bf88, org.springframework.security.web.authentication.logout.LogoutFilter@5232e3f1, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@5bcec67e, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@2c719bd4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@c8f97a7, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@66e17eff, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1f66d8e1, org.springframework.security.web.session.SessionManagementFilter@7b5cc918, org.springframework.security.web.access.ExceptionTranslationFilter@2213639b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4db77402]
+2019-12-05 08:20:30.567  INFO 18192 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-05 08:20:30.627  INFO 18192 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2019-12-05 08:20:30.765  INFO 18192 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-12-05 08:20:30.833  INFO 18192 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2019-12-05 08:20:30.852  INFO 18192 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2019-12-05 08:20:30.909  INFO 18192 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2019-12-05 08:20:31.140  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingGET_1
+2019-12-05 08:20:31.140  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingHEAD_1
+2019-12-05 08:20:31.141  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingPOST_1
+2019-12-05 08:20:31.142  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingPUT_1
+2019-12-05 08:20:31.143  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingPATCH_1
+2019-12-05 08:20:31.144  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingDELETE_1
+2019-12-05 08:20:31.145  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingOPTIONS_1
+2019-12-05 08:20:31.146  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingTRACE_1
+2019-12-05 08:20:31.159  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getPerformanceInitUsingGET_1
+2019-12-05 08:20:31.187  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUserUsingGET_1
+2019-12-05 08:20:31.190  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editUserUsingGET_1
+2019-12-05 08:20:31.202  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingGET_2
+2019-12-05 08:20:31.203  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingHEAD_2
+2019-12-05 08:20:31.203  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingPOST_2
+2019-12-05 08:20:31.204  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingPUT_2
+2019-12-05 08:20:31.206  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingPATCH_2
+2019-12-05 08:20:31.206  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingDELETE_2
+2019-12-05 08:20:31.207  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingOPTIONS_2
+2019-12-05 08:20:31.207  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingTRACE_2
+2019-12-05 08:20:31.260  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUserUsingGET_1
+2019-12-05 08:20:31.264  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUserUsingGET_2
+2019-12-05 08:20:31.266  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editUserUsingGET_2
+2019-12-05 08:20:31.276  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getPerformanceInitUsingGET_2
+2019-12-05 08:20:31.278  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUserUsingPOST_1
+2019-12-05 08:20:31.281  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUserUsingPOST_1
+2019-12-05 08:20:31.284  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingGET_3
+2019-12-05 08:20:31.285  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingHEAD_3
+2019-12-05 08:20:31.285  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingPOST_3
+2019-12-05 08:20:31.286  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingPUT_3
+2019-12-05 08:20:31.287  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingPATCH_3
+2019-12-05 08:20:31.288  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingDELETE_3
+2019-12-05 08:20:31.289  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingOPTIONS_3
+2019-12-05 08:20:31.289  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingTRACE_3
+2019-12-05 08:20:31.295  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingGET_1
+2019-12-05 08:20:31.296  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingHEAD_1
+2019-12-05 08:20:31.296  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingPOST_1
+2019-12-05 08:20:31.297  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingPUT_1
+2019-12-05 08:20:31.298  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingPATCH_1
+2019-12-05 08:20:31.299  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingDELETE_1
+2019-12-05 08:20:31.300  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingOPTIONS_1
+2019-12-05 08:20:31.301  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingTRACE_1
+2019-12-05 08:20:31.388  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUserUsingGET_3
+2019-12-05 08:20:31.391  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editUserUsingGET_3
+2019-12-05 08:20:31.414  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUserUsingGET_2
+2019-12-05 08:20:31.430  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUserUsingGET_4
+2019-12-05 08:20:31.432  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editUserUsingGET_4
+2019-12-05 08:20:31.445  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUserUsingPOST_2
+2019-12-05 08:20:31.448  INFO 18192 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUserUsingPOST_2
+2019-12-05 08:20:31.502  INFO 18192 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2019-12-05 08:20:31.506  INFO 18192 --- [main] com.tcrl.App                             : Started App in 7.234 seconds (JVM running for 8.604)
+2019-12-05 08:20:38.086  INFO 18192 --- [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-05 08:20:38.086  INFO 18192 --- [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-12-05 08:20:38.104  INFO 18192 --- [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 18 ms
+2019-12-05 08:20:45.267 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-7] com.tcrl.dao.UsersMapper.selectList      : ==>  Preparing: SELECT id,username,password,phone,dept,email,headimage,gangweimingcheng,status,createtime,updatetime,birthday,sex FROM sys_users WHERE username = ? 
+2019-12-05 08:20:45.396 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-7] com.tcrl.dao.UsersMapper.selectList      : ==> Parameters: admin(String)
+2019-12-05 08:20:45.426 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-7] com.tcrl.dao.UsersMapper.selectList      : <==      Total: 1
+2019-12-05 08:20:45.439 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-7] c.t.dao.PermissionMapper.listByUserId    : ==>  Preparing: select distinct sp.* from sys_user_role sru inner join sys_role_permission srp on srp.roleid=sru.roleid left join sys_permission sp on srp.permissionid = sp.id where sru.userid=? 
+2019-12-05 08:20:45.444 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-7] c.t.dao.PermissionMapper.listByUserId    : ==> Parameters: 1(Integer)
+2019-12-05 08:20:45.460 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-7] c.t.dao.PermissionMapper.listByUserId    : <==      Total: 38
+2019-12-05 08:20:45.594  INFO 18192 --- [http-nio-0.0.0.0-8080-exec-7] c.t.s.a.MyAuthenticationSuccessHandler   : 登录成功
+2019-12-05 08:21:08.140 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-8] com.tcrl.dao.UsersMapper.selectOne       : ==>  Preparing: SELECT id,username,password,phone,dept,email,headimage,gangweimingcheng,status,createtime,updatetime,birthday,sex FROM sys_users WHERE username = ? 
+2019-12-05 08:21:08.142 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-8] com.tcrl.dao.UsersMapper.selectOne       : ==> Parameters: admin(String)
+2019-12-05 08:21:08.147 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-8] com.tcrl.dao.UsersMapper.selectOne       : <==      Total: 1
+2019-12-05 08:21:08.151 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-8] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-12-05 08:21:08.154 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-8] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-12-05 08:21:08.161 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-8] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 13
+2019-12-05 08:21:08.284 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-3] c.t.dao.PermissionMapper.listByUserId    : ==>  Preparing: select distinct sp.* from sys_user_role sru inner join sys_role_permission srp on srp.roleid=sru.roleid left join sys_permission sp on srp.permissionid = sp.id where sru.userid=? 
+2019-12-05 08:21:08.285 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-3] c.t.dao.PermissionMapper.listByUserId    : ==> Parameters: 1(Integer)
+2019-12-05 08:21:08.293 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-3] c.t.dao.PermissionMapper.listByUserId    : <==      Total: 38
+2019-12-05 08:43:09.395 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-1] com.tcrl.dao.UsersMapper.selectOne       : ==>  Preparing: SELECT id,username,password,phone,dept,email,headimage,gangweimingcheng,status,createtime,updatetime,birthday,sex FROM sys_users WHERE username = ? 
+2019-12-05 08:43:09.396 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-1] com.tcrl.dao.UsersMapper.selectOne       : ==> Parameters: admin(String)
+2019-12-05 08:43:09.399 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-1] com.tcrl.dao.UsersMapper.selectOne       : <==      Total: 1
+2019-12-05 08:43:09.404 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-1] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-12-05 08:43:09.406 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-1] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-12-05 08:43:09.417 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-1] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 13
+2019-12-05 08:43:09.528 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-8] c.t.dao.PermissionMapper.listByUserId    : ==>  Preparing: select distinct sp.* from sys_user_role sru inner join sys_role_permission srp on srp.roleid=sru.roleid left join sys_permission sp on srp.permissionid = sp.id where sru.userid=? 
+2019-12-05 08:43:09.528 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-8] c.t.dao.PermissionMapper.listByUserId    : ==> Parameters: 1(Integer)
+2019-12-05 08:43:09.536 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-8] c.t.dao.PermissionMapper.listByUserId    : <==      Total: 38
+2019-12-05 08:46:35.736 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-5] com.tcrl.dao.UsersMapper.selectOne       : ==>  Preparing: SELECT id,username,password,phone,dept,email,headimage,gangweimingcheng,status,createtime,updatetime,birthday,sex FROM sys_users WHERE username = ? 
+2019-12-05 08:46:35.737 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-5] com.tcrl.dao.UsersMapper.selectOne       : ==> Parameters: admin(String)
+2019-12-05 08:46:35.739 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-5] com.tcrl.dao.UsersMapper.selectOne       : <==      Total: 1
+2019-12-05 08:46:35.742 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-5] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2019-12-05 08:46:35.742 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-5] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2019-12-05 08:46:35.745 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-5] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 13
+2019-12-05 08:46:36.045 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-2] com.tcrl.dao.UsersMapper.countAllUsers   : ==>  Preparing: select count(*) from sys_users t 
+2019-12-05 08:46:36.047 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-2] com.tcrl.dao.UsersMapper.countAllUsers   : ==> Parameters: 
+2019-12-05 08:46:36.052 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-2] com.tcrl.dao.UsersMapper.countAllUsers   : <==      Total: 1
+2019-12-05 08:46:36.054 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-2] c.t.dao.UsersMapper.getallUsersByPage    : ==>  Preparing: select * from sys_users t order by t.id limit ?,? 
+2019-12-05 08:46:36.058 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-2] c.t.dao.UsersMapper.getallUsersByPage    : ==> Parameters: 0(Integer), 15(Integer)
+2019-12-05 08:46:36.065 DEBUG 18192 --- [http-nio-0.0.0.0-8080-exec-2] c.t.dao.UsersMapper.getallUsersByPage    : <==      Total: 14

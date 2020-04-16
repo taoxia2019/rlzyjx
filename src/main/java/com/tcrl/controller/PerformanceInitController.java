@@ -5,9 +5,14 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.tcrl.base.result.PageTableRequest;
 import com.tcrl.base.result.Results;
 import com.tcrl.entity.Department;
+
 import com.tcrl.entity.PerformanceInit;
 import com.tcrl.service.DepartmentService;
 import com.tcrl.service.PerformanceInitService;
+import com.tcrl.utils.ExcelUtil;
+import org.apache.poi.hssf.usermodel.HSSFCell;
+import org.apache.poi.hssf.usermodel.HSSFSheet;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -18,7 +23,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -115,6 +123,71 @@ public class PerformanceInitController {
         }else {
             return Results.failure();
         }
+    }
+
+    //初始化表
+    @PostMapping("/init")
+    @PreAuthorize("hasAuthority('kpi:performance:init')")
+    @ResponseBody
+    public Results importExcel2(MultipartFile file, Model model) throws IOException {
+        // 獲取流對象
+        // MultipartFile 的filename必須和input的name屬性名稱一致
+        InputStream is = file.getInputStream();
+        // 導入流對象
+        HSSFWorkbook wb = new HSSFWorkbook(is);
+        // 獲取sheet表的名稱
+        //HSSFSheet sheet = wb.getSheet("部门人员信息");
+        HSSFSheet sheet = wb.getSheetAt(0);
+
+        HSSFCell cell1 = sheet.getRow(0).getCell(0);
+
+        // 獲取有數據的最後一行
+        int lastRowNum = sheet.getLastRowNum();
+
+        List<PerformanceInit> initList=new ArrayList<>();
+        // 除掉標題行,進行遍歷
+        for (int i = 1; i <= lastRowNum; i++) {
+            if (0 == sheet.getRow(i).getCell(0).toString().length()) {
+                break;
+            }
+            // 獲取pojo對象
+            PerformanceInit pInit = new PerformanceInit();
+            //ID
+            pInit.setId(Long.parseLong(ExcelUtil.getCellValues(sheet.getRow(i).getCell(0))));
+            //被考核部门
+            pInit.setBeikaohedanwei(ExcelUtil.getCellValues(sheet.getRow(i).getCell(2)));
+            //考核项目
+            pInit.setKaohexiangmu(ExcelUtil.getCellValues(sheet.getRow(i).getCell(3)));
+            //标准
+            pInit.setBiaozhun(ExcelUtil.getCellValues(sheet.getRow(i).getCell(4)));
+            //周期
+            pInit.setZhouqi(ExcelUtil.getCellValues(sheet.getRow(i).getCell(5)));
+            //单位
+            pInit.setDanwei(ExcelUtil.getCellValues(sheet.getRow(i).getCell(6)));
+            //目标值
+            /*if(sheet.getRow(i).getCell(7)==null||ExcelUtil.getCellValues(sheet.getRow(i).getCell(7))==""){
+                pInit.setMubiaozhi(0.0);
+            }else {
+                System.out.println(sheet.getRow(i).getCell(7));
+                Double i1 = Double.parseDouble(ExcelUtil.getCellValues(sheet.getRow(i).getCell(7)));
+                pInit.setMubiaozhi(i1);
+            }*/
+
+            //实际值
+            //pInit.setShijizhi(0.0);
+            // 绩效工资考核情况
+            //pInit.setKaohejieguo(0.0);
+            //操作符
+            pInit.setCaozuofu(ExcelUtil.getCellValues(sheet.getRow(i).getCell(10)));
+            //考核单位
+            pInit.setKaohedanwei(ExcelUtil.getCellValues(sheet.getRow(i).getCell(11)));
+            //备注
+            //pInit.setBeizhu(ExcelUtil.getCellValues(sheet.getRow(i).getCell(12)));
+            //状态码
+            pInit.setStatus(Integer.parseInt(ExcelUtil.getCellValues(sheet.getRow(i).getCell(0))));
+            performanceInitService.save(pInit);
+        }
+        return Results.success("上传成功");
     }
 
 }

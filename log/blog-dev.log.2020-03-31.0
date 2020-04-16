@@ -1,0 +1,226 @@
+2020-03-31 17:06:56.851  INFO 19024 --- [main] com.tcrl.App                             : Starting App on PC-20190301SZZL with PID 19024 (D:\123\rlzyjx\target\classes started by Administrator in D:\123\rlzyjx)
+2020-03-31 17:06:56.886 DEBUG 19024 --- [main] com.tcrl.App                             : Running with Spring Boot v2.2.0.RELEASE, Spring v5.2.0.RELEASE
+2020-03-31 17:06:56.887  INFO 19024 --- [main] com.tcrl.App                             : The following profiles are active: dev
+2020-03-31 17:06:58.635  WARN 19024 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'chanliangguagouMapper' and 'com.tcrl.dao.ChanliangguagouMapper' mapperInterface. Bean already defined with the same name!
+2020-03-31 17:06:58.636  WARN 19024 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'departmentMapper' and 'com.tcrl.dao.DepartmentMapper' mapperInterface. Bean already defined with the same name!
+2020-03-31 17:06:58.637  WARN 19024 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'deptemployeeMapper' and 'com.tcrl.dao.DeptemployeeMapper' mapperInterface. Bean already defined with the same name!
+2020-03-31 17:06:58.637  WARN 19024 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'detailedruleResultMapper' and 'com.tcrl.dao.DetailedruleResultMapper' mapperInterface. Bean already defined with the same name!
+2020-03-31 17:06:58.637  WARN 19024 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'performanceInitMapper' and 'com.tcrl.dao.PerformanceInitMapper' mapperInterface. Bean already defined with the same name!
+2020-03-31 17:06:58.638  WARN 19024 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'performanceResultMapper' and 'com.tcrl.dao.PerformanceResultMapper' mapperInterface. Bean already defined with the same name!
+2020-03-31 17:06:58.638  WARN 19024 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'permissionMapper' and 'com.tcrl.dao.PermissionMapper' mapperInterface. Bean already defined with the same name!
+2020-03-31 17:06:58.638  WARN 19024 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'roleMapper' and 'com.tcrl.dao.RoleMapper' mapperInterface. Bean already defined with the same name!
+2020-03-31 17:06:58.639  WARN 19024 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'rolePermissionMapper' and 'com.tcrl.dao.RolePermissionMapper' mapperInterface. Bean already defined with the same name!
+2020-03-31 17:06:58.639  WARN 19024 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'userRoleMapper' and 'com.tcrl.dao.UserRoleMapper' mapperInterface. Bean already defined with the same name!
+2020-03-31 17:06:58.639  WARN 19024 --- [main] o.m.s.mapper.ClassPathMapperScanner      : Skipping MapperFactoryBean with name 'usersMapper' and 'com.tcrl.dao.UsersMapper' mapperInterface. Bean already defined with the same name!
+2020-03-31 17:06:58.640  WARN 19024 --- [main] o.m.s.mapper.ClassPathMapperScanner      : No MyBatis mapper was found in '[com.tcrl.dao]' package. Please check your configuration.
+2020-03-31 17:06:59.561  INFO 19024 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-31 17:06:59.590  INFO 19024 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration' of type [org.springframework.security.config.annotation.configuration.ObjectPostProcessorConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-31 17:06:59.600  INFO 19024 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'objectPostProcessor' of type [org.springframework.security.config.annotation.configuration.AutowireBeanFactoryObjectPostProcessor] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-31 17:06:59.604  INFO 19024 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler@58496dc' of type [org.springframework.security.access.expression.method.DefaultMethodSecurityExpressionHandler] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-31 17:06:59.606  INFO 19024 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration' of type [org.springframework.security.config.annotation.method.configuration.GlobalMethodSecurityConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-31 17:06:59.611  INFO 19024 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'methodSecurityMetadataSource' of type [org.springframework.security.access.method.DelegatingMethodSecurityMetadataSource] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-03-31 17:07:00.180  INFO 19024 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2020-03-31 17:07:00.193  INFO 19024 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2020-03-31 17:07:00.194  INFO 19024 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.27]
+2020-03-31 17:07:00.352  INFO 19024 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2020-03-31 17:07:00.352  INFO 19024 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3101 ms
+2020-03-31 17:07:01.320  INFO 19024 --- [main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2020-03-31 17:07:01.644  WARN 19024 --- [main] c.b.m.core.toolkit.TableInfoHelper       : Warn: Could not find @TableId in Class: com.tcrl.entity.UserRole.
+2020-03-31 17:07:01.784 ERROR 19024 --- [main] c.b.m.core.MybatisConfiguration          : mapper[com.tcrl.dao.ChanliangguagouMapper.countAllDeptGuagoujineByDept] is ignored, because it exists, maybe from xml file
+2020-03-31 17:07:01.785 ERROR 19024 --- [main] c.b.m.core.MybatisConfiguration          : mapper[com.tcrl.dao.ChanliangguagouMapper.getallDeptGuagoujineByDept] is ignored, because it exists, maybe from xml file
+2020-03-31 17:07:02.259  WARN 19024 --- [main] c.b.m.core.toolkit.TableInfoHelper       : Warn: Could not find @TableId in Class: com.tcrl.entity.RolePermission.
+2020-03-31 17:07:03.081  INFO 19024 --- [main] pertySourcedRequestMappingHandlerMapping : Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2020-03-31 17:07:03.313  INFO 19024 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/xadmin/**'], []
+2020-03-31 17:07:03.313  INFO 19024 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/treetable-lay/**'], []
+2020-03-31 17:07:03.313  INFO 19024 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/dtree/**'], []
+2020-03-31 17:07:03.314  INFO 19024 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: Ant [pattern='/myjs/**'], []
+2020-03-31 17:07:03.417  INFO 19024 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@46fc522d, org.springframework.security.web.context.SecurityContextPersistenceFilter@68ef01a5, org.springframework.security.web.header.HeaderWriterFilter@4872669f, org.springframework.security.web.authentication.logout.LogoutFilter@4d705112, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@4e22368c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@186d8a71, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@322e49ee, org.springframework.security.web.authentication.rememberme.RememberMeAuthenticationFilter@3e046e39, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4262fdeb, org.springframework.security.web.session.SessionManagementFilter@4bb147ec, org.springframework.security.web.access.ExceptionTranslationFilter@33d60b7e, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@718fd7c1]
+2020-03-31 17:07:03.517  INFO 19024 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-03-31 17:07:03.615  INFO 19024 --- [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2020-03-31 17:07:03.785  INFO 19024 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2020-03-31 17:07:03.906  INFO 19024 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Context refreshed
+2020-03-31 17:07:03.987  INFO 19024 --- [main] d.s.w.p.DocumentationPluginsBootstrapper : Found 1 custom documentation plugin(s)
+2020-03-31 17:07:04.071  INFO 19024 --- [main] s.d.s.w.s.ApiListingReferenceScanner     : Scanning for api listing references
+2020-03-31 17:07:04.431  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingGET_1
+2020-03-31 17:07:04.432  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingHEAD_1
+2020-03-31 17:07:04.433  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingPOST_1
+2020-03-31 17:07:04.435  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingPUT_1
+2020-03-31 17:07:04.436  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingPATCH_1
+2020-03-31 17:07:04.438  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingDELETE_1
+2020-03-31 17:07:04.439  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingOPTIONS_1
+2020-03-31 17:07:04.440  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingTRACE_1
+2020-03-31 17:07:04.454  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getPerformanceInitUsingGET_1
+2020-03-31 17:07:04.488  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUserUsingGET_1
+2020-03-31 17:07:04.493  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editUserUsingGET_1
+2020-03-31 17:07:04.507  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingGET_2
+2020-03-31 17:07:04.508  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingHEAD_2
+2020-03-31 17:07:04.508  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingPOST_2
+2020-03-31 17:07:04.509  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingPUT_2
+2020-03-31 17:07:04.510  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingPATCH_2
+2020-03-31 17:07:04.510  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingDELETE_2
+2020-03-31 17:07:04.511  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingOPTIONS_2
+2020-03-31 17:07:04.511  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingTRACE_2
+2020-03-31 17:07:04.590  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUserUsingGET_1
+2020-03-31 17:07:04.595  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUserUsingGET_2
+2020-03-31 17:07:04.597  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editUserUsingGET_2
+2020-03-31 17:07:04.611  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: getPerformanceInitUsingGET_2
+2020-03-31 17:07:04.615  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUserUsingPOST_1
+2020-03-31 17:07:04.620  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUserUsingPOST_1
+2020-03-31 17:07:04.625  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingGET_3
+2020-03-31 17:07:04.627  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingHEAD_3
+2020-03-31 17:07:04.628  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingPOST_3
+2020-03-31 17:07:04.630  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingPUT_3
+2020-03-31 17:07:04.631  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingPATCH_3
+2020-03-31 17:07:04.632  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingDELETE_3
+2020-03-31 17:07:04.634  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingOPTIONS_3
+2020-03-31 17:07:04.635  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: exportAllUsingTRACE_3
+2020-03-31 17:07:04.699  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingGET_1
+2020-03-31 17:07:04.703  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingHEAD_1
+2020-03-31 17:07:04.705  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingPOST_1
+2020-03-31 17:07:04.707  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingPUT_1
+2020-03-31 17:07:04.710  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingPATCH_1
+2020-03-31 17:07:04.719  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingDELETE_1
+2020-03-31 17:07:04.721  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingOPTIONS_1
+2020-03-31 17:07:04.727  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: findByDeptResultUsingTRACE_1
+2020-03-31 17:07:04.870  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUserUsingGET_3
+2020-03-31 17:07:04.878  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editUserUsingGET_3
+2020-03-31 17:07:04.927  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: addUserUsingGET_2
+2020-03-31 17:07:05.039  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: deleteUserUsingGET_4
+2020-03-31 17:07:05.042  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: editUserUsingGET_4
+2020-03-31 17:07:05.079  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: saveUserUsingPOST_2
+2020-03-31 17:07:05.082  INFO 19024 --- [main] .d.s.w.r.o.CachingOperationNameGenerator : Generating unique operation named: updateUserUsingPOST_2
+2020-03-31 17:07:05.194  INFO 19024 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2020-03-31 17:07:05.200  INFO 19024 --- [main] com.tcrl.App                             : Started App in 9.768 seconds (JVM running for 11.859)
+2020-03-31 17:07:19.399  INFO 19024 --- [http-nio-0.0.0.0-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-03-31 17:07:19.399  INFO 19024 --- [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2020-03-31 17:07:19.413  INFO 19024 --- [http-nio-0.0.0.0-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2020-03-31 17:07:30.529 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-6] com.tcrl.dao.UsersMapper.selectList      : ==>  Preparing: SELECT id,username,password,phone,dept,email,headimage,gangweimingcheng,status,createtime,updatetime,birthday,sex FROM sys_users WHERE username = ? 
+2020-03-31 17:07:30.708 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-6] com.tcrl.dao.UsersMapper.selectList      : ==> Parameters: admin(String)
+2020-03-31 17:07:30.800 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-6] com.tcrl.dao.UsersMapper.selectList      : <==      Total: 1
+2020-03-31 17:07:30.817 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-6] c.t.dao.PermissionMapper.listByUserId    : ==>  Preparing: select distinct sp.* from sys_user_role sru inner join sys_role_permission srp on srp.roleid=sru.roleid left join sys_permission sp on srp.permissionid = sp.id where sru.userid=? 
+2020-03-31 17:07:30.824 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-6] c.t.dao.PermissionMapper.listByUserId    : ==> Parameters: 1(Integer)
+2020-03-31 17:07:30.919 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-6] c.t.dao.PermissionMapper.listByUserId    : <==      Total: 38
+2020-03-31 17:07:31.056  INFO 19024 --- [http-nio-0.0.0.0-8080-exec-6] c.t.s.a.MyAuthenticationSuccessHandler   : 登录成功
+2020-03-31 17:07:32.172 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-6] com.tcrl.dao.UsersMapper.selectOne       : ==>  Preparing: SELECT id,username,password,phone,dept,email,headimage,gangweimingcheng,status,createtime,updatetime,birthday,sex FROM sys_users WHERE username = ? 
+2020-03-31 17:07:32.172 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-6] com.tcrl.dao.UsersMapper.selectOne       : ==> Parameters: admin(String)
+2020-03-31 17:07:32.176 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-6] com.tcrl.dao.UsersMapper.selectOne       : <==      Total: 1
+2020-03-31 17:07:32.182 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-6] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2020-03-31 17:07:32.187 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-6] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2020-03-31 17:07:32.199 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-6] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 13
+2020-03-31 17:07:32.353 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-4] c.t.dao.PermissionMapper.listByUserId    : ==>  Preparing: select distinct sp.* from sys_user_role sru inner join sys_role_permission srp on srp.roleid=sru.roleid left join sys_permission sp on srp.permissionid = sp.id where sru.userid=? 
+2020-03-31 17:07:32.354 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-4] c.t.dao.PermissionMapper.listByUserId    : ==> Parameters: 1(Integer)
+2020-03-31 17:07:32.367 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-4] c.t.dao.PermissionMapper.listByUserId    : <==      Total: 38
+2020-03-31 17:07:38.044 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-3] com.tcrl.dao.UsersMapper.selectOne       : ==>  Preparing: SELECT id,username,password,phone,dept,email,headimage,gangweimingcheng,status,createtime,updatetime,birthday,sex FROM sys_users WHERE username = ? 
+2020-03-31 17:07:38.045 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-3] com.tcrl.dao.UsersMapper.selectOne       : ==> Parameters: admin(String)
+2020-03-31 17:07:38.050 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-3] com.tcrl.dao.UsersMapper.selectOne       : <==      Total: 1
+2020-03-31 17:07:38.053 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-3] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2020-03-31 17:07:38.053 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-3] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2020-03-31 17:07:38.058 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-3] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 13
+2020-03-31 17:07:38.604 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-5] c.t.d.P.countAllPerformances1            : ==>  Preparing: select count(*) from kpi_performance_result t where t.kaoheyuefen=? 
+2020-03-31 17:07:38.606 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-5] c.t.d.P.countAllPerformances1            : ==> Parameters: 2020-02(String)
+2020-03-31 17:07:38.623 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-5] c.t.d.P.countAllPerformances1            : <==      Total: 1
+2020-03-31 17:07:38.627 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-5] c.t.d.P.getallPerformancesByPage1        : ==>  Preparing: select * from kpi_performance_result t where t.kaoheyuefen=? order by t.id limit ?,? 
+2020-03-31 17:07:38.633 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-5] c.t.d.P.getallPerformancesByPage1        : ==> Parameters: 2020-02(String), 0(Integer), 10(Integer)
+2020-03-31 17:07:38.643 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-5] c.t.d.P.getallPerformancesByPage1        : <==      Total: 0
+2020-03-31 17:07:41.311 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-4] com.tcrl.dao.UsersMapper.selectOne       : ==>  Preparing: SELECT id,username,password,phone,dept,email,headimage,gangweimingcheng,status,createtime,updatetime,birthday,sex FROM sys_users WHERE username = ? 
+2020-03-31 17:07:41.312 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-4] com.tcrl.dao.UsersMapper.selectOne       : ==> Parameters: admin(String)
+2020-03-31 17:07:41.314 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-4] com.tcrl.dao.UsersMapper.selectOne       : <==      Total: 1
+2020-03-31 17:07:41.316 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-4] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2020-03-31 17:07:41.317 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-4] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2020-03-31 17:07:41.322 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-4] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 13
+2020-03-31 17:07:41.557 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-9] com.tcrl.dao.UsersMapper.countAllUsers   : ==>  Preparing: select count(*) from sys_users t 
+2020-03-31 17:07:41.559 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-9] com.tcrl.dao.UsersMapper.countAllUsers   : ==> Parameters: 
+2020-03-31 17:07:41.560 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-9] com.tcrl.dao.UsersMapper.countAllUsers   : <==      Total: 1
+2020-03-31 17:07:41.562 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-9] c.t.dao.UsersMapper.getallUsersByPage    : ==>  Preparing: select * from sys_users t order by t.id limit ?,? 
+2020-03-31 17:07:41.563 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-9] c.t.dao.UsersMapper.getallUsersByPage    : ==> Parameters: 0(Integer), 15(Integer)
+2020-03-31 17:07:41.578 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-9] c.t.dao.UsersMapper.getallUsersByPage    : <==      Total: 14
+2020-03-31 17:07:47.472 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-1] com.tcrl.dao.UsersMapper.selectOne       : ==>  Preparing: SELECT id,username,password,phone,dept,email,headimage,gangweimingcheng,status,createtime,updatetime,birthday,sex FROM sys_users WHERE username = ? 
+2020-03-31 17:07:47.473 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-1] com.tcrl.dao.UsersMapper.selectOne       : ==> Parameters: admin(String)
+2020-03-31 17:07:47.477 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-1] com.tcrl.dao.UsersMapper.selectOne       : <==      Total: 1
+2020-03-31 17:07:47.480 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-1] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2020-03-31 17:07:47.480 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-1] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2020-03-31 17:07:47.484 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-1] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 13
+2020-03-31 17:07:47.917 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-8] c.tcrl.dao.PermissionMapper.selectCount  : ==>  Preparing: SELECT COUNT( 1 ) FROM sys_permission 
+2020-03-31 17:07:47.921 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-8] c.tcrl.dao.PermissionMapper.selectCount  : ==> Parameters: 
+2020-03-31 17:07:47.923 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-8] c.tcrl.dao.PermissionMapper.selectCount  : <==      Total: 1
+2020-03-31 17:07:47.928 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-8] c.tcrl.dao.PermissionMapper.selectList   : ==>  Preparing: SELECT id,parentid,name,css,href,type,permission,sort FROM sys_permission 
+2020-03-31 17:07:47.929 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-8] c.tcrl.dao.PermissionMapper.selectList   : ==> Parameters: 
+2020-03-31 17:07:47.936 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-8] c.tcrl.dao.PermissionMapper.selectList   : <==      Total: 41
+2020-03-31 17:07:54.165 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-9] com.tcrl.dao.UsersMapper.selectOne       : ==>  Preparing: SELECT id,username,password,phone,dept,email,headimage,gangweimingcheng,status,createtime,updatetime,birthday,sex FROM sys_users WHERE username = ? 
+2020-03-31 17:07:54.166 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-9] com.tcrl.dao.UsersMapper.selectOne       : ==> Parameters: admin(String)
+2020-03-31 17:07:54.174 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-9] com.tcrl.dao.UsersMapper.selectOne       : <==      Total: 1
+2020-03-31 17:07:54.177 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-9] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2020-03-31 17:07:54.181 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-9] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2020-03-31 17:07:54.187 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-9] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 13
+2020-03-31 17:07:54.834 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-7] com.tcrl.dao.RoleMapper.countAllRoles    : ==>  Preparing: select count(*) from sys_role t 
+2020-03-31 17:07:54.835 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-7] com.tcrl.dao.RoleMapper.countAllRoles    : ==> Parameters: 
+2020-03-31 17:07:54.840 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-7] com.tcrl.dao.RoleMapper.countAllRoles    : <==      Total: 1
+2020-03-31 17:07:54.843 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-7] c.tcrl.dao.RoleMapper.getallRolesByPage  : ==>  Preparing: select * from sys_role t order by t.id limit ?,? 
+2020-03-31 17:07:54.845 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-7] c.tcrl.dao.RoleMapper.getallRolesByPage  : ==> Parameters: 0(Integer), 10(Integer)
+2020-03-31 17:07:54.849 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-7] c.tcrl.dao.RoleMapper.getallRolesByPage  : <==      Total: 5
+2020-03-31 17:08:35.199 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-10] com.tcrl.dao.UsersMapper.selectOne       : ==>  Preparing: SELECT id,username,password,phone,dept,email,headimage,gangweimingcheng,status,createtime,updatetime,birthday,sex FROM sys_users WHERE username = ? 
+2020-03-31 17:08:35.199 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-10] com.tcrl.dao.UsersMapper.selectOne       : ==> Parameters: admin(String)
+2020-03-31 17:08:35.200 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-10] com.tcrl.dao.UsersMapper.selectOne       : <==      Total: 1
+2020-03-31 17:08:35.203 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-10] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2020-03-31 17:08:35.204 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-10] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2020-03-31 17:08:35.206 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-10] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 13
+2020-03-31 17:08:35.557 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-3] com.tcrl.dao.UsersMapper.selectOne       : ==>  Preparing: SELECT id,username,password,phone,dept,email,headimage,gangweimingcheng,status,createtime,updatetime,birthday,sex FROM sys_users WHERE username = ? 
+2020-03-31 17:08:35.558 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-3] com.tcrl.dao.UsersMapper.selectOne       : ==> Parameters: admin(String)
+2020-03-31 17:08:35.560 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-3] com.tcrl.dao.UsersMapper.selectOne       : <==      Total: 1
+2020-03-31 17:08:35.566 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-3] c.t.d.P.selectList                       : ==>  Preparing: SELECT id,beikaohedanwei,beizhu,biaozhun,caozuofu,danwei,kaohedanwei,kaohejieguo,kaohexiangmu,kaoheyuefen,mubiaozhi,shijizhi,zhouqi,status FROM kpi_performance_result WHERE kaoheyuefen = ? AND beikaohedanwei = ? 
+2020-03-31 17:08:35.579 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-3] c.t.d.P.selectList                       : ==> Parameters: 2020-02(String), 铸轧分厂(String)
+2020-03-31 17:08:35.583 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-3] c.t.d.P.selectList                       : <==      Total: 0
+2020-03-31 17:08:35.591 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-3] c.t.d.P.selectCount                      : ==>  Preparing: SELECT COUNT( 1 ) FROM kpi_performance_result WHERE kaoheyuefen = ? AND beikaohedanwei = ? 
+2020-03-31 17:08:35.593 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-3] c.t.d.P.selectCount                      : ==> Parameters: 2020-02(String), 铸轧分厂(String)
+2020-03-31 17:08:35.595 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-3] c.t.d.P.selectCount                      : <==      Total: 1
+2020-03-31 17:08:35.633 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-7] c.t.d.D.selectList                       : ==>  Preparing: SELECT id,kaoheyuefen,beikaohedanwei,kaoheshiyou,kaohejine,kaohedanwei,status,xiangmumingcheng FROM kpi_detailedrule_result WHERE kaoheyuefen = ? AND beikaohedanwei = ? 
+2020-03-31 17:08:35.640 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-7] c.t.d.D.selectList                       : ==> Parameters: 2020-02(String), 铸轧分厂(String)
+2020-03-31 17:08:35.667 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-7] c.t.d.D.selectList                       : <==      Total: 0
+2020-03-31 17:08:35.670 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-7] c.t.d.D.selectCount                      : ==>  Preparing: SELECT COUNT( 1 ) FROM kpi_detailedrule_result WHERE kaoheyuefen = ? AND beikaohedanwei = ? 
+2020-03-31 17:08:35.671 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-7] c.t.d.D.selectCount                      : ==> Parameters: 2020-02(String), 铸轧分厂(String)
+2020-03-31 17:08:35.676 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-7] c.t.d.D.selectCount                      : <==      Total: 1
+2020-03-31 17:09:38.275 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-2] com.tcrl.dao.UsersMapper.selectOne       : ==>  Preparing: SELECT id,username,password,phone,dept,email,headimage,gangweimingcheng,status,createtime,updatetime,birthday,sex FROM sys_users WHERE username = ? 
+2020-03-31 17:09:38.275 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-2] com.tcrl.dao.UsersMapper.selectOne       : ==> Parameters: admin(String)
+2020-03-31 17:09:38.278 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-2] com.tcrl.dao.UsersMapper.selectOne       : <==      Total: 1
+2020-03-31 17:09:38.281 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-2] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2020-03-31 17:09:38.281 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-2] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2020-03-31 17:09:38.284 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-2] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 13
+2020-03-31 17:09:38.641 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-9] com.tcrl.dao.UsersMapper.selectOne       : ==>  Preparing: SELECT id,username,password,phone,dept,email,headimage,gangweimingcheng,status,createtime,updatetime,birthday,sex FROM sys_users WHERE username = ? 
+2020-03-31 17:09:38.642 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-9] com.tcrl.dao.UsersMapper.selectOne       : ==> Parameters: admin(String)
+2020-03-31 17:09:38.644 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-9] com.tcrl.dao.UsersMapper.selectOne       : <==      Total: 1
+2020-03-31 17:09:38.648 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-9] c.t.d.D.selectCount                      : ==>  Preparing: SELECT COUNT( 1 ) FROM kpi_detailedrule_result WHERE kaohedanwei = ? AND kaoheyuefen = ? 
+2020-03-31 17:09:38.649 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-9] c.t.d.D.selectCount                      : ==> Parameters: 人力资源部(String), 2020-02(String)
+2020-03-31 17:09:38.652 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-9] c.t.d.D.selectCount                      : <==      Total: 1
+2020-03-31 17:09:38.655 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-9] c.t.d.D.selectList                       : ==>  Preparing: SELECT id,kaoheyuefen,beikaohedanwei,kaoheshiyou,kaohejine,kaohedanwei,status,xiangmumingcheng FROM kpi_detailedrule_result WHERE kaohedanwei = ? AND kaoheyuefen = ? 
+2020-03-31 17:09:38.657 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-9] c.t.d.D.selectList                       : ==> Parameters: 人力资源部(String), 2020-02(String)
+2020-03-31 17:09:38.658 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-9] c.t.d.D.selectList                       : <==      Total: 0
+2020-03-31 17:10:00.421 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-4] com.tcrl.dao.UsersMapper.selectOne       : ==>  Preparing: SELECT id,username,password,phone,dept,email,headimage,gangweimingcheng,status,createtime,updatetime,birthday,sex FROM sys_users WHERE username = ? 
+2020-03-31 17:10:00.421 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-4] com.tcrl.dao.UsersMapper.selectOne       : ==> Parameters: admin(String)
+2020-03-31 17:10:00.422 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-4] com.tcrl.dao.UsersMapper.selectOne       : <==      Total: 1
+2020-03-31 17:10:00.424 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-4] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2020-03-31 17:10:00.425 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-4] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2020-03-31 17:10:00.427 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-4] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 13
+2020-03-31 17:10:40.583 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-8] com.tcrl.dao.UsersMapper.selectOne       : ==>  Preparing: SELECT id,username,password,phone,dept,email,headimage,gangweimingcheng,status,createtime,updatetime,birthday,sex FROM sys_users WHERE username = ? 
+2020-03-31 17:10:40.584 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-8] com.tcrl.dao.UsersMapper.selectOne       : ==> Parameters: admin(String)
+2020-03-31 17:10:40.586 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-8] com.tcrl.dao.UsersMapper.selectOne       : <==      Total: 1
+2020-03-31 17:10:40.588 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-8] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2020-03-31 17:10:40.588 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-8] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2020-03-31 17:10:40.590 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-8] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 13
+2020-03-31 17:10:40.954 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-8] c.t.d.D.countAllDeptemployee             : ==>  Preparing: select count(*) from emp_deptemployee 
+2020-03-31 17:10:40.955 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-8] c.t.d.D.countAllDeptemployee             : ==> Parameters: 
+2020-03-31 17:10:40.965 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-8] c.t.d.D.countAllDeptemployee             : <==      Total: 1
+2020-03-31 17:10:40.967 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-8] c.t.d.D.getallDeptemployeeByPage         : ==>  Preparing: select * from emp_deptemployee t order by t.id limit ?,? 
+2020-03-31 17:10:40.968 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-8] c.t.d.D.getallDeptemployeeByPage         : ==> Parameters: 0(Integer), 10(Integer)
+2020-03-31 17:10:40.973 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-8] c.t.d.D.getallDeptemployeeByPage         : <==      Total: 10
+2020-03-31 17:10:45.257 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-9] com.tcrl.dao.UsersMapper.selectOne       : ==>  Preparing: SELECT id,username,password,phone,dept,email,headimage,gangweimingcheng,status,createtime,updatetime,birthday,sex FROM sys_users WHERE username = ? 
+2020-03-31 17:10:45.257 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-9] com.tcrl.dao.UsersMapper.selectOne       : ==> Parameters: admin(String)
+2020-03-31 17:10:45.266 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-9] com.tcrl.dao.UsersMapper.selectOne       : <==      Total: 1
+2020-03-31 17:10:45.269 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-9] c.tcrl.dao.DepartmentMapper.selectList   : ==>  Preparing: SELECT id,deptName,parentId,flag FROM sys_department WHERE id <> ? 
+2020-03-31 17:10:45.269 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-9] c.tcrl.dao.DepartmentMapper.selectList   : ==> Parameters: 1(Integer)
+2020-03-31 17:10:45.271 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-9] c.tcrl.dao.DepartmentMapper.selectList   : <==      Total: 13
+2020-03-31 17:10:45.506 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-10] c.t.d.ChanliangguagouMapper.selectCount  : ==>  Preparing: SELECT COUNT( 1 ) FROM emp_chanliangguagou WHERE kaoheyuefen = ? 
+2020-03-31 17:10:45.507 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-10] c.t.d.ChanliangguagouMapper.selectCount  : ==> Parameters: 2020-02(String)
+2020-03-31 17:10:45.547 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-10] c.t.d.ChanliangguagouMapper.selectCount  : <==      Total: 1
+2020-03-31 17:10:45.551 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-10] c.t.d.ChanliangguagouMapper.selectList   : ==>  Preparing: SELECT id,xingming,dept,gangwei,guagoudanwei,gangxu,dangci,gangweigongzi,jixiaogongzi,guagoujine,kaoheyuefen,beiyongziduan2,beiyongziduan3,beiyongziduan4 FROM emp_chanliangguagou WHERE kaoheyuefen = ? 
+2020-03-31 17:10:45.552 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-10] c.t.d.ChanliangguagouMapper.selectList   : ==> Parameters: 2020-02(String)
+2020-03-31 17:10:45.554 DEBUG 19024 --- [http-nio-0.0.0.0-8080-exec-10] c.t.d.ChanliangguagouMapper.selectList   : <==      Total: 0

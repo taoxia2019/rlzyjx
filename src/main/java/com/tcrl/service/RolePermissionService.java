@@ -2,6 +2,7 @@ package com.tcrl.service;
 
 import com.tcrl.entity.RolePermission;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -13,6 +14,7 @@ import java.util.List;
  * @author taoxia
  * @since 2019-10-04
  */
+
 public interface RolePermissionService extends IService<RolePermission> {
 
     /**
